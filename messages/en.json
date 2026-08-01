@@ -1,0 +1,561 @@
+{
+  "meta": {
+    "home": {
+      "title": "NUMA KIDS — gummy bear vitamins for children",
+      "description": "Science-backed kids supplements by NUMA KIDS: calcium D3, multivitamins, probiotics and Omega-3. International certificates, free delivery and a 30-day return guarantee."
+    },
+    "products": {
+      "title": "All kids vitamins — NUMA KIDS catalogue",
+      "description": "6 science-backed formulas for children: vitamin C, vitamin D3, magnesium, Omega-3, multivitamins and probiotics. Buy NUMA KIDS supplements with delivery."
+    },
+    "blog": {
+      "title": "Helpful articles about children's health — NUMA KIDS blog",
+      "description": "The science of children's health, made simple: immunity, gut health, nutrition and vitamins. Articles by the NUMA KIDS experts."
+    },
+    "contacts": {
+      "title": "NUMA KIDS contacts — get in touch",
+      "description": "Phone, e-mail and address of NUMA KIDS. We answer questions about kids vitamins within 24 hours and help you pick a formula."
+    },
+    "consultation": {
+      "title": "Free consultation on kids vitamins — NUMA KIDS",
+      "description": "Leave a request and a NUMA KIDS specialist will help you choose vitamins for your child for free. We reply within 15–30 minutes during working hours."
+    },
+    "product": {
+      "title": "{name} — {tagline} | NUMA KIDS",
+      "description": "{description} Buy {name} at NUMA KIDS: certified manufacturing, free delivery, 30-day returns."
+    },
+    "article": {
+      "title": "{title} | NUMA KIDS blog",
+      "description": "{excerpt}"
+    },
+    "notFound": {
+      "title": "Page not found — NUMA KIDS",
+      "description": "This page does not exist. Go back home or browse the NUMA KIDS kids vitamins catalogue."
+    },
+    "keywords": "kids vitamins, children supplements, gummy bears, calcium D3, probiotics for kids, omega-3 for children, multivitamins, NUMA KIDS"
+  },
+  "common": {
+    "buy": "buy",
+    "readMore": "Read article",
+    "allProducts": "All products",
+    "allArticles": "All articles",
+    "consultation": "Consultation",
+    "cart": "Cart",
+    "menu": "Menu",
+    "close": "Close",
+    "prev": "Previous",
+    "next": "Next",
+    "currency": "UZS",
+    "minutes": "{count} min",
+    "backHome": "Back to home",
+    "goToCatalog": "Go to catalogue",
+    "skipToContent": "Skip to content",
+    "otherBrands": "Other NUMA projects"
+  },
+  "nav": {
+    "home": "Home",
+    "products": "Products",
+    "blog": "Blog",
+    "contacts": "Contacts"
+  },
+  "brands": {
+    "family": "NUMA FAMILY",
+    "catering": "NUMA CATTERING",
+    "tabobat": "NABAVIY TABOBAT"
+  },
+  "locale": {
+    "label": "Language",
+    "ru": "Ru",
+    "en": "En",
+    "uz": "Uz"
+  },
+  "hero": {
+    "title": "The NUMA KIDS superhero squad",
+    "teams": {
+      "green": "Green team",
+      "yellow": "Yellow team",
+      "purple": "Purple team",
+      "red": "Red team",
+      "orange": "Orange team"
+    }
+  },
+  "trust": {
+    "title": "Natural supplements —",
+    "titleAccent": "more benefit!",
+    "subtitle": "Every formula is backed by research, built from bioavailable ingredients and designed specifically for a growing body.",
+    "items": {
+      "safe": {
+        "title": "Safe",
+        "text": "Clinically tested"
+      },
+      "natural": {
+        "title": "Natural",
+        "text": "No colourings or flavourings"
+      },
+      "quality": {
+        "title": "Quality",
+        "text": "GMP standards"
+      }
+    }
+  },
+  "planet": {
+    "title": "“Good for kids and the planet”",
+    "text": "Perfect for a quick breakfast, a school snack or recovery after training.",
+    "items": {
+      "natural": {
+        "title": "Natural:",
+        "text": "No artificial colourings"
+      },
+      "checked": {
+        "title": "Proven:",
+        "text": "Helps to focus better"
+      },
+      "useful": {
+        "title": "Tasty:",
+        "text": "Gummy bears kids love"
+      }
+    }
+  },
+  "articlesSection": {
+    "title": "Helpful articles"
+  },
+  "catalog": {
+    "title": "Our",
+    "titleAccent": "vitamins",
+    "subtitle": "6 formulas for health and happiness"
+  },
+  "certificates": {
+    "title": "Our international certificates",
+    "subtitle": "We follow international quality and safety standards at every stage of production",
+    "items": {
+      "euro-leaf": {
+        "title": "EURO-LEAF",
+        "subtitle": "European organic certificate",
+        "text": "The official organic mark of the European Union. It confirms that the product meets strict requirements for organic production, sustainability and quality control"
+      },
+      "halal": {
+        "title": "HALAL CERTIFICATE",
+        "subtitle": "Halal certificate",
+        "text": "Confirms that the product complies with halal requirements and is produced in line with Islamic standards of quality, safety and purity"
+      },
+      "usda": {
+        "title": "USDA ORGANIC",
+        "subtitle": "US National Organic Program",
+        "text": "A certificate of the U.S. Department of Agriculture confirming compliance with organic standards of production, processing, storage and distribution"
+      },
+      "iso": {
+        "title": "ISO 22000:2018",
+        "subtitle": "Food safety management system",
+        "text": "An international standard confirming effective quality and food-safety control at every stage of production and supply"
+      },
+      "gmp": {
+        "title": "GMP",
+        "subtitle": "Good Manufacturing Practice",
+        "text": "The international good manufacturing practice standard, confirming high requirements for production, quality control, safety and product efficacy"
+      }
+    }
+  },
+  "cta": {
+    "title": "Start taking care of health",
+    "titleAccent": "today",
+    "delivery": "Free delivery",
+    "guarantee": "30-day return guarantee",
+    "button": "Consultation"
+  },
+  "reviews": {
+    "title": "Parents' reviews",
+    "role": "Customer",
+    "items": {
+      "madina": {
+        "name": "Madina Rasulova",
+        "text": "My boys don't like vegetables, but Jekky helps me sneak them into their diet as a tasty smoothie!"
+      },
+      "rasul": {
+        "name": "Rasul Khamdamov",
+        "text": "Thanks to the variety of flavours the kids pick something new every day and take it happily"
+      },
+      "zilola": {
+        "name": "Zilola Otazhonova",
+        "text": "It is a great way to be sure the child gets all the minerals they need in a convenient form"
+      }
+    }
+  },
+  "newsletter": {
+    "title": "NUMA KIDS — healthy nutrition for children",
+    "placeholder": "Enter your email",
+    "button": "Get a discount",
+    "success": "Thank you! The promo code is on its way to your inbox.",
+    "error": "Please enter a valid email"
+  },
+  "marquee": "VITAMINS",
+  "footer": {
+    "tagline": "Science-backed vitamins for your child's health",
+    "catalogTitle": "Catalogue",
+    "infoTitle": "Information",
+    "contactsTitle": "Contacts",
+    "available": "We are online 24/7",
+    "rights": "© All rights reserved",
+    "catalog": {
+      "all": "All products",
+      "vitaminC": "Vitamin C",
+      "probiotics": "Probiotics",
+      "omega": "Omega-3",
+      "multi": "Multivitamins"
+    },
+    "info": {
+      "blog": "Blog",
+      "about": "About us",
+      "delivery": "Delivery and payment",
+      "returns": "Warranty and returns",
+      "faq": "FAQ"
+    }
+  },
+  "productsPage": {
+    "title": "All vitamins",
+    "subtitle": "6 science-backed formulas for children",
+    "all": "All",
+    "empty": "No products in this category yet"
+  },
+  "productCategories": {
+    "vitamin-c": "Vitamin C",
+    "vitamin-d3": "Vitamin D3",
+    "magnesium": "Magnesium",
+    "omega-3": "Omega 3",
+    "multi": "Multi",
+    "probiotics": "Probiotics"
+  },
+  "productBadges": {
+    "top": "TOP",
+    "strains": "{count} strains"
+  },
+  "products": {
+    "bonny": {
+      "name": "Bonny — calcium D3",
+      "shortName": "Bonny",
+      "tagline": "For strong bones",
+      "description": "Supports growth, teeth and the skeletal system. Tasty gummy bears with calcium and vitamin D3 for everyday care.",
+      "long": "Tasty gummy bears with calcium and vitamin D3 that support growth, strengthen bones and teeth and help a child's body develop properly",
+      "purposeIntro": "Calcium and vitamin D3 are essential for a child's proper growth and development. They strengthen bones and teeth and keep kids active every day",
+      "compositionTitle": "Calcium and vitamin D3",
+      "compositionText": "Bonny is not only about bones and teeth — it also supports muscles, the nervous system and the whole body. Regular intake helps cover calcium deficiency during periods of rapid growth",
+      "activeFormula": "Ca + D3"
+    },
+    "funny": {
+      "name": "Funny — multivitamins",
+      "shortName": "Funny",
+      "tagline": "Everyday support",
+      "description": "A vitamin complex for activity, immunity and a child's good wellbeing every day. In a format kids love",
+      "long": "Gummy bears with a complete complex of vitamins and minerals for daily support of activity, immunity and a good mood",
+      "purposeIntro": "A balanced vitamin complex covers a child's daily needs and helps the body handle school and training loads",
+      "compositionTitle": "11 vitamins in one bear",
+      "compositionText": "Funny combines B-group vitamins with C, E and D3 in a single gummy formula. Regular intake helps cover micronutrient gaps and keeps energy levels steady",
+      "activeFormula": "Multi 11"
+    },
+    "jekky": {
+      "name": "Jekky — probiotics",
+      "shortName": "Jekky",
+      "tagline": "A happy tummy",
+      "description": "Probiotics that support gut microflora, comfortable digestion and lightness after meals",
+      "long": "Gummy bears with live probiotic cultures for healthy microflora, comfortable digestion and strong immunity",
+      "purposeIntro": "Healthy gut microflora is the foundation of immunity, good mood and proper absorption of nutrients",
+      "compositionTitle": "24 strains of live cultures",
+      "compositionText": "Jekky contains carefully selected probiotic strains that populate the gut with beneficial bacteria and help children handle diet changes and antibiotic courses",
+      "activeFormula": "24 strains"
+    },
+    "genny": {
+      "name": "Genny — Omega-3 DHA",
+      "shortName": "Genny",
+      "tagline": "Brain and vision support",
+      "description": "DHA is a key omega-3 fatty acid for brain development, memory, attention and eye health. Suitable for daily intake",
+      "long": "Gummy bears with fish oil and a high DHA content for brain development, memory, focus and eye health",
+      "purposeIntro": "Omega-3 are essential fatty acids the body cannot produce on its own. They are vital for brain, vision and heart health",
+      "compositionTitle": "Fish oil and complex",
+      "compositionText": "Genny is not only food for the brain but also an important component for heart health, vision and the whole body. Regular intake helps cover the deficiency of essential fatty acids",
+      "activeFormula": "DHA/EPA"
+    },
+    "vitty": {
+      "name": "Vitty — vitamin C",
+      "shortName": "Vitty",
+      "tagline": "A shield for immunity",
+      "description": "Vitamin C in a gentle gummy form for strong immunity, healthy vessels and faster recovery after colds",
+      "long": "Gummy bears with vitamin C and bioflavonoids for daily immune support at kindergarten and school",
+      "purposeIntro": "Vitamin C takes part in the immune response, helps absorb iron and supports the health of vessels and skin",
+      "compositionTitle": "Vitamin C and bioflavonoids",
+      "compositionText": "Vitty pairs vitamin C with natural citrus bioflavonoids for better absorption. The gentle formula is easy on the stomach and suitable for daily intake",
+      "activeFormula": "Vitamin C"
+    },
+    "magny": {
+      "name": "Magny — magnesium",
+      "shortName": "Magny",
+      "tagline": "Calm and sound sleep",
+      "description": "Magnesium with vitamin B6 for restful sleep, a steady nervous system and the wellbeing of an active child",
+      "long": "Gummy bears with magnesium and vitamin B6 supporting the nervous system, sound sleep and lower fatigue",
+      "purposeIntro": "Magnesium is involved in more than 300 body processes and is especially important for the nervous system, muscles and quality sleep",
+      "compositionTitle": "Magnesium and vitamin B6",
+      "compositionText": "Magny combines a bioavailable form of magnesium with vitamin B6, which improves its absorption. The formula helps children fall asleep easier and handle stress calmly",
+      "activeFormula": "Mg + B6"
+    }
+  },
+  "product": {
+    "breadcrumbHome": "Home",
+    "breadcrumbProducts": "Products",
+    "addToCart": "Add to cart",
+    "quantity": "Quantity",
+    "decrease": "Decrease quantity",
+    "increase": "Increase quantity",
+    "gallery": "Product gallery",
+    "specsTitle": "Specifications",
+    "specs": {
+      "volume": {
+        "label": "Volume",
+        "value": "400 mg"
+      },
+      "form": {
+        "label": "Form",
+        "value": "Gummy bears"
+      },
+      "age": {
+        "label": "Age",
+        "value": "2 years and older"
+      },
+      "country": {
+        "label": "Country of origin",
+        "value": "Uzbekistan"
+      },
+      "shelfLife": {
+        "label": "Shelf life",
+        "value": "24 months"
+      },
+      "storage": {
+        "label": "Storage conditions",
+        "value": "In a dry, cool place at a temperature not above +25 °C"
+      }
+    },
+    "purposeTitle": "What is {name} for?",
+    "purposes": {
+      "teeth": {
+        "title": "Healthy teeth",
+        "text": "Supports dental health and helps teeth develop properly"
+      },
+      "joints": {
+        "title": "Joints and bones",
+        "text": "Reduces inflammation in the joints and supports mobility and flexibility"
+      },
+      "growth": {
+        "title": "Child growth",
+        "text": "Helps the body get the elements it needs for harmonious growth"
+      },
+      "activity": {
+        "title": "Activity and energy",
+        "text": "Helps keep skin healthy, improves its appearance and strengthens hair and nails"
+      },
+      "immunity": {
+        "title": "Immunity",
+        "text": "Helps strengthen the immune system and protects the body from infections and inflammation"
+      },
+      "energy": {
+        "title": "Energy and tone",
+        "text": "Improves overall body tone, helps fight fatigue and keeps kids active throughout the day"
+      }
+    },
+    "intakeTitle": "How to take {name}?",
+    "intakeSubtitle": "Follow the recommended rules of intake to get the best result.",
+    "intake": {
+      "dosage": {
+        "title": "Dosage",
+        "text": "Take 1–2 gummies a day with a meal"
+      },
+      "regularity": {
+        "title": "Regularity",
+        "text": "The minimum recommended course is 1 month. For a stronger effect we recommend completing the full course"
+      },
+      "afterMeal": {
+        "title": "After a meal",
+        "text": "Drink 1–2 glasses of clean water. This helps the product absorb better"
+      },
+      "storage": {
+        "title": "Storage",
+        "text": "Store in a dry, cool place protected from direct sunlight and moisture"
+      }
+    },
+    "importantTitle": "Important to follow",
+    "importantText": "Take only in accordance with the recommended age dosage. For better absorption take during or after a meal. Do not exceed the recommended daily amount. Consult a paediatrician before giving to younger children. Store in a dry place at a temperature not above +25 °C.",
+    "facts": {
+      "dosage": {
+        "value": "400 MG",
+        "label": "Dosage"
+      },
+      "course": {
+        "value": "1–3 months",
+        "label": "Course"
+      },
+      "natural": {
+        "value": "100%",
+        "label": "Natural product"
+      },
+      "active": {
+        "label": "Active formula"
+      }
+    },
+    "advantagesTitle": "{name} benefits",
+    "advantages": {
+      "skin": "Improves the condition of skin and hair",
+      "heart": "Supports cardiovascular health",
+      "inflammation": "Has an anti-inflammatory effect",
+      "vision": "Helps preserve eye health and improves vision quality",
+      "energy": "A source of energy and vitality at any age",
+      "memory": "Supports brain function and strengthens memory"
+    },
+    "effects": {
+      "bones": {
+        "title": "Stronger bones and teeth",
+        "text": "Supports the correct formation and strengthening of bone tissue and teeth"
+      },
+      "growth": {
+        "title": "Growth and development",
+        "text": "Supports healthy growth and harmonious development of a child's body"
+      },
+      "calcium": {
+        "title": "Calcium absorption",
+        "text": "Vitamin D3 supports effective absorption of calcium and phosphorus"
+      },
+      "immunity": {
+        "title": "Immune support",
+        "text": "Helps strengthen the child's natural defences"
+      },
+      "energy": {
+        "title": "Energy and activity",
+        "text": "Supports activity, alertness and a child's good wellbeing"
+      },
+      "safety": {
+        "title": "Safe formula for children",
+        "text": "Developed specifically for children with their daily needs in mind"
+      }
+    },
+    "orderTitle": "Place your order right now",
+    "orderText": "Start caring about your child's health today and feel positive changes within 2–4 weeks of regular intake",
+    "orderButton": "Place an order",
+    "notFound": "This product is not in the catalogue"
+  },
+  "blogPage": {
+    "title": "Helpful articles",
+    "subtitle": "The science of children's health — simple and clear",
+    "all": "All topics",
+    "empty": "No articles in this topic yet",
+    "backToBlog": "All articles",
+    "published": "Published"
+  },
+  "articleTopics": {
+    "immunity": "Immunity",
+    "gut-health": "Gut health",
+    "nutrition": "Nutrition",
+    "vitamins": "Vitamins"
+  },
+  "articles": {
+    "science-of-immunity": {
+      "title": "The science of immunity: which vitamins really matter for kids",
+      "excerpt": "Not all immunity products are equal. Here is what research says about building strong defences in children.",
+      "body": "A child's immune system keeps developing into adolescence, and during that period it is especially sensitive to micronutrient gaps. Vitamin D3, vitamin C and zinc have the strongest evidence base.\n\nVitamin D3 is involved in the work of innate immune cells. In regions with little sunlight most children are deficient, so supplementation in autumn and winter is justified.\n\nVitamin C does not prevent a cold, but it shortens its duration. Regular intake works better than large doses taken once symptoms appear.\n\nProbiotics affect immunity indirectly: about 70 % of immune cells live in the gut, so healthy microflora is part of the body's defence."
+    },
+    "gut-is-the-second-brain": {
+      "title": "Why gut health matters for a child's growth",
+      "excerpt": "Gut microflora affects not only digestion, but also immunity, mood and overall wellbeing.",
+      "body": "The gut–brain axis is one of the most fascinating areas of modern science. Understanding it can change the way you approach your child's health.\n\nMicroflora takes part in synthesising B vitamins and vitamin K and helps absorb calcium and iron — exactly the elements that matter most during rapid growth.\n\nDiet changes, travel and antibiotic courses disturb the bacterial balance. In such periods probiotics help restore microflora faster.\n\nSigns worth paying attention to: irregular stool, bloating, reduced appetite and frequent colds."
+    },
+    "focus-and-brain-development": {
+      "title": "How to support your child's focus and brain development",
+      "excerpt": "Which nutrients help children concentrate, learn and remember new information better.",
+      "body": "A child's brain is roughly 60 % fat, and a significant share of it is docosahexaenoic acid (DHA) from the omega-3 group.\n\nDHA is part of neuronal cell membranes and affects how fast signals travel. Studies link sufficient omega-3 levels with better attention and school performance.\n\nIron and iodine are responsible for cognitive development, while B vitamins support energy metabolism in nervous tissue.\n\nOne important note: supplements only work alongside proper sleep, physical activity and a varied diet."
+    },
+    "healthy-snacks-for-active-kids": {
+      "title": "Healthy snacks for active kids",
+      "excerpt": "Which foods and habits help a child get more energy and the vitamins they need every day.",
+      "body": "A snack is not “extra food” — it is a full part of a child's diet, providing up to a quarter of daily energy.\n\nA good snack combines slow carbohydrates, protein and a little fat: wholegrain bread with cheese, yoghurt with berries or a handful of nuts with fruit.\n\nSweet bars and juices give a quick energy spike followed by an equally quick crash — an hour later the child is hungry and distracted again.\n\nVitamin complexes complement the diet but do not replace it. The gummy format helps make intake a daily habit without negotiation."
+    }
+  },
+  "contacts": {
+    "title": "Get in touch",
+    "subtitle": "We are here to answer your questions and help you take care of your child's health",
+    "channels": {
+      "email": {
+        "title": "Email",
+        "text": "We reply within 24 hours"
+      },
+      "phone": {
+        "title": "Phone",
+        "text": "We are online 24/7"
+      },
+      "address": {
+        "title": "Address",
+        "text": ""
+      },
+      "hours": {
+        "title": "Working hours",
+        "text": "Mon – Fri: 9:00–18:00",
+        "extra": "Sat – Sun: closed"
+      }
+    },
+    "formTitle": "Write to us",
+    "form": {
+      "name": "Your name",
+      "email": "E-mail",
+      "subject": "Subject",
+      "message": "Your message",
+      "submit": "Get a free consultation",
+      "sent": "Message sent — we will reply within 24 hours",
+      "privacy": "We guarantee the confidentiality of your data"
+    },
+    "faqTitle": "Frequently asked questions",
+    "faq": {
+      "production": {
+        "question": "Where are your vitamins produced?",
+        "answer": "Our products are made at certified facilities following GMP and ISO 22000 standards."
+      },
+      "delivery": {
+        "question": "How does delivery work and how long does it take?",
+        "answer": "Delivery across Uzbekistan takes 1 to 5 working days. Free delivery for orders above 300,000 UZS."
+      },
+      "returns": {
+        "question": "Can I return a product?",
+        "answer": "Yes, you can return a product within 30 days if it has not been opened or used."
+      },
+      "choose": {
+        "question": "How do I choose a vitamin for my child?",
+        "answer": "We recommend consulting a paediatrician. You can also request a free consultation on our website."
+      }
+    }
+  },
+  "consultation": {
+    "title": "Book a consultation",
+    "subtitle": "Leave your contacts and we will get in touch for a free consultation",
+    "form": {
+      "name": "Your name",
+      "namePlaceholder": "First and last name",
+      "phone": "Phone number",
+      "phonePlaceholder": "+998 __ ___ __ __",
+      "subject": "Subject",
+      "subjectPlaceholder": "Optional",
+      "message": "Message",
+      "messagePlaceholder": "Your message...",
+      "required": "required field",
+      "note": "Once the form is submitted our specialist will contact you within 24 hours. The consultation is free!",
+      "submit": "Send request",
+      "submitting": "Sending…"
+    },
+    "errors": {
+      "name": "Please enter your name",
+      "phone": "Please enter a valid phone number"
+    },
+    "success": {
+      "title": "Thank you for your request!",
+      "text": "Your request has been sent successfully. A NUMA KIDS specialist will contact you shortly",
+      "time": "We usually reply within 15–30 minutes during working hours",
+      "backHome": "Back to home",
+      "goToCatalog": "Go to catalogue"
+    }
+  },
+  "notFound": {
+    "title": "Page not found",
+    "text": "It looks like this page ran off with the gummy bears. Go back home or browse the catalogue."
+  }
+}

@@ -1,0 +1,79 @@
+import Image from "next/image";
+import { useTranslations } from "next-intl";
+
+import { Container } from "@/components/shared/container";
+import type { Product } from "@/types";
+
+const FACT_POSITION = [
+  "sm:absolute sm:top-4 sm:left-0",
+  "sm:absolute sm:top-16 sm:right-0",
+  "sm:absolute sm:bottom-20 sm:left-0",
+  "sm:absolute sm:bottom-4 sm:right-0",
+];
+
+export function ProductComposition({ product }: { product: Product }) {
+  const t = useTranslations();
+  const name = t(`products.${product.slug}.shortName`);
+
+  const facts = [
+    { value: t("product.facts.dosage.value"), label: t("product.facts.dosage.label") },
+    { value: t("product.facts.course.value"), label: t("product.facts.course.label") },
+    { value: t("product.facts.natural.value"), label: t("product.facts.natural.label") },
+    {
+      value: t(`products.${product.slug}.activeFormula`),
+      label: t("product.facts.active.label"),
+    },
+  ];
+
+  return (
+    <section className="py-16 sm:py-20">
+      <Container className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+        <div>
+          <h2 className="text-3xl leading-tight font-extrabold text-brand-ink sm:text-4xl">
+            {name}:
+            <br />
+            {t(`products.${product.slug}.compositionTitle`)}
+          </h2>
+          <p className="mt-8 max-w-md leading-relaxed text-brand-ink/60">
+            {t(`products.${product.slug}.compositionText`)}
+          </p>
+        </div>
+
+        <div className="relative mx-auto grid w-full max-w-xl gap-4 sm:aspect-square sm:place-items-center sm:gap-0">
+          <div
+            aria-hidden="true"
+            className="absolute inset-8 hidden rounded-full bg-brand-pink-tint sm:block"
+          />
+          <div
+            aria-hidden="true"
+            className="absolute inset-4 hidden rounded-full border border-brand-pink-soft/60 sm:block"
+          />
+
+          <div className="relative order-first mx-auto h-56 w-40 sm:order-none sm:h-72 sm:w-52">
+            <Image
+              src={product.image}
+              alt={name}
+              fill
+              sizes="220px"
+              className="object-contain drop-shadow-[0_18px_28px_rgba(0,0,0,0.14)]"
+            />
+          </div>
+
+          <ul className="grid grid-cols-2 gap-3 sm:contents">
+            {facts.map((fact, index) => (
+              <li
+                key={fact.label}
+                className={`rounded-2xl bg-brand-pink-soft px-5 py-4 text-center sm:w-44 ${FACT_POSITION[index]}`}
+              >
+                <p className="text-base font-bold text-white">{fact.value}</p>
+                <p className="mt-1 text-xs text-white/90 sm:text-sm">
+                  {fact.label}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </Container>
+    </section>
+  );
+}

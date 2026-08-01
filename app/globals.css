@@ -1,26 +1,244 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@custom-variant dark (&:is(.dark *));
+
+/* ---------------------------------------------------------------------------
+   NUMA KIDS design tokens — every value comes from the Figma source of truth.
+   All design keys live here as Tailwind theme variables, never as ad-hoc CSS.
+--------------------------------------------------------------------------- */
+@theme {
+  /* Typography */
+  --font-sans: var(--font-onest), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-onest), ui-sans-serif, system-ui, sans-serif;
+
+  /* Brand */
+  --color-brand-pink: #fd5a90;
+  --color-brand-pink-soft: #fea6c1;
+  --color-brand-pink-tint: #ffe9ea;
+  --color-brand-pink-deep: #af053b;
+  --color-brand-magenta: #e93c79;
+  --color-brand-yellow: #ebd35c;
+  --color-brand-yellow-deep: #ffd318;
+  --color-brand-purple: #635392;
+  --color-brand-orange: #f97316;
+  --color-brand-ink: #171c33;
+  --color-brand-cocoa: #3d2b1f;
+
+  /* Surfaces */
+  --color-surface: #ffffff;
+  --color-surface-cream: #fffaf5;
+  --color-surface-peach: #feeadc;
+  --color-surface-blush: #fee6e6;
+  --color-surface-sand: #fef1e9;
+
+  /* Product accents — pink */
+  --color-pink-card: #ffe9ea;
+  --color-pink-ink: #af053b;
+  --color-pink-action: #fea6c1;
+  --color-pink-badge: #fe6d9f;
+
+  /* Product accents — blue */
+  --color-blue-card: #e5f3fb;
+  --color-blue-ink: #2a6fb6;
+  --color-blue-action: #a3cff7;
+  --color-blue-badge: #57aaf4;
+
+  /* Product accents — green */
+  --color-green-card: #f3f3e2;
+  --color-green-ink: #467e10;
+  --color-green-action: #9ee25d;
+  --color-green-badge: #467e10;
+
+  /* Product accents — orange */
+  --color-orange-card: #ffdec9;
+  --color-orange-ink: #d9651d;
+  --color-orange-action: #ff9b5e;
+  --color-orange-badge: #ff9b5e;
+
+  /* Contact + FAQ tinted cards */
+  --color-tint-rose: #fef0f3;
+  --color-tint-sky: #f0f7fe;
+  --color-tint-mint: #f6faf0;
+  --color-tint-butter: #fef8ed;
+  --color-tint-lilac: #fbf5fa;
+  --color-tint-cream: #fef8f1;
+  --color-tint-frost: #f5f9fc;
+
+  /* Review cards */
+  --color-review-yellow: #ffd318;
+  --color-review-pink: #e4467b;
+  --color-review-orange: #ef6e01;
+
+  /* Decorative sparkles */
+  --color-star-gold: #fecf53;
+  --color-star-mint: #a8ded0;
+  --color-star-blush: #ffb9b0;
+  --color-star-grey: #d9d9d9;
+
+  /* Layout */
+  --spacing-header: 6rem;
+  --radius-card: 1.5rem;
+
+  /* Motion */
+  --animate-marquee: marquee 30s linear infinite;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-rise: rise 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  --background: #ffffff;
+  --foreground: #171c33;
+  --card: #ffffff;
+  --card-foreground: #171c33;
+  --popover: #ffffff;
+  --popover-foreground: #171c33;
+  --primary: #fd5a90;
+  --primary-foreground: #ffffff;
+  --secondary: #fef1e9;
+  --secondary-foreground: #171c33;
+  --muted: #f6f6f7;
+  --muted-foreground: #6b6f80;
+  --accent: #ffe9ea;
+  --accent-foreground: #af053b;
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: #ece9e6;
+  --input: #e4e0dc;
+  --ring: #fd5a90;
+  --chart-1: #fd5a90;
+  --chart-2: #57aaf4;
+  --chart-3: #9ee25d;
+  --chart-4: #ff9b5e;
+  --chart-5: #635392;
+  --radius: 0.875rem;
+  --sidebar: #fffaf5;
+  --sidebar-foreground: #171c33;
+  --sidebar-primary: #fd5a90;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #ffe9ea;
+  --sidebar-accent-foreground: #af053b;
+  --sidebar-border: #ece9e6;
+  --sidebar-ring: #fd5a90;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    @apply font-sans;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-heading tracking-tight;
+    text-wrap: balance;
+  }
+
+  ::selection {
+    @apply bg-brand-pink text-white;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .text-gradient-brand {
+    @apply bg-gradient-to-r from-brand-magenta via-brand-pink to-brand-yellow-deep bg-clip-text text-transparent;
+  }
+
+  /* Rounded-arch silhouette used by the hero team cards. */
+  .mask-arch {
+    border-radius: 9999px 9999px 0 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
