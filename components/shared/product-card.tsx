@@ -34,11 +34,11 @@ export function ProductCard({ product, index, priority }: ProductCardProps) {
     <article className="group flex w-full flex-col">
       <div
         className={cn(
-          "relative flex flex-1 flex-col rounded-t-[4.5rem] rounded-b-3xl px-6 pt-6 pb-7 transition-transform duration-300 group-hover:-translate-y-1 sm:rounded-t-[6rem] sm:px-7",
+          "relative flex flex-1 flex-col rounded-t-[4.5rem] rounded-b-3xl px-6 pt-6 pb-7 cursor-pointer transition-transform duration-300 sm:rounded-t-[6rem] sm:px-7",
           accent.card,
         )}
       >
-        <div className="flex items-center justify-between gap-2">
+        <div className="flex items-center justify-around gap-2">
           {product.isTop ? (
             <span
               className={cn(
@@ -75,7 +75,7 @@ export function ProductCard({ product, index, priority }: ProductCardProps) {
         <h3 className={cn("mt-5 text-xl font-bold sm:text-2xl", accent.text)}>
           <Link
             href={href}
-            className="outline-none hover:underline focus-visible:underline"
+            className="outline-none group-hover:underline focus-visible:underline"
           >
             {t(`products.${product.slug}.name`)}
           </Link>
