@@ -3,7 +3,7 @@
 import { ShoppingCart } from "lucide-react";
 import { useTranslations } from "next-intl";
 
-import { useCart } from "@/hooks/use-cart";
+import { useCart } from "@/hooks";
 import { cn } from "@/lib/utils";
 
 export function CartButton({ className }: { className?: string }) {

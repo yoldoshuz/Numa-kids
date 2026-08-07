@@ -6,12 +6,12 @@ import { useMemo } from "react";
 import { ArticleRow } from "@/components/shared/article-card";
 import { Container } from "@/components/shared/container";
 import { FilterPills } from "@/components/shared/filter-pills";
-import { ALL_FILTER, useQueryFilter } from "@/hooks/use-query-filter";
-import { ARTICLES } from "@/lib/data";
+import { ALL_FILTER, useQueryFilter } from "@/hooks";
+import type { Article } from "@/types";
 
 const TOPICS = ["immunity", "gut-health", "nutrition", "vitamins"] as const;
 
-export function BlogList() {
+export function BlogList({ articles: allArticles }: { articles: Article[] }) {
   const t = useTranslations();
   const [topic, setTopic] = useQueryFilter("topic", TOPICS);
 
@@ -29,9 +29,9 @@ export function BlogList() {
   const articles = useMemo(
     () =>
       topic === ALL_FILTER
-        ? ARTICLES
-        : ARTICLES.filter((article) => article.topic === topic),
-    [topic],
+        ? allArticles
+        : allArticles.filter((article) => article.topic === topic),
+    [topic, allArticles],
   );
 
   return (

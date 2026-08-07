@@ -1,15 +1,20 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { useMemo } from "react";
+import { useCallback, useLayoutEffect, useMemo, useRef } from "react";
 
 import { Container } from "@/components/shared/container";
 import { FilterPills } from "@/components/shared/filter-pills";
 import { ProductCard } from "@/components/shared/product-card";
-import { ALL_FILTER, useQueryFilter } from "@/hooks/use-query-filter";
-import { PRODUCTS, PRODUCT_CATEGORIES } from "@/lib/data";
+import { ALL_FILTER, useQueryFilter } from "@/hooks";
+import { PRODUCT_CATEGORIES } from "@/lib/data";
+import type { Product } from "@/types";
 
-export function ProductsCatalog() {
+export function ProductsCatalog({
+  products: catalogue,
+}: {
+  products: Product[];
+}) {
   const t = useTranslations();
   const [category, setCategory] = useQueryFilter(
     "category",
@@ -30,20 +35,46 @@ export function ProductsCatalog() {
   const products = useMemo(
     () =>
       category === ALL_FILTER
-        ? PRODUCTS
-        : PRODUCTS.filter((product) => product.category === category),
-    [category],
+        ? catalogue
+        : catalogue.filter((product) => product.category === category),
+    [category, catalogue],
   );
+
+  /*
+   * Filtering shortens the page, and the browser clamps the scroll offset to
+   * the new document height — which reads as the page jumping upwards out from
+   * under the shopper. Remembering where the pills sat and correcting by the
+   * delta afterwards keeps them visually still.
+   */
+  const pillsRef = useRef<HTMLDivElement>(null);
+  const anchor = useRef<number | null>(null);
+
+  const handleChange = useCallback(
+    (next: string) => {
+      anchor.current = pillsRef.current?.getBoundingClientRect().top ?? null;
+      setCategory(next);
+    },
+    [setCategory],
+  );
+
+  useLayoutEffect(() => {
+    if (anchor.current === null || !pillsRef.current) return;
+    const delta = pillsRef.current.getBoundingClientRect().top - anchor.current;
+    if (delta !== 0) window.scrollBy(0, delta);
+    anchor.current = null;
+  }, [category]);
 
   return (
     <section className="py-12 sm:py-16">
       <Container>
-        <FilterPills
-          options={options}
-          value={category}
-          onChange={setCategory}
-          label={t("productsPage.title")}
-        />
+        <div ref={pillsRef}>
+          <FilterPills
+            options={options}
+            value={category}
+            onChange={handleChange}
+            label={t("productsPage.title")}
+          />
+        </div>
 
         {products.length === 0 ? (
           <p className="mt-16 text-center text-brand-ink/50">
@@ -53,11 +84,7 @@ export function ProductsCatalog() {
           <ul className="mt-10 grid gap-x-8 gap-y-4 sm:grid-cols-2 lg:mt-16 lg:grid-cols-3 lg:gap-x-14">
             {products.map((product, index) => (
               <li key={product.slug} className="flex">
-                <ProductCard
-                  product={product}
-                  index={(index % 3) + 1}
-                  priority={index < 3}
-                />
+                <ProductCard product={product} priority={index < 3} />
               </li>
             ))}
           </ul>

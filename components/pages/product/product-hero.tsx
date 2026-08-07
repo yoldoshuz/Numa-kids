@@ -5,7 +5,7 @@ import { Minus, Plus } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
 
-import { useCart } from "@/hooks/use-cart";
+import { useCart } from "@/hooks";
 import { ACCENT } from "@/lib/accents";
 import { Container } from "@/components/shared/container";
 import { formatPrice } from "@/lib/format";

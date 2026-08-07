@@ -2,9 +2,9 @@ import { useTranslations } from "next-intl";
 
 import { ArticleCard } from "@/components/shared/article-card";
 import { Container } from "@/components/shared/container";
-import { ARTICLES } from "@/lib/data";
+import type { Article } from "@/types";
 
-export function ArticlesSection() {
+export function ArticlesSection({ articles }: { articles: Article[] }) {
   const t = useTranslations("articlesSection");
 
   return (
@@ -15,7 +15,7 @@ export function ArticlesSection() {
         </h2>
 
         <div className="mt-8 grid gap-6 md:grid-cols-2 lg:gap-16">
-          {ARTICLES.slice(0, 2).map((article) => (
+          {articles.slice(0, 2).map((article) => (
             <ArticleCard key={article.slug} article={article} />
           ))}
         </div>

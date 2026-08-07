@@ -2,6 +2,9 @@ import type { Metadata, Viewport } from "next";
 import { Onest } from "next/font/google";
 import { notFound } from "next/navigation";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
+
+import { CartProvider, QueryProvider } from "@/hooks";
+import { getProducts } from "@/lib/api/catalog";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
 import { Footer } from "@/components/layout/footer";
@@ -78,6 +81,9 @@ export default async function LocaleLayout({
 
   const t = await getTranslations({ locale, namespace: "common" });
 
+  // The cart addresses items by backend id, so it needs the resolved catalogue.
+  const catalog = await getProducts();
+
   return (
     <html
       lang={locale}
@@ -86,25 +92,29 @@ export default async function LocaleLayout({
     >
       <body className="flex min-h-full flex-col bg-white">
         <NextIntlClientProvider>
-          <a
-            href="#main"
-            className="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-50 focus:rounded-lg focus:bg-brand-pink focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white"
-          >
-            {t("skipToContent")}
-          </a>
+          <QueryProvider>
+            <CartProvider catalog={catalog}>
+              <a
+                href="#main"
+                className="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-50 focus:rounded-lg focus:bg-brand-pink focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white"
+              >
+                {t("skipToContent")}
+              </a>
 
-          <Header />
-          <main id="main" className="flex-1">
-            {children}
-          </main>
-          <Footer />
+              <Header />
+              <main id="main" className="flex-1">
+                {children}
+              </main>
+              <Footer />
 
-          <JsonLd
-            data={[
-              organizationJsonLd(locale as AppLocale),
-              websiteJsonLd(locale as AppLocale),
-            ]}
-          />
+              <JsonLd
+                data={[
+                  organizationJsonLd(locale as AppLocale),
+                  websiteJsonLd(locale as AppLocale),
+                ]}
+              />
+            </CartProvider>
+          </QueryProvider>
         </NextIntlClientProvider>
       </body>
     </html>

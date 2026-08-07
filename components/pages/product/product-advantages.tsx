@@ -6,7 +6,7 @@ import { useTranslations } from "next-intl";
 
 import { CarouselControls } from "@/components/shared/carousel-controls";
 import { Container } from "@/components/shared/container";
-import { useCarousel } from "@/hooks/use-carousel";
+import { useCarousel } from "@/hooks";
 import { PRODUCT_ADVANTAGES } from "@/lib/data";
 import type { Product } from "@/types";
 

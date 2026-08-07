@@ -10,7 +10,8 @@ import { ProductIntake } from "@/components/pages/product/product-intake";
 import { ProductOrder } from "@/components/pages/product/product-order";
 import { ProductPurpose } from "@/components/pages/product/product-purpose";
 import { JsonLd } from "@/components/shared/json-ld";
-import { getProduct, PRODUCTS } from "@/lib/data";
+import { getProduct } from "@/lib/api/catalog";
+import { PRODUCTS } from "@/lib/data";
 import { breadcrumbJsonLd, productJsonLd } from "@/lib/json-ld";
 import { routing, type AppLocale } from "@/lib/i18n/routing";
 import { buildMetadata } from "@/lib/seo";
@@ -29,7 +30,7 @@ export async function generateMetadata({
   params: Params;
 }): Promise<Metadata> {
   const { locale, slug } = await params;
-  const product = getProduct(slug);
+  const product = await getProduct(slug);
   if (!product) return {};
 
   const t = await getTranslations({ locale });
@@ -54,7 +55,7 @@ export async function generateMetadata({
 
 export default async function ProductPage({ params }: { params: Params }) {
   const { locale, slug } = await params;
-  const product = getProduct(slug);
+  const product = await getProduct(slug);
   if (!product) notFound();
 
   setRequestLocale(locale);

@@ -6,12 +6,12 @@ import { useTranslations } from "next-intl";
 import { Container } from "@/components/shared/container";
 import { ProductCard } from "@/components/shared/product-card";
 import { RainbowWord } from "@/components/shared/rainbow-word";
-import { useCarousel } from "@/hooks/use-carousel";
+import { useCarousel } from "@/hooks";
 import { Link } from "@/lib/i18n/navigation";
-import { PRODUCTS } from "@/lib/data";
+import type { Product } from "@/types";
 import { CarouselControls } from "@/components/shared/carousel-controls";
 
-export function CatalogSection() {
+export function CatalogSection({ products }: { products: Product[] }) {
   const t = useTranslations();
   const { ref, canScrollPrev, canScrollNext, scrollPrev, scrollNext } =
     useCarousel<HTMLUListElement>();
@@ -55,16 +55,12 @@ export function CatalogSection() {
             ref={ref}
             className="-mx-5 flex snap-x snap-mandatory gap-6 overflow-x-auto px-5 pb-4 sm:mx-0 sm:px-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
           >
-            {PRODUCTS.map((product, index) => (
+            {products.map((product, index) => (
               <li
                 key={product.slug}
                 className="w-[80vw] max-w-sm shrink-0 snap-start sm:w-[46%] lg:w-[31.5%]"
               >
-                <ProductCard
-                  product={product}
-                  index={product.order}
-                  priority={index < 3}
-                />
+                <ProductCard product={product} priority={index < 3} />
               </li>
             ))}
           </ul>

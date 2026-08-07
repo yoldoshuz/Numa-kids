@@ -50,7 +50,10 @@
     "backHome": "Back to home",
     "goToCatalog": "Go to catalogue",
     "skipToContent": "Skip to content",
-    "otherBrands": "Other NUMA projects"
+    "otherBrands": "Other NUMA projects",
+    "quantity": "Quantity",
+    "decrease": "Decrease",
+    "increase": "Increase"
   },
   "nav": {
     "home": "Home",
