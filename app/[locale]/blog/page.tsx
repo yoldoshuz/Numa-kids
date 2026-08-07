@@ -4,7 +4,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { BlogList } from "@/components/pages/blog/blog-list";
 import { JsonLd } from "@/components/shared/json-ld";
 import { PageHero } from "@/components/shared/page-hero";
-import { ARTICLES } from "@/lib/data";
+import { getArticles } from "@/lib/api/catalog";
 import { breadcrumbJsonLd, itemListJsonLd } from "@/lib/json-ld";
 import { routing, type AppLocale } from "@/lib/i18n/routing";
 import { buildMetadata } from "@/lib/seo";
@@ -39,6 +39,8 @@ export default async function BlogPage({
 
   const t = await getTranslations({ locale });
 
+  const articles = await getArticles();
+
   return (
     <>
       <PageHero
@@ -48,7 +50,7 @@ export default async function BlogPage({
         imageAlt={t("blogPage.title")}
       />
 
-      <BlogList />
+      <BlogList articles={articles} />
 
       <JsonLd
         data={[
@@ -60,7 +62,7 @@ export default async function BlogPage({
             locale,
           ),
           itemListJsonLd(
-            ARTICLES.map((article) => ({
+            articles.map((article) => ({
               name: t(`articles.${article.slug}.title`),
               path: `/blog/${article.slug}`,
             })),

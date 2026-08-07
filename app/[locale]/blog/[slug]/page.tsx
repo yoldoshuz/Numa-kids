@@ -7,7 +7,8 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { ArticleCard } from "@/components/shared/article-card";
 import { Container } from "@/components/shared/container";
 import { JsonLd } from "@/components/shared/json-ld";
-import { ARTICLES, getArticle } from "@/lib/data";
+import { getArticle, getArticles } from "@/lib/api/catalog";
+import { ARTICLES } from "@/lib/data";
 import { formatDate } from "@/lib/format";
 import { Link } from "@/lib/i18n/navigation";
 import { articleJsonLd, breadcrumbJsonLd } from "@/lib/json-ld";
@@ -28,7 +29,7 @@ export async function generateMetadata({
   params: Params;
 }): Promise<Metadata> {
   const { locale, slug } = await params;
-  const article = getArticle(slug);
+  const article = await getArticle(slug);
   if (!article) return {};
 
   const t = await getTranslations({ locale });
@@ -48,14 +49,14 @@ export async function generateMetadata({
 
 export default async function ArticlePage({ params }: { params: Params }) {
   const { locale, slug } = await params;
-  const article = getArticle(slug);
+  const article = await getArticle(slug);
   if (!article) notFound();
 
   setRequestLocale(locale);
   const t = await getTranslations({ locale });
 
   const paragraphs = t(`articles.${slug}.body`).split("\n\n");
-  const related = ARTICLES.filter((item) => item.slug !== slug).slice(0, 2);
+  const related = (await getArticles()).filter((item) => item.slug !== slug).slice(0, 2);
 
   return (
     <>

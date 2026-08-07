@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 
 import { CarouselControls } from "@/components/shared/carousel-controls";
 import { Container } from "@/components/shared/container";
-import { useCarousel } from "@/hooks/use-carousel";
+import { useCarousel } from "@/hooks";
 import { REVIEWS } from "@/lib/data";
 import { cn } from "@/lib/utils";
 

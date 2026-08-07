@@ -12,7 +12,13 @@ interface PageHeroProps {
   imageClassName?: string;
 }
 
-/** Cream banner with a mascot cut-out shared by the inner pages. */
+/**
+ * Cream banner with a mascot cut-out shared by the inner pages.
+ *
+ * Deliberately shallow: on a catalogue page the banner is a signpost, not the
+ * subject, and the previous height pushed the product grid below the fold on
+ * a laptop.
+ */
 export function PageHero({
   title,
   subtitle,
@@ -23,17 +29,17 @@ export function PageHero({
   return (
     <section className="relative isolate overflow-hidden bg-surface-cream">
       <Sparkles className="-z-0" />
-      <Container className="relative grid items-center gap-8 py-12 sm:py-16 md:grid-cols-[1.1fr_1fr] lg:py-20">
+      <Container className="relative grid items-center gap-6 py-7 sm:py-9 md:grid-cols-[1.2fr_1fr] lg:py-11">
         <div>
-          <h1 className="text-4xl font-extrabold text-brand-ink sm:text-5xl lg:text-[3.4rem]">
+          <h1 className="text-3xl font-extrabold text-brand-ink sm:text-4xl lg:text-[2.6rem]">
             {title}
           </h1>
-          <p className="mt-4 max-w-md text-base text-brand-ink/60 sm:text-lg">
+          <p className="mt-3 max-w-md text-sm text-brand-ink/60 sm:text-base">
             {subtitle}
           </p>
         </div>
 
-        <div className="relative mx-auto h-48 w-full max-w-sm sm:h-64 md:h-72 lg:h-80">
+        <div className="relative mx-auto h-32 w-full max-w-xs sm:h-40 md:h-44 lg:h-48">
           <Image
             src={image}
             alt={imageAlt}

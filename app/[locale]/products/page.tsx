@@ -4,7 +4,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { ProductsCatalog } from "@/components/pages/products/products-catalog";
 import { JsonLd } from "@/components/shared/json-ld";
 import { PageHero } from "@/components/shared/page-hero";
-import { PRODUCTS } from "@/lib/data";
+import { getProducts } from "@/lib/api/catalog";
 import { breadcrumbJsonLd, itemListJsonLd } from "@/lib/json-ld";
 import { routing, type AppLocale } from "@/lib/i18n/routing";
 import { buildMetadata } from "@/lib/seo";
@@ -40,6 +40,8 @@ export default async function ProductsPage({
 
   const t = await getTranslations({ locale });
 
+  const products = await getProducts();
+
   return (
     <>
       <PageHero
@@ -49,7 +51,7 @@ export default async function ProductsPage({
         imageAlt={t("hero.title")}
       />
 
-      <ProductsCatalog />
+      <ProductsCatalog products={products} />
 
       <JsonLd
         data={[
@@ -61,7 +63,7 @@ export default async function ProductsPage({
             locale,
           ),
           itemListJsonLd(
-            PRODUCTS.map((product) => ({
+            products.map((product) => ({
               name: t(`products.${product.slug}.name`),
               path: `/products/${product.slug}`,
             })),

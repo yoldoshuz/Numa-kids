@@ -50,7 +50,10 @@
     "backHome": "Вернуться на главную",
     "goToCatalog": "Перейти в каталог",
     "skipToContent": "Перейти к содержимому",
-    "otherBrands": "Другие проекты NUMA"
+    "otherBrands": "Другие проекты NUMA",
+    "quantity": "Количество",
+    "decrease": "Уменьшить",
+    "increase": "Увеличить"
   },
   "nav": {
     "home": "Главная",

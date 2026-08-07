@@ -85,6 +85,7 @@
   --animate-marquee: marquee 30s linear infinite;
   --animate-float: float 6s ease-in-out infinite;
   --animate-rise: rise 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+  --animate-team-in: team-in 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 @keyframes marquee {
@@ -103,6 +104,19 @@
   }
   50% {
     transform: translateY(-10px);
+  }
+}
+
+/* Each arch hands its mascot to the neighbour on the right, so the new one
+   arrives from the left as the row turns clockwise. */
+@keyframes team-in {
+  from {
+    opacity: 0;
+    transform: translateX(-14%) scale(1.04);
+  }
+  to {
+    opacity: 1;
+    transform: none;
   }
 }
 

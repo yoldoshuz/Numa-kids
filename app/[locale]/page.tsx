@@ -10,7 +10,7 @@ import { PlanetSection } from "@/components/pages/home/planet-section";
 import { ReviewsSection } from "@/components/pages/home/reviews-section";
 import { TrustSection } from "@/components/pages/home/trust-section";
 import { JsonLd } from "@/components/shared/json-ld";
-import { PRODUCTS } from "@/lib/data";
+import { getArticles, getProducts } from "@/lib/api/catalog";
 import { itemListJsonLd } from "@/lib/json-ld";
 import { routing, type AppLocale } from "@/lib/i18n/routing";
 import { buildMetadata } from "@/lib/seo";
@@ -45,13 +45,15 @@ export default async function HomePage({
 
   const t = await getTranslations({ locale, namespace: "products" });
 
+  const [products, articles] = await Promise.all([getProducts(), getArticles()]);
+
   return (
     <>
       <HeroTeams />
       <TrustSection />
       <PlanetSection />
-      <ArticlesSection />
-      <CatalogSection />
+      <ArticlesSection articles={articles} />
+      <CatalogSection products={products} />
       <CertificatesSection />
       <CtaSection />
       <ReviewsSection />
@@ -59,7 +61,7 @@ export default async function HomePage({
       <JsonLd
         data={[
           itemListJsonLd(
-            PRODUCTS.map((product) => ({
+            products.map((product) => ({
               name: t(`${product.slug}.name`),
               path: `/products/${product.slug}`,
             })),

@@ -20,6 +20,14 @@ export interface ProductEffect {
 }
 
 export interface Product {
+  /**
+   * Backend UUID. Present only on products resolved from the API — the server
+   * cart addresses items by id, so its absence is what tells the cart to fall
+   * back to its local, offline mode.
+   */
+  id?: string;
+  /** Units left in stock; `undefined` when serving the static catalogue. */
+  stock?: number;
   slug: string;
   category: ProductCategory;
   accent: Accent;
