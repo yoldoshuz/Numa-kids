@@ -32,7 +32,11 @@
       "title": "Page not found — NUMA KIDS",
       "description": "This page does not exist. Go back home or browse the NUMA KIDS kids vitamins catalogue."
     },
-    "keywords": "kids vitamins, children supplements, gummy bears, calcium D3, probiotics for kids, omega-3 for children, multivitamins, NUMA KIDS"
+    "keywords": "kids vitamins, children supplements, gummy bears, calcium D3, probiotics for kids, omega-3 for children, multivitamins, NUMA KIDS",
+    "cart": {
+      "title": "Cart — NUMA Kids",
+      "description": "Your cart"
+    }
   },
   "common": {
     "buy": "buy",
@@ -53,7 +57,8 @@
     "otherBrands": "Other NUMA projects",
     "quantity": "Quantity",
     "decrease": "Decrease",
-    "increase": "Increase"
+    "increase": "Increase",
+    "pcs": "pcs"
   },
   "nav": {
     "home": "Home",
@@ -560,5 +565,58 @@
   "notFound": {
     "title": "Page not found",
     "text": "It looks like this page ran off with the gummy bears. Go back home or browse the catalogue."
+  },
+  "cart": {
+    "title": "Cart",
+    "empty": "Your cart is empty",
+    "emptyHint": "Have a look at the catalogue — there's plenty to choose from",
+    "items": "Items ({count})",
+    "delivery": "Delivery",
+    "free": "Free",
+    "total": "Total",
+    "checkout": "Checkout",
+    "remove": "Remove",
+    "pcs": "pcs",
+    "continue": "Continue shopping"
+  },
+  "checkout": {
+    "title": "Checkout",
+    "contactTitle": "Contact details",
+    "deliveryTitle": "Delivery",
+    "deliveryOption": "Courier across Tashkent",
+    "deliveryTime": "1–2 business days",
+    "orderTitle": "Your order",
+    "paymentTitle": "Payment method",
+    "name": "First name",
+    "namePlaceholder": "Aziza",
+    "surname": "Surname",
+    "surnamePlaceholder": "Karimova",
+    "phone": "Phone",
+    "phonePlaceholder": "+998 90 123 45 67",
+    "city": "City",
+    "cityPlaceholder": "Tashkent",
+    "address": "Address",
+    "addressPlaceholder": "15 Navoi St, apt. 42",
+    "paymentCash": "Cash on delivery",
+    "paymentCashHint": "Pay the courier after checking your order",
+    "paymentClick": "Click",
+    "paymentClickHint": "Card payment via Click",
+    "paymentPayme": "Payme",
+    "paymentPaymeHint": "Card payment via Payme",
+    "paymentUzum": "Uzum",
+    "paymentUzumHint": "Pay in the Uzum app",
+    "pay": "Go to payment",
+    "payCash": "Place order",
+    "submitting": "Placing your order…",
+    "redirecting": "Taking you to payment…",
+    "successTitle": "Order received!",
+    "successText": "We'll be in touch shortly to confirm it",
+    "orderNumber": "Order number",
+    "emptyRedirect": "Your cart is empty",
+    "errorGeneric": "We couldn't place the order. Please try again.",
+    "errorStock": "Not enough stock left. Please adjust the quantity.",
+    "errorPayment": "The order was created but payment could not be opened. We'll contact you.",
+    "errorOffline": "The server is unavailable. We'll take your order by phone.",
+    "errorPhone": "Enter the number as +998 XX XXX XX XX"
   }
 }

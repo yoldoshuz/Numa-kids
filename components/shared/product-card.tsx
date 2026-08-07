@@ -13,11 +13,16 @@ import type { Product } from "@/types";
 
 interface ProductCardProps {
   product: Product;
+  /** Number printed on the tab hanging under the card. */
+  index: number;
   priority?: boolean;
 }
 
-/** The signature "price tag" card: a tall arch holding the packshot and copy. */
-export function ProductCard({ product, priority }: ProductCardProps) {
+/**
+ * The signature "price tag" card: a tall arch on top and a numbered tab that
+ * hangs below the card, exactly as in the Figma catalogue grid.
+ */
+export function ProductCard({ product, index, priority }: ProductCardProps) {
   const t = useTranslations();
   const { add, setQuantity, lines, ready } = useCart();
   const inCart =
@@ -109,6 +114,25 @@ export function ProductCard({ product, priority }: ProductCardProps) {
               {t("common.buy")}
             </button>
           )}
+        </div>
+      </div>
+
+      {/* Numbered tab hanging under the card. */}
+      <div className="flex justify-center" aria-hidden="true">
+        <div
+          className={cn(
+            "flex h-14 w-24 items-end justify-center rounded-b-[2.5rem] pb-1.5",
+            accent.card,
+          )}
+        >
+          <span
+            className={cn(
+              "grid size-9 place-items-center rounded-full bg-white text-sm font-bold",
+              accent.text,
+            )}
+          >
+            {index}
+          </span>
         </div>
       </div>
     </article>

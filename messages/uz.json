@@ -32,7 +32,11 @@
       "title": "Sahifa topilmadi — NUMA KIDS",
       "description": "Bunday sahifa mavjud emas. Bosh sahifaga qayting yoki NUMA KIDS bolalar vitaminlari katalogini ko'ring."
     },
-    "keywords": "bolalar vitaminlari, bolalar uchun vitaminlar, marmelad ayiqchalar, kalsiy D3, bolalar uchun probiotiklar, bolalar uchun omega-3, multivitaminlar, NUMA KIDS"
+    "keywords": "bolalar vitaminlari, bolalar uchun vitaminlar, marmelad ayiqchalar, kalsiy D3, bolalar uchun probiotiklar, bolalar uchun omega-3, multivitaminlar, NUMA KIDS",
+    "cart": {
+      "title": "Savat — NUMA Kids",
+      "description": "Sizning savatingiz"
+    }
   },
   "common": {
     "buy": "sotib olish",
@@ -53,7 +57,8 @@
     "otherBrands": "NUMA'ning boshqa loyihalari",
     "quantity": "Miqdori",
     "decrease": "Kamaytirish",
-    "increase": "Ko'paytirish"
+    "increase": "Ko'paytirish",
+    "pcs": "dona"
   },
   "nav": {
     "home": "Bosh sahifa",
@@ -560,5 +565,58 @@
   "notFound": {
     "title": "Sahifa topilmadi",
     "text": "Chamasi bu sahifa marmelad ayiqchalar bilan birga qochib ketibdi. Bosh sahifaga qayting yoki katalogni ko'ring."
+  },
+  "cart": {
+    "title": "Savat",
+    "empty": "Savat hozircha bo'sh",
+    "emptyHint": "Katalogga qarang — tanlash uchun mahsulotlar bor",
+    "items": "Mahsulotlar ({count})",
+    "delivery": "Yetkazib berish",
+    "free": "Bepul",
+    "total": "Jami",
+    "checkout": "Buyurtma berish",
+    "remove": "O'chirish",
+    "pcs": "dona",
+    "continue": "Xaridni davom ettirish"
+  },
+  "checkout": {
+    "title": "Buyurtmani rasmiylashtirish",
+    "contactTitle": "Aloqa ma'lumotlari",
+    "deliveryTitle": "Yetkazib berish",
+    "deliveryOption": "Toshkent bo'ylab kuryer",
+    "deliveryTime": "1–2 ish kuni",
+    "orderTitle": "Sizning buyurtmangiz",
+    "paymentTitle": "To'lov usuli",
+    "name": "Ism",
+    "namePlaceholder": "Aziza",
+    "surname": "Familiya",
+    "surnamePlaceholder": "Karimova",
+    "phone": "Telefon",
+    "phonePlaceholder": "+998 90 123 45 67",
+    "city": "Shahar",
+    "cityPlaceholder": "Toshkent",
+    "address": "Manzil",
+    "addressPlaceholder": "Navoiy ko'chasi, 15-uy, 42-xonadon",
+    "paymentCash": "Yetkazib berishda naqd pul",
+    "paymentCashHint": "Buyurtmani tekshirgach kuryerga to'lanadi",
+    "paymentClick": "Click",
+    "paymentClickHint": "Click orqali karta bilan to'lov",
+    "paymentPayme": "Payme",
+    "paymentPaymeHint": "Payme orqali karta bilan to'lov",
+    "paymentUzum": "Uzum",
+    "paymentUzumHint": "Uzum ilovasi orqali to'lov",
+    "pay": "To'lovga o'tish",
+    "payCash": "Buyurtma berish",
+    "submitting": "Rasmiylashtirilmoqda…",
+    "redirecting": "To'lovga o'tilmoqda…",
+    "successTitle": "Buyurtma qabul qilindi!",
+    "successText": "Tasdiqlash uchun tez orada siz bilan bog'lanamiz",
+    "orderNumber": "Buyurtma raqami",
+    "emptyRedirect": "Savat hozircha bo'sh",
+    "errorGeneric": "Buyurtmani rasmiylashtirib bo'lmadi. Qayta urinib ko'ring.",
+    "errorStock": "Omborda yetarli mahsulot yo'q. Miqdorni o'zgartiring.",
+    "errorPayment": "Buyurtma yaratildi, ammo to'lovni ochib bo'lmadi. Siz bilan bog'lanamiz.",
+    "errorOffline": "Server mavjud emas. Buyurtmani telefon orqali qabul qilamiz.",
+    "errorPhone": "Raqamni +998 XX XXX XX XX ko'rinishida kiriting"
   }
 }

@@ -60,7 +60,11 @@ export function CatalogSection({ products }: { products: Product[] }) {
                 key={product.slug}
                 className="w-[80vw] max-w-sm shrink-0 snap-start sm:w-[46%] lg:w-[31.5%]"
               >
-                <ProductCard product={product} priority={index < 3} />
+                <ProductCard
+                  product={product}
+                  index={product.order}
+                  priority={index < 3}
+                />
               </li>
             ))}
           </ul>

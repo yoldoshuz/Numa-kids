@@ -84,7 +84,11 @@ export function ProductsCatalog({
           <ul className="mt-10 grid gap-x-8 gap-y-4 sm:grid-cols-2 lg:mt-16 lg:grid-cols-3 lg:gap-x-14">
             {products.map((product, index) => (
               <li key={product.slug} className="flex">
-                <ProductCard product={product} priority={index < 3} />
+                <ProductCard
+                  product={product}
+                  index={(index % 3) + 1}
+                  priority={index < 3}
+                />
               </li>
             ))}
           </ul>
