@@ -143,3 +143,34 @@ export async function getArticle(slug: string): Promise<Article | undefined> {
   const api = await tryFetch(() => getBlogPostBySlug(slug));
   return api ? toArticle(api) : staticArticle(slug);
 }
+
+/**
+ * The products an article recommends, with the editor's note for the lead one.
+ *
+ * An article that explains which vitamins matter and then stops is a dead end —
+ * the parent has to go back to the catalogue and work out which jar was meant.
+ * The list is curated per article in the admin CMS, so what it offers is always
+ * what the text is about.
+ *
+ * Resolved against the storefront's own catalogue rather than the junction's
+ * trimmed payload, so these cards carry the same imagery and copy as everywhere
+ * else. Empty when the API is unreachable, so the strip is conditional rather
+ * than a hole in the layout.
+ */
+export async function getArticleProducts(
+  slug: string,
+): Promise<{ products: Product[]; note: string | null }> {
+  const api = await tryFetch(() => getBlogPostBySlug(slug));
+  const rows = [...(api?.products ?? [])].sort((a, b) => a.sortOrder - b.sortOrder);
+  if (!rows.length) return { products: [], note: null };
+
+  const catalogue = await getProducts();
+  const bySlug = new Map(catalogue.map((product) => [product.slug, product]));
+
+  return {
+    products: rows
+      .map((row) => bySlug.get(row.product?.slug ?? ""))
+      .filter((product): product is Product => product !== undefined),
+    note: rows.find((row) => row.note)?.note ?? null,
+  };
+}

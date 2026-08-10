@@ -7,7 +7,8 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { ArticleCard } from "@/components/shared/article-card";
 import { Container } from "@/components/shared/container";
 import { JsonLd } from "@/components/shared/json-ld";
-import { getArticle, getArticles } from "@/lib/api/catalog";
+import { ProductCard } from "@/components/shared/product-card";
+import { getArticle, getArticleProducts, getArticles } from "@/lib/api/catalog";
 import { ARTICLES } from "@/lib/data";
 import { formatDate } from "@/lib/format";
 import { Link } from "@/lib/i18n/navigation";
@@ -56,7 +57,10 @@ export default async function ArticlePage({ params }: { params: Params }) {
   const t = await getTranslations({ locale });
 
   const paragraphs = t(`articles.${slug}.body`).split("\n\n");
+  const tArticleProducts = await getTranslations({ locale, namespace: "articleProducts" });
   const related = (await getArticles()).filter((item) => item.slug !== slug).slice(0, 2);
+  // What the article is about, offered for sale where the reader finishes it.
+  const { products: articleProducts, note: articleNote } = await getArticleProducts(slug);
 
   return (
     <>
@@ -114,6 +118,28 @@ export default async function ArticlePage({ params }: { params: Params }) {
             ))}
           </div>
         </Container>
+
+        {articleProducts.length > 0 ? (
+          <Container>
+            <aside className="mt-12 rounded-3xl bg-brand-pink-tint p-6 sm:p-8">
+              <h2 className="text-2xl font-extrabold text-brand-ink">
+                {tArticleProducts("title")}
+              </h2>
+              <p className="mt-2 text-base leading-relaxed text-brand-ink/70">
+                {articleNote ?? tArticleProducts("subtitle")}
+              </p>
+              <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                {articleProducts.map((product, index) => (
+                  <ProductCard
+                    key={product.slug}
+                    product={product}
+                    index={index + 1}
+                  />
+                ))}
+              </div>
+            </aside>
+          </Container>
+        ) : null}
 
         <Container>
           <h2 className="mt-6 text-2xl font-extrabold text-brand-ink">

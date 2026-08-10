@@ -68,8 +68,9 @@
   },
   "brands": {
     "family": "NUMA FAMILY",
-    "catering": "NUMA CATTERING",
-    "tabobat": "NABAVIY TABOBAT"
+    "nutrition": "NUMA NUTRITION",
+    "tabobat": "NABAVIY TABOBAT",
+    "catering": "NUMA CATERING"
   },
   "locale": {
     "label": "Язык",
@@ -618,5 +619,9 @@
     "errorPayment": "Заказ создан, но не удалось открыть оплату. Мы свяжемся с вами.",
     "errorOffline": "Сервер недоступен. Мы примем заказ по телефону.",
     "errorPhone": "Введите номер в формате +998 XX XXX XX XX"
+  },
+  "articleProducts": {
+    "title": "Продукты из этой статьи",
+    "subtitle": "То, о чём шла речь выше — можно заказать прямо отсюда"
   }
 }

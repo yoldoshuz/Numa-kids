@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { CircleCheck, Loader2 } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { useState } from "react";
+import { useState, type FormEvent } from "react";
 
 import { Container } from "@/components/shared/container";
 import { RainbowWord } from "@/components/shared/rainbow-word";
@@ -12,6 +12,7 @@ import { enabledPaymentMethods, normalizePhone } from "@/lib/api/checkout";
 import type { PaymentMethod } from "@/lib/api/types";
 import { ACCENT } from "@/lib/accents";
 import { formatPrice } from "@/lib/format";
+import { formatUzPhoneInput, UZ_PHONE_PREFIX } from "@/lib/phone";
 import { Link } from "@/lib/i18n/navigation";
 import { cn } from "@/lib/utils";
 
@@ -144,6 +145,19 @@ export function CheckoutView() {
                       inputMode={field === "phone" ? "tel" : undefined}
                       autoComplete={autoComplete[field]}
                       placeholder={t(`${field}Placeholder`)}
+                      {...(field === "phone"
+                        ? {
+                            // The field carries the country code and regroups
+                            // digits as they are typed, so what the customer
+                            // sees is what the API will accept.
+                            defaultValue: UZ_PHONE_PREFIX,
+                            onInput: (event: FormEvent<HTMLInputElement>) => {
+                              event.currentTarget.value = formatUzPhoneInput(
+                                event.currentTarget.value,
+                              );
+                            },
+                          }
+                        : {})}
                       aria-invalid={field === "phone" && phoneError}
                       className={cn(
                         "h-12 rounded-2xl bg-surface-sand px-4 text-sm text-brand-ink outline-none transition placeholder:text-brand-ink/35 focus-visible:ring-2 focus-visible:ring-brand-pink/50",

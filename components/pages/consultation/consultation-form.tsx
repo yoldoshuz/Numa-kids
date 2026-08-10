@@ -2,11 +2,12 @@
 
 import { X } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { useState } from "react";
+import { useState, type FormEvent } from "react";
 
 import { Container } from "@/components/shared/container";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { formatUzPhoneInput, UZ_PHONE_PREFIX } from "@/lib/phone";
 import {
   Dialog,
   DialogClose,
@@ -112,6 +113,12 @@ export function ConsultationForm() {
                     errors.phone ? "consult-phone-error" : undefined
                   }
                   placeholder={t("form.phonePlaceholder")}
+                  defaultValue={UZ_PHONE_PREFIX}
+                  onInput={(event: FormEvent<HTMLInputElement>) => {
+                    event.currentTarget.value = formatUzPhoneInput(
+                      event.currentTarget.value,
+                    );
+                  }}
                   className={`${FIELD} mt-2`}
                 />
                 {errors.phone && (

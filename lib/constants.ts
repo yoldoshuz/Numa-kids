@@ -8,7 +8,7 @@ export const SITE_NAME = "NUMA KIDS";
 
 export const CONTACTS = {
   email: "info@numakids.com",
-  phone: "+998 71 203-22-32",
+  phone: "+998 71 203 22 32",
   phoneHref: "tel:+998712032232",
   address: "123456, г. Ташкент, ул. Здоровья, 15, офис 301",
   addressEn: "123456, Tashkent, Zdorovya st. 15, office 301",
@@ -46,9 +46,10 @@ export const FOOTER_INFO: NavItem[] = [
 
 /** Sibling brands surfaced from the logo dropdown. */
 export const SIBLING_SITES: SiblingSite[] = [
-  { id: "family", href: "https://numafamily.com" },
-  { id: "catering", href: "https://numacatering.com" },
+  { id: "family", href: "https://numafamily.uz" },
+  { id: "nutrition", href: "https://numanutrition.uz" },
   { id: "tabobat", href: "https://nabaviytabobat.uz" },
+  { id: "catering", href: "https://numacatering.com" },
 ];
 
 export const CURRENCY = "UZS";

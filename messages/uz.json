@@ -68,8 +68,9 @@
   },
   "brands": {
     "family": "NUMA FAMILY",
-    "catering": "NUMA CATTERING",
-    "tabobat": "NABAVIY TABOBAT"
+    "nutrition": "NUMA NUTRITION",
+    "tabobat": "NABAVIY TABOBAT",
+    "catering": "NUMA CATERING"
   },
   "locale": {
     "label": "Til",
@@ -618,5 +619,9 @@
     "errorPayment": "Buyurtma yaratildi, ammo to'lovni ochib bo'lmadi. Siz bilan bog'lanamiz.",
     "errorOffline": "Server mavjud emas. Buyurtmani telefon orqali qabul qilamiz.",
     "errorPhone": "Raqamni +998 XX XXX XX XX ko'rinishida kiriting"
+  },
+  "articleProducts": {
+    "title": "Ushbu maqoladagi mahsulotlar",
+    "subtitle": "Yuqorida so'z yuritilgan mahsulotlarni shu yerdan buyurtma qilish mumkin"
   }
 }
