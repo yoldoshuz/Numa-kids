@@ -15,7 +15,8 @@ import { cn } from "@/lib/utils";
 export function CartView() {
   const t = useTranslations("cart");
   const tCommon = useTranslations("common");
-  const { items, count, subtotal, setQuantity, remove, ready } = useCart();
+  const { items, count, subtotal, totals, hasUnavailable, setQuantity, remove, ready } =
+    useCart();
 
   // `ready` gates the empty state so the page does not flash "your cart is
   // empty" while the server cart is still loading.
@@ -157,9 +158,28 @@ export function CartView() {
               </div>
             </dl>
 
+            {totals.unavailableTotal > 0 ? (
+              <p className="mt-4 text-sm font-semibold text-red-600">
+                {t("unavailableTotal")}: {formatPrice(totals.unavailableTotal)}{" "}
+                {tCommon("currency")}
+              </p>
+            ) : null}
+
+            {/* Checkout rejects these lines anyway; say so here rather than
+                letting the customer bounce off a 400 on the next screen. */}
+            {hasUnavailable ? (
+              <p className="mt-3 text-sm leading-snug text-red-600">{t("unavailableHint")}</p>
+            ) : null}
+
             <Link
               href="/checkout"
-              className="mt-6 flex h-13 items-center justify-center rounded-full bg-brand-pink px-6 text-sm font-semibold text-white transition hover:bg-brand-pink-deep"
+              aria-disabled={hasUnavailable}
+              onClick={(event) => {
+                if (hasUnavailable) event.preventDefault();
+              }}
+              className={`mt-6 flex h-13 items-center justify-center rounded-full bg-brand-pink px-6 text-sm font-semibold text-white transition${
+                hasUnavailable ? " pointer-events-none opacity-50" : " hover:bg-brand-pink-deep"
+              }`}
             >
               {t("checkout")}
             </Link>
