@@ -1,8 +1,9 @@
 "use client";
 
-import { ChevronRight } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useEffect, useRef, useState } from "react";
+
+import Image from "next/image";
 
 import { BrandLogo } from "@/components/layout/brand-logo";
 import { SIBLING_SITES } from "@/lib/constants";
@@ -44,20 +45,17 @@ export function BrandSwitcher() {
       onMouseEnter={() => schedule(true)}
       onMouseLeave={() => schedule(false)}
     >
-      <div className="flex items-center gap-1">
+      {/* The logo is the trigger — no separate affordance beside it. */}
+      <button
+        type="button"
+        aria-label={t("common.otherBrands")}
+        aria-expanded={open}
+        aria-haspopup="menu"
+        onClick={() => setOpen((value) => !value)}
+        className="flex items-center rounded-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-pink"
+      >
         <BrandLogo priority />
-        <button
-          type="button"
-          aria-label={t("common.otherBrands")}
-          aria-expanded={open}
-          onClick={() => setOpen((value) => !value)}
-          className="grid size-7 place-items-center rounded-full text-brand-ink/40 transition hover:bg-brand-pink-tint hover:text-brand-pink"
-        >
-          <ChevronRight
-            className={`size-4 transition-transform ${open ? "rotate-90" : ""}`}
-          />
-        </button>
-      </div>
+      </button>
 
       {open && (
         <div
@@ -73,11 +71,18 @@ export function BrandSwitcher() {
               role="menuitem"
               className="flex items-center gap-3 rounded-xl p-2.5 transition hover:bg-white/25"
             >
-              <span className="size-9 shrink-0 rounded-lg bg-gradient-to-br from-white/70 to-white/25 ring-1 ring-white/50" />
-              <span className="flex-1 text-sm font-bold tracking-wide text-white">
-                {t(`brands.${site.id}`)}
+              <span className="grid size-9 shrink-0 place-items-center rounded-lg bg-white p-1">
+                <Image
+                  src={site.logo}
+                  alt=""
+                  width={72}
+                  height={72}
+                  className="h-full w-full object-contain"
+                />
               </span>
-              <ChevronRight className="size-4 text-white/80" />
+              <span className="flex-1 text-sm font-bold tracking-wide text-white">
+                {site.label}
+              </span>
             </a>
           ))}
         </div>

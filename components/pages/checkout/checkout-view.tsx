@@ -239,16 +239,17 @@ export function CheckoutView() {
                 <li key={item.slug} className="flex items-center gap-3">
                   <span
                     className={cn(
-                      "grid size-14 shrink-0 place-items-center rounded-2xl",
+                      "grid size-14 shrink-0 place-items-center overflow-hidden rounded-2xl",
                       ACCENT[item.product.accent].card,
                     )}
                   >
                     <Image
                       src={item.product.image}
                       alt=""
-                      width={44}
-                      height={58}
-                      className="h-[85%] w-auto object-contain"
+                      width={56}
+                      height={56}
+                      sizes="56px"
+                      className="h-full w-full object-contain p-1.5"
                     />
                   </span>
                   <span className="min-w-0 flex-1 leading-tight">

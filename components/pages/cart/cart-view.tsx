@@ -60,16 +60,17 @@ export function CartView() {
                   <Link
                     href={`/products/${item.slug}`}
                     className={cn(
-                      "grid size-20 shrink-0 place-items-center rounded-2xl sm:size-24",
+                      "grid size-20 shrink-0 place-items-center overflow-hidden rounded-2xl sm:size-24",
                       accent.card,
                     )}
                   >
                     <Image
                       src={item.product.image}
                       alt=""
-                      width={72}
+                      width={96}
                       height={96}
-                      className="h-[85%] w-auto object-contain"
+                      sizes="96px"
+                      className="h-full w-full object-contain p-2"
                     />
                   </Link>
 

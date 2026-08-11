@@ -95,5 +95,9 @@ export interface NavItem {
 
 export interface SiblingSite {
   id: string;
+  /** Brand name — identical in every locale, so it is not a translation key. */
+  label: string;
   href: string;
+  /** Path under `public/brands/`. */
+  logo: string;
 }
