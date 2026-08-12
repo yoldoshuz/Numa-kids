@@ -47,9 +47,8 @@ export default async function ContactsPage({
       <PageHero
         title={t("contacts.title")}
         subtitle={t("contacts.subtitle")}
-        image="/images/teams/green.jpg"
-        imageAlt={t("hero.teams.green")}
-        imageClassName="rounded-3xl object-cover"
+        image="/images/mascots/bonny-alt.png"
+        imageAlt={t("hero.mascots.surfing")}
       />
 
       <section className="py-12 sm:py-16">

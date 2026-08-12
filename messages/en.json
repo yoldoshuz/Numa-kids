@@ -86,6 +86,9 @@
       "purple": "Purple team",
       "red": "Red team",
       "orange": "Orange team"
+    },
+    "mascots": {
+      "surfing": "Bonny the bear on a surfboard"
     }
   },
   "trust": {

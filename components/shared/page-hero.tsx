@@ -7,7 +7,8 @@ import { cn } from "@/lib/utils";
 interface PageHeroProps {
   title: string;
   subtitle: string;
-  image: string;
+  /** One cut-out, or a small cast standing side by side. */
+  image: string | string[];
   imageAlt: string;
   imageClassName?: string;
 }
@@ -26,6 +27,8 @@ export function PageHero({
   imageAlt,
   imageClassName,
 }: PageHeroProps) {
+  const cast = Array.isArray(image) ? image : [image];
+
   return (
     <section className="relative isolate overflow-hidden bg-surface-cream">
       <Sparkles className="-z-0" />
@@ -39,15 +42,24 @@ export function PageHero({
           </p>
         </div>
 
-        <div className="relative mx-auto h-32 w-full max-w-xs sm:h-40 md:h-44 lg:h-48">
-          <Image
-            src={image}
-            alt={imageAlt}
-            fill
-            priority
-            sizes="(max-width: 768px) 70vw, 380px"
-            className={cn("animate-float object-contain", imageClassName)}
-          />
+        {/*
+          Each cut-out gets its own equal share of the strip and is contained
+          within it, so a second mascot narrows the pair rather than pushing the
+          banner wider — the row has to survive a 375px phone.
+        */}
+        <div className="mx-auto flex h-32 w-full max-w-xs items-end justify-center gap-2 sm:h-40 md:h-44 lg:h-48">
+          {cast.map((src, index) => (
+            <div key={src} className="relative h-full min-w-0 flex-1">
+              <Image
+                src={src}
+                alt={index === 0 ? imageAlt : ""}
+                fill
+                priority
+                sizes="(max-width: 768px) 70vw, 380px"
+                className={cn("animate-float object-contain", imageClassName)}
+              />
+            </div>
+          ))}
         </div>
       </Container>
     </section>

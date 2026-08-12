@@ -47,7 +47,7 @@ export default async function ProductsPage({
       <PageHero
         title={t("productsPage.title")}
         subtitle={t("productsPage.subtitle")}
-        image="/images/mascots/bonny-alt.png"
+        image={["/images/mascots/jekky-hero.png", "/images/mascots/bonny-hero.png"]}
         imageAlt={t("hero.title")}
       />
 
