@@ -553,7 +553,10 @@
     },
     "errors": {
       "name": "Please enter your name",
-      "phone": "Please enter a valid phone number"
+      "phone": "Please enter a valid phone number",
+      "message": "Describe the problem — at least 10 characters",
+      "rateLimit": "Too many requests. Please try again later",
+      "network": "Could not send the request. Please try again"
     },
     "success": {
       "title": "Thank you for your request!",

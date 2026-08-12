@@ -34,6 +34,19 @@ export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
+/**
+ * How long a rendered page may be reused before it is built again, in seconds.
+ *
+ * Applies to every route under this layout. Without it the storefront is a
+ * pure build-time snapshot: the catalogue is read with axios, which Next's
+ * fetch cache knows nothing about, so nothing ever marks a page stale and a
+ * moderator's edit only appears after a redeploy. Kept in step with
+ * `CATALOG_REVALIDATE_SECONDS`, which governs the same window on the client.
+ *
+ * Must stay a literal — Next evaluates this statically and rejects an import.
+ */
+export const revalidate = 300;
+
 export async function generateMetadata({
   params,
 }: {
@@ -61,7 +74,9 @@ export async function generateMetadata({
     formatDetection: { telephone: true, address: true, email: true },
     icons: {
       icon: "/favicon.ico",
-      apple: "/images/logo.png",
+      // `images/logo.png` is a 600x171 wordmark; iOS crops a home-screen icon
+      // to a square, so it needs a square source.
+      apple: "/apple-icon.png",
     },
   };
 }

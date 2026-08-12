@@ -16,18 +16,13 @@ export default function manifest(): MetadataRoute.Manifest {
     theme_color: "#fd5a90",
     lang: "ru",
     categories: ["health", "shopping", "lifestyle"],
+    // Square renders of the logo. The wordmark is 600x171 — declaring it as
+    // 512x512, as this list used to, leaves an installed app with a
+    // browser-generated icon instead.
     icons: [
-      {
-        src: "/images/logo.png",
-        sizes: "512x512",
-        type: "image/png",
-        purpose: "any",
-      },
-      {
-        src: "/favicon.ico",
-        sizes: "48x48",
-        type: "image/x-icon",
-      },
+      { src: "/icon-192.png", sizes: "192x192", type: "image/png", purpose: "any" },
+      { src: "/icon-512.png", sizes: "512x512", type: "image/png", purpose: "any" },
+      { src: "/favicon.ico", sizes: "48x48", type: "image/x-icon" },
     ],
   };
 }

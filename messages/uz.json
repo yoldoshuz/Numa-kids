@@ -553,7 +553,10 @@
     },
     "errors": {
       "name": "Ismingizni kiriting",
-      "phone": "To'g'ri telefon raqamini kiriting"
+      "phone": "To'g'ri telefon raqamini kiriting",
+      "message": "Muammoni tavsiflang — kamida 10 ta belgi",
+      "rateLimit": "Juda ko'p ariza yuborildi. Birozdan so'ng urinib ko'ring",
+      "network": "Arizani yuborib bo'lmadi. Yana bir bor urinib ko'ring"
     },
     "success": {
       "title": "Arizangiz uchun rahmat!",

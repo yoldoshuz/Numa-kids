@@ -7,7 +7,13 @@ import { useState, type FormEvent } from "react";
 import { Container } from "@/components/shared/container";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { formatUzPhoneInput, UZ_PHONE_PREFIX } from "@/lib/phone";
+import {
+  classifyConsultationError,
+  postConsultation,
+  PROBLEM_MAX_LENGTH,
+  PROBLEM_MIN_LENGTH,
+} from "@/lib/api/consultation";
+import { formatUzPhoneInput, toApiPhone, UZ_PHONE_PREFIX } from "@/lib/phone";
 import {
   Dialog,
   DialogClose,
@@ -25,28 +31,53 @@ export function ConsultationForm() {
   const tCommon = useTranslations("common");
   const [open, setOpen] = useState(false);
   const [pending, setPending] = useState(false);
-  const [errors, setErrors] = useState<{ name?: string; phone?: string }>({});
+  const [errors, setErrors] = useState<{
+    name?: string;
+    phone?: string;
+    message?: string;
+  }>({});
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
-  function onSubmit(event: React.FormEvent<HTMLFormElement>) {
+  async function onSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const form = event.currentTarget;
     const data = new FormData(form);
     const name = String(data.get("name") ?? "").trim();
     const phone = String(data.get("phone") ?? "").trim();
+    const subject = String(data.get("subject") ?? "").trim();
+    const message = String(data.get("message") ?? "").trim();
+
+    const apiPhone = toApiPhone(phone);
 
     const next: typeof errors = {};
     if (name.length < 2) next.name = t("errors.name");
-    if (phone.replace(/\D/g, "").length < 9) next.phone = t("errors.phone");
+    if (!apiPhone) next.phone = t("errors.phone");
+    if (message.length < PROBLEM_MIN_LENGTH) next.message = t("errors.message");
     setErrors(next);
-    if (Object.keys(next).length > 0) return;
+    setSubmitError(null);
+    if (Object.keys(next).length > 0 || !apiPhone) return;
 
-    // No backend yet: simulate the request so the success state is reachable.
+    // The subject line is a headline for the problem, not a field of its own —
+    // the API takes a single description, so the two are glued together.
+    const problem = (subject ? `${subject}\n\n${message}` : message).slice(
+      0,
+      PROBLEM_MAX_LENGTH,
+    );
+
     setPending(true);
-    window.setTimeout(() => {
-      setPending(false);
+    try {
+      await postConsultation({ name, phone: apiPhone, problem });
       setOpen(true);
       form.reset();
-    }, 400);
+    } catch (error) {
+      setSubmitError(
+        classifyConsultationError(error) === "rateLimit"
+          ? t("errors.rateLimit")
+          : t("errors.network"),
+      );
+    } finally {
+      setPending(false);
+    }
   }
 
   return (
@@ -153,19 +184,39 @@ export function ConsultationForm() {
                 className="block text-base text-brand-ink/80"
               >
                 {t("form.message")}
+                <span className="text-brand-pink" aria-hidden="true">
+                  *
+                </span>
+                <span className="sr-only"> ({t("form.required")})</span>
               </label>
               <Textarea
                 id="consult-message"
                 name="message"
                 rows={6}
+                required
+                minLength={PROBLEM_MIN_LENGTH}
+                maxLength={PROBLEM_MAX_LENGTH}
+                aria-invalid={Boolean(errors.message)}
+                aria-describedby={errors.message ? "consult-message-error" : undefined}
                 placeholder={t("form.messagePlaceholder")}
                 className="mt-2 w-full rounded-xl border-transparent bg-white px-5 py-4 text-base text-brand-ink placeholder:text-brand-ink/35 focus-visible:border-brand-pink focus-visible:ring-brand-pink/30"
               />
+              {errors.message && (
+                <p id="consult-message-error" className="mt-1.5 text-sm text-brand-pink">
+                  {errors.message}
+                </p>
+              )}
             </div>
 
             <p className="rounded-xl bg-white px-5 py-4 text-sm text-brand-ink/60">
               {t("form.note")}
             </p>
+
+            {submitError && (
+              <p role="alert" className="text-center text-sm font-medium text-brand-pink">
+                {submitError}
+              </p>
+            )}
 
             <div className="flex justify-center">
               <button
