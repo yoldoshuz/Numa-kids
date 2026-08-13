@@ -73,7 +73,8 @@ export function LocaleSwitcher({ className }: { className?: string }) {
       <SelectTrigger
         aria-label={t("label")}
         className={cn(
-          "h-11 gap-2 rounded-xl border-border bg-white px-3 text-sm font-medium text-brand-ink",
+          // One radius and height with the rest of the bar; the caret only added width.
+          "!h-11 gap-2 rounded-full border-border bg-white px-3 text-sm font-medium text-brand-ink [&>svg:last-child]:hidden",
           isPending && "opacity-60",
           className,
         )}

@@ -48,10 +48,10 @@ export function ProductHero({ product }: { product: Product }) {
             fill
             priority
             sizes="(max-width: 1024px) 100vw, 560px"
-            className={cn(
-              "object-contain p-8",
-              active > 0 && "object-cover p-0",
-            )}
+            // Every frame is contained: the set is whatever was uploaded for
+            // the product, so "slot 0 is the packshot, the rest are lifestyle"
+            // stopped being a safe assumption.
+            className="object-contain p-8"
           />
         </div>
 
@@ -78,10 +78,7 @@ export function ProductHero({ product }: { product: Product }) {
                   alt=""
                   fill
                   sizes="180px"
-                  className={cn(
-                    "object-cover",
-                    index === 0 && "object-contain p-3",
-                  )}
+                  className="object-contain p-3"
                 />
               </button>
             </li>

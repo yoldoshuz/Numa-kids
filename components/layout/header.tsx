@@ -6,6 +6,7 @@ import { useState, useSyncExternalStore } from "react";
 
 import { BrandSwitcher } from "@/components/layout/brand-switcher";
 import { CartButton } from "@/components/layout/cart-button";
+import { LoginButton } from "@/components/layout/login-button";
 import { LocaleSwitcher } from "@/components/layout/locale-switcher";
 import { Container } from "@/components/shared/container";
 import {
@@ -70,12 +71,15 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-2 sm:gap-3">
+        <div className="flex items-center gap-1.5 [&>*]:h-11 sm:gap-2">
+          {/* Worded further along for wider screens; this is the phone one. */}
+          <LoginButton compact className="sm:hidden" />
           <CartButton />
           <LocaleSwitcher className="hidden sm:flex" />
+          <LoginButton />
           <Link
             href="/consultation"
-            className="hidden rounded-xl bg-brand-yellow px-5 py-3 text-sm font-medium text-brand-ink transition hover:brightness-105 sm:inline-flex"
+            className="hidden h-11 items-center rounded-full bg-brand-yellow px-5 text-sm font-medium text-brand-ink transition hover:brightness-105 sm:inline-flex"
           >
             {t("common.consultation")}
           </Link>
@@ -86,7 +90,7 @@ export function Header() {
                 <button
                   type="button"
                   aria-label={t("common.menu")}
-                  className="grid size-11 place-items-center rounded-full bg-surface-sand text-brand-ink lg:hidden"
+                  className="grid h-11 w-11 place-items-center rounded-full bg-surface-sand text-brand-ink lg:hidden"
                 />
               }
             >

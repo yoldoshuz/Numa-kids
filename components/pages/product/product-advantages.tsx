@@ -30,13 +30,19 @@ export function ProductAdvantages({ product }: { product: Product }) {
           >
             {product.banner.map((image) => (
               <li key={image} className="w-full shrink-0 snap-center">
-                <div className="relative aspect-[16/6] overflow-hidden rounded-3xl sm:aspect-[16/5]">
+                {/*
+                  The strip takes whatever is in the product's photo set, which
+                  is as often an upright jar as a wide banner — contained on the
+                  cream plate rather than cropped, since a 16:6 crop of a jar is
+                  a band across the middle of its label.
+                */}
+                <div className="relative aspect-[16/7] overflow-hidden rounded-3xl bg-surface-cream sm:aspect-[16/5]">
                   <Image
                     src={image}
                     alt={name}
                     fill
                     sizes="(max-width: 1280px) 100vw, 1200px"
-                    className="object-cover"
+                    className="object-contain"
                   />
                 </div>
               </li>

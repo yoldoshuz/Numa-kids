@@ -43,39 +43,54 @@ export function ProductIntake({ product }: { product: Product }) {
             ))}
           </ol>
 
+          {/*
+            These slots are filled from the product's uploaded photos, which are
+            as often an upright jar as a wide frame, so each box states its own
+            ratio and the picture letterboxes inside it. A cover-crop of a jar
+            is a strip of its label blown up past recognition.
+          */}
           <div className="grid gap-5">
             <div className="grid gap-5 sm:grid-cols-[1.85fr_1fr]">
-              <div className="relative aspect-[16/9] overflow-hidden rounded-2xl">
+              <div className="relative aspect-[16/9] overflow-hidden rounded-2xl bg-surface-cream">
                 <Image
                   src={product.gallery[1] ?? product.gallery[0]}
                   alt={name}
                   fill
                   sizes="(max-width: 640px) 100vw, 520px"
-                  className="object-cover"
+                  className="object-contain"
                 />
               </div>
-              <div className="relative hidden aspect-[4/3] overflow-hidden rounded-2xl sm:block">
+              <div className="relative hidden aspect-[4/3] overflow-hidden rounded-2xl bg-surface-cream sm:block">
                 <Image
                   src={product.gallery[0]}
                   alt={name}
                   fill
                   sizes="280px"
-                  className="object-cover"
+                  className="object-contain"
                 />
               </div>
             </div>
 
-            <div className="relative isolate overflow-hidden rounded-2xl">
-              <Image
-                src={product.banner[0]}
-                alt={name}
-                width={1200}
-                height={415}
-                sizes="(max-width: 1024px) 100vw, 820px"
-                className="h-full w-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-brand-pink-soft/95 via-brand-pink-soft/70 to-transparent" />
-              <div className="absolute inset-y-0 left-0 flex max-w-[60%] flex-col justify-center p-6 sm:p-8">
+            {/*
+              The banner used to size itself from the file: as a plain
+              `w-full h-full` image its height came from the photo's own ratio,
+              so an upright jar stretched this panel to several hundred pixels.
+              Below `sm` the caption sits under the photo on a solid plate —
+              the overlay gradient fades out on its right, which at phone width
+              would leave the text lying on the product.
+            */}
+            <div className="isolate overflow-hidden rounded-2xl sm:relative">
+              <div className="relative aspect-[16/10] w-full bg-surface-cream sm:aspect-[1200/415]">
+                <Image
+                  src={product.banner[0]}
+                  alt={name}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 820px"
+                  className="object-contain"
+                />
+              </div>
+              <div className="hidden bg-gradient-to-r from-brand-pink-soft/95 via-brand-pink-soft/70 to-transparent sm:absolute sm:inset-0 sm:block" />
+              <div className="flex flex-col justify-center bg-brand-pink-soft p-6 sm:absolute sm:inset-y-0 sm:left-0 sm:max-w-[60%] sm:bg-transparent sm:p-8">
                 <h3 className="text-base font-bold text-white">
                   {t("product.importantTitle")}
                 </h3>

@@ -1,5 +1,7 @@
 "use client";
 
+import { useAuth } from "@/hooks";
+
 import { X } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useState, type FormEvent } from "react";
@@ -29,6 +31,8 @@ const FIELD =
 export function ConsultationForm() {
   const t = useTranslations("consultation");
   const tCommon = useTranslations("common");
+  // Seeded from the account: nobody retypes a number we already store.
+  const { user } = useAuth();
   const [open, setOpen] = useState(false);
   const [pending, setPending] = useState(false);
   const [errors, setErrors] = useState<{
@@ -144,7 +148,7 @@ export function ConsultationForm() {
                     errors.phone ? "consult-phone-error" : undefined
                   }
                   placeholder={t("form.phonePlaceholder")}
-                  defaultValue={UZ_PHONE_PREFIX}
+                  defaultValue={user ? formatUzPhoneInput(user.phone) : UZ_PHONE_PREFIX}
                   onInput={(event: FormEvent<HTMLInputElement>) => {
                     event.currentTarget.value = formatUzPhoneInput(
                       event.currentTarget.value,
