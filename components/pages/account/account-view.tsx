@@ -8,6 +8,7 @@ import {
   Package,
   Pencil,
   ReceiptText,
+  Trash2,
   ShoppingBag,
   ShoppingCart,
 } from "lucide-react";
@@ -17,6 +18,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 import { Container } from "@/components/shared/container";
+import { QuantityStepper } from "@/components/shared/quantity-stepper";
 import { useAuth, useCart } from "@/hooks";
 import {
   getMyOrder,
@@ -298,7 +300,20 @@ function StoreTag({ store }: { store?: string }) {
 function CartPanel() {
   const t = useTranslations("account");
   const tProducts = useTranslations("products");
-  const { items, count, subtotal, ready, hasUnavailable } = useCart();
+  const { items, count, subtotal, ready, hasUnavailable, setQuantity, remove } =
+    useCart();
+
+  // The server returns the basket in the order it last wrote it, so without
+
+
+  // a fixed sort a quantity change reshuffles the rows under the cursor.
+
+
+  const rows = [...items].sort((a, b) => a.slug.localeCompare(b.slug));
+
+
+  
+
 
   return (
     <section className={PANEL}>
@@ -336,8 +351,8 @@ function CartPanel() {
       ) : (
         <>
           <ul className="mt-5 flex flex-col divide-y divide-brand-pink-tint">
-            {items.map((item) => (
-              <li key={item.slug} className="flex items-center gap-3 py-3 first:pt-0">
+            {rows.map((item) => (
+              <li key={item.slug} className="flex flex-wrap items-center gap-3 py-3 first:pt-0">
                 <span className="relative size-14 shrink-0 overflow-hidden rounded-2xl bg-surface-cream">
                   <Image
                     src={item.product.image}
@@ -352,11 +367,30 @@ function CartPanel() {
                     {tProducts(`${item.slug}.name`)}
                   </span>
                   <span className="block text-xs text-brand-ink/55">
-                    {formatPrice(item.product.price)} × {item.quantity}
+                    {formatPrice(item.product.price)}
                   </span>
                 </span>
-                <span className="whitespace-nowrap text-sm font-bold text-brand-ink">
-                  {formatPrice(item.product.price * item.quantity)}
+                <span className="flex w-full items-center justify-between gap-3 sm:w-auto sm:justify-end">
+                  <QuantityStepper
+                    value={item.quantity}
+                    onChange={(next) => setQuantity(item.slug, next)}
+                    accent={item.product.accent}
+                    min={1}
+                    label={t("quantity")}
+                    decreaseLabel={t("decrease")}
+                    increaseLabel={t("increase")}
+                  />
+                  <span className="w-24 text-right text-sm font-bold whitespace-nowrap text-brand-ink">
+                    {formatPrice(item.product.price * item.quantity)}
+                  </span>
+                  <button
+                    type="button"
+                    onClick={() => remove(item.slug)}
+                    aria-label={t("removeItem")}
+                    className="grid size-8 shrink-0 place-items-center rounded-full text-brand-ink/40 transition-colors hover:bg-surface-cream hover:text-brand-pink"
+                  >
+                    <Trash2 className="size-4" />
+                  </button>
                 </span>
               </li>
             ))}
