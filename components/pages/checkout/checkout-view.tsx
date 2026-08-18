@@ -33,7 +33,7 @@ export function CheckoutView() {
   const tCart = useTranslations("cart");
   const tProducts = useTranslations("products");
 
-  const { items, count, subtotal, ready } = useCart();
+  const { items, count, subtotal, totals, ready } = useCart();
   const { user } = useAuth();
   const { phase, errorKey, orderId, busy, setErrorKey, submit } = useCheckout();
 
@@ -293,14 +293,25 @@ export function CheckoutView() {
                   {formatPrice(subtotal)} {tCommon("currency")}
                 </dd>
               </div>
+              {/* Priced by the API, so this line and the created order can
+                  never disagree. Free from two units up. */}
               <div className="flex items-center justify-between">
                 <dt className="text-brand-ink/60">{tCart("delivery")}</dt>
-                <dd className="font-semibold text-brand-green">{tCart("free")}</dd>
+                {totals.deliveryFee > 0 ? (
+                  <dd className="font-semibold text-brand-ink">
+                    {formatPrice(totals.deliveryFee)} {tCommon("currency")}
+                  </dd>
+                ) : (
+                  <dd className="font-semibold text-brand-green">{tCart("free")}</dd>
+                )}
               </div>
+              {totals.deliveryFee > 0 ? (
+                <p className="-mt-1 text-xs text-brand-ink/50">{tCart("freeFrom")}</p>
+              ) : null}
               <div className="flex items-center justify-between border-t border-brand-ink/10 pt-3">
                 <dt className="font-bold text-brand-ink">{tCart("total")}</dt>
                 <dd className="text-xl font-extrabold text-brand-ink">
-                  {formatPrice(subtotal)} {tCommon("currency")}
+                  {formatPrice(totals.grandTotal)} {tCommon("currency")}
                 </dd>
               </div>
             </dl>

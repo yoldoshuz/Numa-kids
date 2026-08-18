@@ -16,6 +16,22 @@ import type {
  */
 export const PRODUCTS: Product[] = [
   {
+    slug: "rikki",
+    category: "antiparasitic",
+    accent: "green",
+    image: "/images/products/rikki.png",
+    gallery: [
+      "/images/products/bonny-shot-1.jpg",
+      "/images/products/bonny-shot-2.jpg",
+      "/images/products/kist.jpg",
+    ],
+    banner: ["/images/products/bonny-banner.jpg", "/images/products/bonny-hero.jpg"],
+    price: 390_000,
+    strains: 90,
+    isTop: true,
+    order: 1,
+  },
+  {
     slug: "bonny",
     category: "vitamin-d3",
     accent: "pink",
@@ -26,10 +42,10 @@ export const PRODUCTS: Product[] = [
       "/images/products/kist.jpg",
     ],
     banner: ["/images/products/bonny-banner.jpg", "/images/products/bonny-hero.jpg"],
-    price: 250_000,
+    price: 390_000,
     strains: 24,
     isTop: true,
-    order: 1,
+    order: 2,
   },
   {
     slug: "funny",
@@ -45,7 +61,7 @@ export const PRODUCTS: Product[] = [
     price: 120_000,
     strains: 24,
     isTop: true,
-    order: 2,
+    order: 5,
   },
   {
     slug: "jekky",
@@ -58,7 +74,7 @@ export const PRODUCTS: Product[] = [
       "/images/products/kist.jpg",
     ],
     banner: ["/images/products/bonny-banner.jpg", "/images/products/bonny-hero.jpg"],
-    price: 120_000,
+    price: 390_000,
     strains: 24,
     isTop: true,
     order: 3,
@@ -77,7 +93,7 @@ export const PRODUCTS: Product[] = [
     price: 120_000,
     strains: 24,
     isTop: true,
-    order: 1,
+    order: 4,
   },
   {
     slug: "vitty",
@@ -93,7 +109,7 @@ export const PRODUCTS: Product[] = [
     price: 120_000,
     strains: 24,
     isTop: true,
-    order: 1,
+    order: 6,
   },
   {
     slug: "magny",
@@ -109,11 +125,12 @@ export const PRODUCTS: Product[] = [
     price: 120_000,
     strains: 24,
     isTop: true,
-    order: 2,
+    order: 7,
   },
 ];
 
 export const PRODUCT_CATEGORIES: ProductCategory[] = [
+  "antiparasitic",
   "vitamin-c",
   "vitamin-d3",
   "magnesium",

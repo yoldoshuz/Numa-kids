@@ -8,12 +8,23 @@ export const SITE_NAME = "NUMA KIDS";
 
 export const CONTACTS = {
   email: "info@numakids.com",
-  phone: "+998 71 203 22 32",
-  phoneHref: "tel:+998712032232",
-  address: "123456, г. Ташкент, ул. Здоровья, 15, офис 301",
-  addressEn: "123456, Tashkent, Zdorovya st. 15, office 301",
-  addressUz: "123456, Toshkent sh., Salomatlik ko'chasi, 15-uy, 301-ofis",
+  phone: "+998 55 513 33 33",
+  phoneHref: "tel:+998555133333",
+  address: "Ташкент, Яшнабадский район, ул. Элбек, 31",
+  addressEn: "Tashkent, Yashnabad district, Elbek street, 31",
+  addressUz: "Toshkent, Yashnobod tumani, Elbek koʻchasi, 31",
 } as const;
+
+/**
+ * Delivery for a single-unit order, UZS; from two units up it is free.
+ *
+ * The API is the source of truth (`shared/utils/money.ts`) and every online
+ * cart shows its figure. This copy only prices the offline fallback, where
+ * there is no server to ask — keep the two in step.
+ */
+export const DELIVERY_FEE = 50_000;
+
+export const FREE_DELIVERY_MIN_QUANTITY = 2;
 
 export const SOCIALS = [
   { id: "facebook", href: "https://facebook.com/numakids" },

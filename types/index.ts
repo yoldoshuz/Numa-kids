@@ -6,6 +6,7 @@ export type Locale = AppLocale;
 export type Accent = "pink" | "blue" | "green" | "orange";
 
 export type ProductCategory =
+  | "antiparasitic"
   | "vitamin-c"
   | "vitamin-d3"
   | "magnesium"

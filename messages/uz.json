@@ -229,6 +229,7 @@
     "empty": "Bu turkumda hozircha mahsulot yo'q"
   },
   "productCategories": {
+    "antiparasitic": "Antiparazitar",
     "vitamin-c": "C vitamini",
     "vitamin-d3": "D3 vitamini",
     "magnesium": "Magniy",
@@ -241,6 +242,17 @@
     "strains": "{count} shtamm"
   },
   "products": {
+    "rikki": {
+      "name": "Rikki — antiparazitar",
+      "shortName": "Rikki",
+      "tagline": "Sogʻlom oʻsish uchun",
+      "description": "Yumshoq antiparazitar profilaktika va bolaning sogʻlom oʻsishi uchun oʻsimlik kompleksiga ega marmelad ayiqchalar",
+      "long": "Rikki — ichak tozaligini yumshoq qoʻllab-quvvatlaydigan va bolaning sogʻlom oʻsishiga yordam beradigan oʻsimlik kompleksli marmelad ayiqchalar",
+      "purposeIntro": "Bolalar dunyoni qoʻllari bilan oʻrganadi, hayvonlar va qum bilan oʻynaydi — muntazam profilaktika hazm salomatligini saqlashga yordam beradi",
+      "compositionTitle": "Oʻsimlik kompleksi",
+      "compositionText": "Rikki ichakning tabiiy himoyasini qoʻllab-quvvatlaydigan va bolaning ishtahasini buzmaydigan yumshoq oʻsimlik ekstraktlarini birlashtiradi",
+      "activeFormula": "90 ta ayiqcha"
+    },
     "bonny": {
       "name": "Bonny — kalsiy D3",
       "shortName": "Bonny",
@@ -587,7 +599,8 @@
     "continue": "Xaridni davom ettirish",
     "unavailable": "Mavjud emas",
     "unavailableTotal": "Buyurtma uchun mavjud emas",
-    "unavailableHint": "Buyurtma berish uchun mavjud bo'lmagan mahsulotlarni o'chiring."
+    "unavailableHint": "Buyurtma berish uchun mavjud bo'lmagan mahsulotlarni o'chiring.",
+    "freeFrom": "2 ta mahsulotdan boshlab yetkazib berish bepul"
   },
   "checkout": {
     "title": "Buyurtmani rasmiylashtirish",

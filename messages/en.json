@@ -229,6 +229,7 @@
     "empty": "No products in this category yet"
   },
   "productCategories": {
+    "antiparasitic": "Antiparasitic",
     "vitamin-c": "Vitamin C",
     "vitamin-d3": "Vitamin D3",
     "magnesium": "Magnesium",
@@ -241,6 +242,17 @@
     "strains": "{count} strains"
   },
   "products": {
+    "rikki": {
+      "name": "Rikki — antiparasitic",
+      "shortName": "Rikki",
+      "tagline": "For healthy growth",
+      "description": "Gummy bears with a plant complex for gentle antiparasitic prevention and healthy growth",
+      "long": "Rikki is a gummy bear with a plant complex that gently supports a clean gut and helps a child grow up healthy",
+      "purposeIntro": "Children explore the world with their hands and play with animals and sand — regular prevention helps keep digestion healthy",
+      "compositionTitle": "Plant complex",
+      "compositionText": "Rikki combines gentle plant extracts that support the gut’s natural defences without upsetting a child’s appetite",
+      "activeFormula": "90 bears"
+    },
     "bonny": {
       "name": "Bonny — calcium D3",
       "shortName": "Bonny",
@@ -587,7 +599,8 @@
     "continue": "Continue shopping",
     "unavailable": "Out of stock",
     "unavailableTotal": "Not available to order",
-    "unavailableHint": "Remove the unavailable items to place the order."
+    "unavailableHint": "Remove the unavailable items to place the order.",
+    "freeFrom": "Free delivery from 2 items"
   },
   "checkout": {
     "title": "Checkout",

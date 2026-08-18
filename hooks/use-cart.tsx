@@ -20,6 +20,7 @@ import {
   postCartItem,
 } from "@/lib/api/endpoints";
 import { queryKeys } from "@/lib/api/query-keys";
+import { DELIVERY_FEE } from "@/lib/constants";
 import type { ApiCart, ApiCartTotals } from "@/lib/api/types";
 import { PRODUCTS as staticProducts } from "@/lib/data";
 import type { Product } from "@/types";
@@ -368,12 +369,21 @@ export function CartProvider({
       (sum, item) => sum + item.product.price * item.quantity,
       0,
     );
+    const totalQuantity = items.reduce((sum, item) => sum + item.quantity, 0);
+    // Same rule as the API (shared/utils/money.ts): a one-unit order pays
+    // 50 000 for delivery, two units and up ride free.
+    const deliveryFee = totalQuantity === 1 ? DELIVERY_FEE : 0;
+
     return {
       total,
       totalTiyin: Math.round(total * 100),
       unavailableTotal: 0,
       itemsCount: items.length,
-      totalQuantity: items.reduce((sum, item) => sum + item.quantity, 0),
+      totalQuantity,
+      deliveryFee,
+      deliveryFeeTiyin: Math.round(deliveryFee * 100),
+      grandTotal: total + deliveryFee,
+      grandTotalTiyin: Math.round((total + deliveryFee) * 100),
     };
   }, [serverBacked, cartQuery.data, items]);
 

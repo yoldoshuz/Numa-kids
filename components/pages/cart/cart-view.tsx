@@ -146,14 +146,26 @@ export function CartView() {
                   {formatPrice(subtotal)} {tCommon("currency")}
                 </dd>
               </div>
+              {/* A single-unit order pays for delivery; from two units up it
+                  is free. The server prices it — never recompute here, or the
+                  basket and the order disagree. */}
               <div className="flex items-center justify-between">
                 <dt className="text-brand-ink/60">{t("delivery")}</dt>
-                <dd className="font-semibold text-brand-green">{t("free")}</dd>
+                {totals.deliveryFee > 0 ? (
+                  <dd className="font-semibold text-brand-ink">
+                    {formatPrice(totals.deliveryFee)} {tCommon("currency")}
+                  </dd>
+                ) : (
+                  <dd className="font-semibold text-brand-green">{t("free")}</dd>
+                )}
               </div>
+              {totals.deliveryFee > 0 ? (
+                <p className="text-xs text-brand-ink/50">{t("freeFrom")}</p>
+              ) : null}
               <div className="mt-2 flex items-center justify-between border-t border-brand-ink/10 pt-4">
                 <dt className="font-bold text-brand-ink">{t("total")}</dt>
                 <dd className="text-xl font-extrabold text-brand-ink">
-                  {formatPrice(subtotal)} {tCommon("currency")}
+                  {formatPrice(totals.grandTotal)} {tCommon("currency")}
                 </dd>
               </div>
             </dl>
