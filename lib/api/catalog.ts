@@ -131,10 +131,20 @@ export async function fetchApiBlogPosts(): Promise<ApiBlogPost[] | null> {
 
 /* ── public surface ──────────────────────────────────────────────────────── */
 
+/**
+ * The catalogue in the order the shop wants it shown.
+ *
+ * The API answers in its own insertion order, which has nothing to do with the
+ * merchandising sequence, so `order` — editable per product through
+ * `attributes` and seeded from the static catalogue — is what decides the grid.
+ * The sort is stable, so products sharing a number keep the order the API sent.
+ */
+const byOrder = (products: Product[]) => [...products].sort((a, b) => a.order - b.order);
+
 export async function getProducts(): Promise<Product[]> {
   const api = await fetchApiProducts();
-  if (!api?.length) return PRODUCTS;
-  return api.map(toProduct);
+  if (!api?.length) return byOrder(PRODUCTS);
+  return byOrder(api.map(toProduct));
 }
 
 export async function getProduct(slug: string): Promise<Product | undefined> {
@@ -148,8 +158,8 @@ export async function getFeaturedProducts(): Promise<Product[]> {
     return Array.isArray(data) ? data : (data.rows ?? []);
   });
 
-  if (!api?.length) return PRODUCTS.filter((p) => p.isTop);
-  return api.map(toProduct);
+  if (!api?.length) return byOrder(PRODUCTS.filter((p) => p.isTop));
+  return byOrder(api.map(toProduct));
 }
 
 export async function getArticles(): Promise<Article[]> {
