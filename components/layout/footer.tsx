@@ -47,7 +47,7 @@ export function Footer() {
                       rel="noopener noreferrer"
                       className="text-sm font-semibold text-brand-ink transition hover:text-brand-pink"
                     >
-                      {social.id.charAt(0).toUpperCase() + social.id.slice(1)}
+                      {social.label}
                     </a>
                   </li>
                 ))}

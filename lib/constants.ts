@@ -8,17 +8,23 @@ export const SITE_NAME = "NUMA KIDS";
 
 export const CONTACTS = {
   /*
-   * Instagram is this brand's own account; the Telegram is the group's shared
-   * admin, the same one every NUMA site points at. The handles the tester found
-   * here — @numakids and a Telegram username that resolved to nothing — were
-   * never registered.
+   * Two Telegram destinations, and they are not interchangeable. `telegram` is
+   * the brand's public channel — footers, the contact card, structured data,
+   * anywhere the site is just saying where to find it. `telegramAdmin` is a
+   * person and belongs only behind a button offering to carry on a
+   * conversation. Dropping someone from a footer icon into a private chat with
+   * an administrator is what split these apart.
    */
   email: "numafamilyuz@gmail.com",
   emailHref: "mailto:numafamilyuz@gmail.com",
   instagram: "@numakids.uz",
   instagramHref: "https://www.instagram.com/numakids.uz",
-  telegram: "@Numa_uz_admin",
-  telegramHref: "https://t.me/Numa_uz_admin",
+  telegram: "@numa_kids",
+  telegramHref: "https://t.me/numa_kids",
+  telegramAdmin: "@Numa_uz_admin",
+  telegramAdminHref: "https://t.me/Numa_uz_admin",
+  facebookHref: "https://www.facebook.com/share/1ErFh5Xmsd/",
+  youtubeHref: "https://www.youtube.com/@numakids",
   phone: "+998 55 513 33 33",
   phoneHref: "tel:+998555133333",
   address: "Ташкент, Яшнабадский район, ул. Элбек, 31",
@@ -37,11 +43,13 @@ export const DELIVERY_FEE = 50_000;
 
 export const FREE_DELIVERY_MIN_QUANTITY = 2;
 
+/** Footer social row. `label` is spelled out — "Youtube" from a capitalised
+ * id is wrong, and the network names are not translated in any locale. */
 export const SOCIALS = [
-  { id: "instagram", href: CONTACTS.instagramHref },
-  { id: "telegram", href: CONTACTS.telegramHref },
-  { id: "facebook", href: "https://facebook.com/numakids" },
-  { id: "tiktok", href: "https://tiktok.com/@numakids" },
+  { id: "instagram", label: "Instagram", href: CONTACTS.instagramHref },
+  { id: "telegram", label: "Telegram", href: CONTACTS.telegramHref },
+  { id: "facebook", label: "Facebook", href: CONTACTS.facebookHref },
+  { id: "youtube", label: "YouTube", href: CONTACTS.youtubeHref },
 ] as const;
 
 export const NAV_ITEMS: NavItem[] = [
@@ -53,7 +61,7 @@ export const NAV_ITEMS: NavItem[] = [
 
 export const FOOTER_CATALOG: NavItem[] = [
   { href: "/products", key: "all" },
-  { href: "/products?category=vitamin-c", key: "vitaminC" },
+  { href: "/products?category=antiparasitic", key: "antiparasitic" },
   { href: "/products?category=probiotics", key: "probiotics" },
   { href: "/products?category=omega-3", key: "omega" },
   { href: "/products?category=multi", key: "multi" },
@@ -63,7 +71,8 @@ export const FOOTER_INFO: NavItem[] = [
   { href: "/blog", key: "blog" },
   { href: "/about", key: "about" },
   { href: "/delivery", key: "delivery" },
-  { href: "/returns", key: "returns" },
+  // "Natijalar" — what parents got, which is the reviews block, not a returns page.
+  { href: "/#reviews", key: "results" },
   { href: "/contacts#faq", key: "faq" },
 ];
 

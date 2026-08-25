@@ -7,7 +7,6 @@ import { useTranslations } from "next-intl";
 import { CarouselControls } from "@/components/shared/carousel-controls";
 import { Container } from "@/components/shared/container";
 import { useCarousel } from "@/hooks";
-import { PRODUCT_ADVANTAGES } from "@/lib/data";
 import type { Product } from "@/types";
 
 export function ProductAdvantages({ product }: { product: Product }) {
@@ -15,6 +14,8 @@ export function ProductAdvantages({ product }: { product: Product }) {
   const { ref, canScrollPrev, canScrollNext, scrollPrev, scrollNext } =
     useCarousel<HTMLUListElement>();
   const name = t(`products.${product.slug}.shortName`);
+  // Per product: the shared list printed the same six lines on every page.
+  const advantages = t.raw(`products.${product.slug}.advantages`) as string[];
 
   return (
     <section className="py-14 sm:py-20">
@@ -60,7 +61,7 @@ export function ProductAdvantages({ product }: { product: Product }) {
         </div>
 
         <ul className="mt-10 grid gap-4 md:grid-cols-2 md:gap-x-8">
-          {PRODUCT_ADVANTAGES.map((advantage) => (
+          {advantages.map((advantage) => (
             <li
               key={advantage}
               className="flex items-center gap-3 rounded-xl bg-white px-5 py-4 ring-1 ring-border"
@@ -72,7 +73,7 @@ export function ProductAdvantages({ product }: { product: Product }) {
                 <Check className="size-4" />
               </span>
               <span className="text-sm text-brand-ink/80">
-                {t(`product.advantages.${advantage}`)}
+                {advantage}
               </span>
             </li>
           ))}

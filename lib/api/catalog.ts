@@ -9,7 +9,15 @@
  */
 
 import { ARTICLES, PRODUCTS, PRODUCT_CATEGORIES } from "@/lib/data";
-import type { Accent, Article, ArticleTopic, Product, ProductCategory } from "@/types";
+import type {
+  Accent,
+  Article,
+  ArticleTopic,
+  Product,
+  ProductCategory,
+  ReviewCard,
+} from "@/types";
+import type { AppLocale } from "@/lib/i18n/routing";
 
 import { isSoldOut } from "@/lib/utils";
 import { isApiConfigured } from "./config";
@@ -20,6 +28,7 @@ import {
   getFeatured,
   getProductBySlug,
   getProductList,
+  getReviews,
 } from "./endpoints";
 import type { ApiBlogPost, ApiProduct } from "./types";
 
@@ -213,4 +222,39 @@ export async function getArticleProducts(
       .filter((product): product is Product => product !== undefined),
     note: rows.find((row) => row.note)?.note ?? null,
   };
+}
+
+/**
+ * Published reviews, in the reader's language.
+ *
+ * `null` means "use the bundled copy" — returned both when the CMS cannot be
+ * reached and when it answers with nothing. The empty case is deliberate: the
+ * reviews are being migrated into the CMS store by store, and until a store is
+ * filled in, an empty response would silently delete a section that is on the
+ * page today. The moment the admin publishes one review, the CMS wins.
+ *
+ * Tones and avatars are not CMS fields: they cycle through the palette the
+ * section was designed around, so a review added in the admin lands looking
+ * like the rest without anyone picking a colour.
+ */
+const REVIEW_TONES = ["yellow", "pink", "orange"] as const;
+const REVIEW_AVATARS = [
+  "/images/reviews/avatar-1.jpg",
+  "/images/reviews/avatar-2.jpg",
+  "/images/reviews/avatar-3.jpg",
+];
+
+export async function getReviewCards(locale: AppLocale): Promise<ReviewCard[] | null> {
+  const api = await tryFetch(() => getReviews());
+  if (!api?.items?.length) return null;
+
+  return api.items.map((review, index) => ({
+    id: review.id,
+    name: review.authorName ?? review.title[locale] ?? "",
+    text: review.description[locale] ?? "",
+    rating: review.rating,
+    videoUrl: review.videoUrl,
+    avatar: REVIEW_AVATARS[index % REVIEW_AVATARS.length],
+    tone: REVIEW_TONES[index % REVIEW_TONES.length],
+  }));
 }

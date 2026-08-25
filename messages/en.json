@@ -88,9 +88,9 @@
     "goTo": "Show {name}"
   },
   "trust": {
-    "title": "Natural supplements —",
-    "titleAccent": "more benefit!",
-    "subtitle": "Every formula is backed by research, built from bioavailable ingredients and designed specifically for a growing body.",
+    "title": "For children's health and development —",
+    "titleAccent": "a natural solution",
+    "subtitle": "No chemical additives. Natural, halal products for your child to grow up healthy.",
     "items": {
       "safe": {
         "title": "Safe",
@@ -116,21 +116,21 @@
       },
       "checked": {
         "title": "Proven:",
-        "text": "Helps to focus better"
+        "text": "No GMO additives"
       },
       "useful": {
         "title": "Tasty:",
-        "text": "Gummy bears kids love"
+        "text": "Gummy bears"
       }
     }
   },
   "articlesSection": {
-    "title": "Helpful articles"
+    "title": "What matters for your child's health!"
   },
   "catalog": {
     "title": "Our",
     "titleAccent": "vitamins",
-    "subtitle": "6 formulas for health and happiness"
+    "subtitle": "Six science-backed products for children"
   },
   "certificates": {
     "title": "Our international certificates",
@@ -166,36 +166,47 @@
   "cta": {
     "title": "Start taking care of health",
     "titleAccent": "today",
-    "delivery": "Free delivery",
-    "guarantee": "30-day return guarantee",
-    "button": "Consultation"
+    "delivery": "Free delivery and a specialist consultation!",
+    "button": "Find out more"
   },
   "reviews": {
     "title": "Parents' reviews",
     "role": "Customer",
     "items": {
-      "madina": {
-        "name": "Madina Rasulova",
-        "text": "My boys don't like vegetables, but Jekky helps me sneak them into their diet as a tasty smoothie!"
+      "gulnora": {
+        "name": "Gulnora Ismoilova",
+        "text": "My sons would not eat. Then I bought them Jekky. Their appetite came back and they started eating."
       },
-      "rasul": {
-        "name": "Rasul Khamdamov",
-        "text": "Thanks to the variety of flavours the kids pick something new every day and take it happily"
+      "nigora": {
+        "name": "Nigora Yusupova",
+        "text": "My children had white patches on their faces. I gave them Rikki. The patches and the rash are gone!"
+      },
+      "dilnoza": {
+        "name": "Dilnoza Karimova",
+        "text": "My child was struggling at school. Endomarine was recommended to me and I started giving it to my children. They are calmer now, lessons come easier and they are doing well."
+      },
+      "shahnoza": {
+        "name": "Shahnoza Turayeva",
+        "text": "My child kept crying that his tummy hurt. Then I bought him Jekky. He does not complain about it any more!"
+      },
+      "malika": {
+        "name": "Malika Ergasheva",
+        "text": "My child ground his teeth at night and slept badly. I bought Rikki and the children ate it happily. The worms are gone and they sleep well at night!"
       },
       "zilola": {
-        "name": "Zilola Otazhonova",
-        "text": "It is a great way to be sure the child gets all the minerals they need in a convenient form"
+        "name": "Zilola Otajonova",
+        "text": "My child's bones were fragile and broke at the slightest thing. I bought him Bonny so they would get stronger. Since then there have been no problems with his bones."
       }
     }
   },
   "newsletter": {
-    "title": "NUMA KIDS — healthy nutrition for children",
+    "title": "NUMA KIDS — good products for children",
     "placeholder": "Enter your email",
-    "button": "Get a discount",
+    "button": "Get in touch",
     "success": "Thank you! The promo code is on its way to your inbox.",
     "error": "Please enter a valid email"
   },
-  "marquee": "VITAMINS",
+  "marquee": "NUMA KIDS",
   "footer": {
     "tagline": "Science-backed vitamins for your child's health",
     "catalogTitle": "Catalogue",
@@ -205,17 +216,17 @@
     "rights": "© All rights reserved",
     "catalog": {
       "all": "All products",
-      "vitaminC": "Vitamin C",
       "probiotics": "Probiotics",
       "omega": "Omega-3",
-      "multi": "Multivitamins"
+      "multi": "Multivitamins",
+      "antiparasitic": "Antiparasitic"
     },
     "info": {
       "blog": "Blog",
       "about": "About us",
       "delivery": "Delivery and payment",
-      "returns": "Warranty and returns",
-      "faq": "FAQ"
+      "faq": "FAQ",
+      "results": "Results"
     }
   },
   "productsPage": {
@@ -226,12 +237,11 @@
   },
   "productCategories": {
     "antiparasitic": "Antiparasitic",
-    "vitamin-c": "Vitamin C",
     "vitamin-d3": "Vitamin D3",
-    "magnesium": "Magnesium",
     "omega-3": "Omega 3",
     "multi": "Multi",
-    "probiotics": "Probiotics"
+    "probiotics": "Probiotics",
+    "iodine": "Iodine"
   },
   "productBadges": {
     "top": "TOP",
@@ -241,79 +251,383 @@
     "rikki": {
       "name": "Rikki — antiparasitic",
       "shortName": "Rikki",
-      "tagline": "For healthy growth",
-      "description": "Gummy bears with a plant complex for gentle antiparasitic prevention and healthy growth",
-      "long": "Rikki is a gummy bear with a plant complex that gently supports a clean gut and helps a child grow up healthy",
-      "purposeIntro": "Children explore the world with their hands and play with animals and sand — regular prevention helps keep digestion healthy",
+      "tagline": "To clear out worms",
+      "description": "Helps clear out worms and strengthen immunity. Helps clear the patches and rash from the face.",
+      "long": "Rikki, the antiparasitic product, helps your child get rid of worms and parasites.",
+      "purposeIntro": "If your child shows these signs, it is time to think about parasite prevention",
       "compositionTitle": "Plant complex",
       "compositionText": "Rikki combines gentle plant extracts that support the gut’s natural defences without upsetting a child’s appetite",
-      "activeFormula": "90 bears"
+      "activeFormula": "90 gummy bears",
+      "effects": [
+        {
+          "title": "Clears out worms and parasites",
+          "text": "Stops parasites in their tracks and helps the body be rid of them.",
+          "value": 96
+        },
+        {
+          "title": "Settles the gut",
+          "text": "Clears parasites from the gut and helps fade the patches on the face.",
+          "value": 92
+        },
+        {
+          "title": "Heads off bad breath",
+          "text": "Reduces the harm parasites do and helps the gut flora recover.",
+          "value": 88
+        },
+        {
+          "title": "Fights white patches and rashes",
+          "text": "Cleanses the body and clears out toxins.",
+          "value": 90
+        }
+      ],
+      "advantages": [
+        "Clears out worms and parasites",
+        "Settles the gut",
+        "Heads off bad breath",
+        "Fights white patches and rashes"
+      ],
+      "purposes": [
+        {
+          "title": "Frequent tummy aches",
+          "text": "Parasites irritate the gut wall, so the ache keeps coming back."
+        },
+        {
+          "title": "Loss of appetite, or the opposite — constant hunger",
+          "text": "The body loses nutrients and appetite swings sharply either way."
+        },
+        {
+          "title": "Grinding teeth at night and disturbed sleep",
+          "text": "Restlessness and grinding teeth at night is the commonest sign of all."
+        },
+        {
+          "title": "Itching around the anus, mostly at night",
+          "text": "Itching that gets worse at night points to parasites being active."
+        },
+        {
+          "title": "Weakness, poor concentration and tiring quickly",
+          "text": "Vitamins stop being absorbed, so the child tires fast and loses focus."
+        }
+      ]
     },
     "bonny": {
-      "name": "Bonny — calcium D3",
+      "name": "Bonny",
       "shortName": "Bonny",
       "tagline": "For strong bones",
-      "description": "Supports growth, teeth and the skeletal system. Tasty gummy bears with calcium and vitamin D3 for everyday care.",
+      "description": "Strengthens bones and teeth. Helps growth. Helps head off weakness and loss of appetite.",
       "long": "Tasty gummy bears with calcium and vitamin D3 that support growth, strengthen bones and teeth and help a child's body develop properly",
       "purposeIntro": "Calcium and vitamin D3 are essential for a child's proper growth and development. They strengthen bones and teeth and keep kids active every day",
       "compositionTitle": "Calcium and vitamin D3",
       "compositionText": "Bonny is not only about bones and teeth — it also supports muscles, the nervous system and the whole body. Regular intake helps cover calcium deficiency during periods of rapid growth",
-      "activeFormula": "Ca + D3"
+      "activeFormula": "90 gummy bears",
+      "effects": [
+        {
+          "title": "Strengthens bones and teeth",
+          "text": "The nutrients in it support strong bones and teeth.",
+          "value": 95
+        },
+        {
+          "title": "Helps growth",
+          "text": "Supports normal bone development and helps the child grow.",
+          "value": 92
+        },
+        {
+          "title": "Improves the immune system",
+          "text": "Supports the body's natural defences and helps strengthen immunity.",
+          "value": 90
+        },
+        {
+          "title": "Helps head off weakness and loss of appetite",
+          "text": "Helps supply the nutrients the body needs and keeps the child alert and eating.",
+          "value": 88
+        }
+      ],
+      "advantages": [
+        "Strengthens bones and teeth",
+        "Helps growth",
+        "Improves the immune system",
+        "Heads off weakness and loss of appetite"
+      ],
+      "purposes": [
+        {
+          "title": "Strengthens bones and teeth",
+          "text": "The nutrients in it support strong bones and teeth."
+        },
+        {
+          "title": "Helps growth",
+          "text": "Supports normal bone development and helps the child grow."
+        },
+        {
+          "title": "Improves the immune system",
+          "text": "Supports the body's natural defences and helps strengthen immunity."
+        },
+        {
+          "title": "Heads off weakness and loss of appetite",
+          "text": "Helps supply the nutrients the body needs and keeps the child alert and eating."
+        }
+      ]
     },
     "funny": {
-      "name": "Funny — multivitamins",
+      "name": "Funny",
       "shortName": "Funny",
-      "tagline": "Everyday support",
-      "description": "A vitamin complex for activity, immunity and a child's good wellbeing every day. In a format kids love",
+      "tagline": "Strong immunity",
+      "description": "A natural help for settling sleep, heading off viral illness and raising haemoglobin in the blood.",
       "long": "Gummy bears with a complete complex of vitamins and minerals for daily support of activity, immunity and a good mood",
       "purposeIntro": "A balanced vitamin complex covers a child's daily needs and helps the body handle school and training loads",
       "compositionTitle": "11 vitamins in one bear",
       "compositionText": "Funny combines B-group vitamins with C, E and D3 in a single gummy formula. Regular intake helps cover micronutrient gaps and keeps energy levels steady",
-      "activeFormula": "Multi 11"
+      "activeFormula": "90 gummy bears",
+      "effects": [
+        {
+          "title": "Strengthens immunity",
+          "text": "Supports the body's natural defences and helps it fight off infections.",
+          "value": 94
+        },
+        {
+          "title": "Helps settle sleep",
+          "text": "Supports calm, sound sleep and settles the child into a routine.",
+          "value": 91
+        },
+        {
+          "title": "Helps head off viral illness",
+          "text": "Supports the body's natural defences and fights viral illness.",
+          "value": 90
+        },
+        {
+          "title": "Helps raise haemoglobin",
+          "text": "Supplies the body with what it needs to make blood.",
+          "value": 89
+        },
+        {
+          "title": "Helps with allergy-related conditions",
+          "text": "Supports the body's natural defences and helps in allergy-related conditions.",
+          "value": 86
+        }
+      ],
+      "advantages": [
+        "Settles sleep",
+        "Heads off viral illness",
+        "Raises haemoglobin in the blood",
+        "Helps with allergy-related conditions"
+      ],
+      "purposes": [
+        {
+          "title": "Settles sleep",
+          "text": "Supports the body's natural defences and helps it fight off infections."
+        },
+        {
+          "title": "Heads off viral illness",
+          "text": "Supports calm, sound sleep and settles the child into a routine."
+        },
+        {
+          "title": "Raises haemoglobin in the blood",
+          "text": "Supports the body's natural defences and fights viral illness."
+        },
+        {
+          "title": "Helps with allergy-related conditions",
+          "text": "Supplies the body with what it needs to make blood."
+        }
+      ]
     },
     "jekky": {
-      "name": "Jekky — probiotics",
+      "name": "Jekky",
       "shortName": "Jekky",
       "tagline": "A happy tummy",
-      "description": "Probiotics that support gut microflora, comfortable digestion and lightness after meals",
+      "description": "Helps restore the gut flora. Helps head off constipation and diarrhoea. Helps strengthen immunity. Improves digestion. Helps reduce bloating.",
       "long": "Gummy bears with live probiotic cultures for healthy microflora, comfortable digestion and strong immunity",
       "purposeIntro": "Healthy gut microflora is the foundation of immunity, good mood and proper absorption of nutrients",
       "compositionTitle": "24 strains of live cultures",
       "compositionText": "Jekky contains carefully selected probiotic strains that populate the gut with beneficial bacteria and help children handle diet changes and antibiotic courses",
-      "activeFormula": "24 strains"
+      "activeFormula": "90 gummy bears",
+      "effects": [
+        {
+          "title": "Restores the gut flora",
+          "text": "Fights off harmful bacteria and strengthens immunity.",
+          "value": 95
+        },
+        {
+          "title": "Heads off constipation and diarrhoea",
+          "text": "Helps rebalance the good bacteria in the gut, so it settles into a normal rhythm.",
+          "value": 92
+        },
+        {
+          "title": "Improves digestion",
+          "text": "Ensures nutrients are fully absorbed and gets the digestive system working.",
+          "value": 90
+        },
+        {
+          "title": "Strengthens immunity",
+          "text": "Raises the body's resistance to viruses and infections and protects the gut.",
+          "value": 93
+        },
+        {
+          "title": "Improves metabolism",
+          "text": "Clears toxins and waste from the gut and improves the metabolism.",
+          "value": 88
+        },
+        {
+          "title": "Reduces bloating",
+          "text": "Food is digested better, so bloating and trapped gas ease off.",
+          "value": 87
+        }
+      ],
+      "advantages": [
+        "Restores the gut flora",
+        "Heads off constipation and diarrhoea",
+        "Strengthens immunity",
+        "Improves digestion",
+        "Reduces bloating"
+      ],
+      "purposes": [
+        {
+          "title": "Restores the gut flora",
+          "text": "Fights off harmful bacteria and strengthens immunity."
+        },
+        {
+          "title": "Heads off constipation and diarrhoea",
+          "text": "Helps rebalance the good bacteria in the gut, so it settles into a normal rhythm."
+        },
+        {
+          "title": "Strengthens immunity",
+          "text": "Ensures nutrients are fully absorbed and gets the digestive system working."
+        },
+        {
+          "title": "Improves digestion",
+          "text": "Raises the body's resistance to viruses and infections and protects the gut."
+        },
+        {
+          "title": "Reduces bloating",
+          "text": "Clears toxins and waste from the gut and improves the metabolism."
+        }
+      ]
     },
     "genny": {
-      "name": "Genny — Omega-3 DHA",
+      "name": "Genny",
       "shortName": "Genny",
-      "tagline": "Brain and vision support",
-      "description": "DHA is a key omega-3 fatty acid for brain development, memory, attention and eye health. Suitable for daily intake",
+      "tagline": "For brain and eyesight",
+      "description": "Helps develop mental activity, strengthen memory and immunity, and hold attention.",
       "long": "Gummy bears with fish oil and a high DHA content for brain development, memory, focus and eye health",
       "purposeIntro": "Omega-3 are essential fatty acids the body cannot produce on its own. They are vital for brain, vision and heart health",
-      "compositionTitle": "Fish oil and complex",
+      "compositionTitle": "Fish oil, EPA and DHA",
       "compositionText": "Genny is not only food for the brain but also an important component for heart health, vision and the whole body. Regular intake helps cover the deficiency of essential fatty acids",
-      "activeFormula": "DHA/EPA"
+      "activeFormula": "90 gummy bears",
+      "effects": [
+        {
+          "title": "Develops brain function",
+          "text": "Supports the child's mental development and helps with focus, thinking and learning.",
+          "value": 95
+        },
+        {
+          "title": "Strengthens speech and memory",
+          "text": "Helps the child retain new information, express thoughts and develop speech.",
+          "value": 92
+        },
+        {
+          "title": "Supports eyesight",
+          "text": "Supports the processes that keep eyes healthy and vision working normally.",
+          "value": 90
+        },
+        {
+          "title": "Helps hold attention",
+          "text": "Helps keep focus during reading, homework and taking in new material.",
+          "value": 88
+        },
+        {
+          "title": "Supports healthy growth",
+          "text": "Supports, as a whole, the processes a child's physical and mental development depends on.",
+          "value": 90
+        }
+      ],
+      "advantages": [
+        "Improves brain function",
+        "Helps prevent eyesight from declining",
+        "Reduces inflammation in the body",
+        "Strengthens immunity"
+      ],
+      "purposes": [
+        {
+          "title": "Improves brain function",
+          "text": "Supports the child's mental development and helps with focus, thinking and learning."
+        },
+        {
+          "title": "Helps prevent eyesight from declining",
+          "text": "Helps the child retain new information, express thoughts and develop speech."
+        },
+        {
+          "title": "Reduces inflammation in the body",
+          "text": "Supports the processes that keep eyes healthy and vision working normally."
+        },
+        {
+          "title": "Strengthens immunity",
+          "text": "Helps keep focus during reading, homework and taking in new material."
+        }
+      ]
     },
-    "vitty": {
-      "name": "Vitty — vitamin C",
-      "shortName": "Vitty",
-      "tagline": "A shield for immunity",
-      "description": "Vitamin C in a gentle gummy form for strong immunity, healthy vessels and faster recovery after colds",
-      "long": "Gummy bears with vitamin C and bioflavonoids for daily immune support at kindergarten and school",
-      "purposeIntro": "Vitamin C takes part in the immune response, helps absorb iron and supports the health of vessels and skin",
-      "compositionTitle": "Vitamin C and bioflavonoids",
-      "compositionText": "Vitty pairs vitamin C with natural citrus bioflavonoids for better absorption. The gentle formula is easy on the stomach and suitable for daily intake",
-      "activeFormula": "Vitamin C"
-    },
-    "magny": {
-      "name": "Magny — magnesium",
-      "shortName": "Magny",
-      "tagline": "Calm and sound sleep",
-      "description": "Magnesium with vitamin B6 for restful sleep, a steady nervous system and the wellbeing of an active child",
-      "long": "Gummy bears with magnesium and vitamin B6 supporting the nervous system, sound sleep and lower fatigue",
-      "purposeIntro": "Magnesium is involved in more than 300 body processes and is especially important for the nervous system, muscles and quality sleep",
-      "compositionTitle": "Magnesium and vitamin B6",
-      "compositionText": "Magny combines a bioavailable form of magnesium with vitamin B6, which improves its absorption. The formula helps children fall asleep easier and handle stress calmly",
-      "activeFormula": "Mg + B6"
+    "endomarine": {
+      "name": "Endomarine",
+      "shortName": "Endomarine",
+      "tagline": "Iodine and the thyroid",
+      "description": "Sharpens attention and memory. Raises mental and physical activity. Improves thyroid function.",
+      "long": "Endomarine — gummy bears that top up the body's iodine and support thyroid function and a child's mental development",
+      "purposeIntro": "An iodine shortfall shows up in a child's attention, memory and growth — taking it regularly helps make that up",
+      "compositionTitle": "Iodine",
+      "compositionText": "Endomarine supplies the iodine the body needs and supports the making of thyroid hormones",
+      "activeFormula": "Iodine",
+      "effects": [
+        {
+          "title": "Raises mental and physical activity",
+          "text": "Keeps the child alert through the day, moving and thinking.",
+          "value": 94
+        },
+        {
+          "title": "Supports the nervous system",
+          "text": "Helps the nervous system work normally and the child develop overall.",
+          "value": 92
+        },
+        {
+          "title": "Tops up the body's iodine",
+          "text": "Helps make sure the body has enough of the iodine it needs.",
+          "value": 95
+        },
+        {
+          "title": "Settles thyroid function",
+          "text": "Helps supply the iodine the thyroid needs to make its hormones.",
+          "value": 93
+        },
+        {
+          "title": "Helps the child grow healthily",
+          "text": "Supports normal development through the growing years.",
+          "value": 90
+        },
+        {
+          "title": "Supports the ability to learn",
+          "text": "Plays its part in taking in knowledge, thinking and mastering new material.",
+          "value": 89
+        }
+      ],
+      "advantages": [
+        "Sharpens attention and memory",
+        "Raises mental and physical activity",
+        "Improves thyroid function",
+        "Tops up the body's iodine"
+      ],
+      "purposes": [
+        {
+          "title": "Sharpens attention and memory",
+          "text": "Keeps the child alert through the day, moving and thinking."
+        },
+        {
+          "title": "Raises mental and physical activity",
+          "text": "Helps the nervous system work normally and the child develop overall."
+        },
+        {
+          "title": "Improves thyroid function",
+          "text": "Helps make sure the body has enough of the iodine it needs."
+        },
+        {
+          "title": "Tops up the body's iodine",
+          "text": "Helps supply the iodine the thyroid needs to make its hormones."
+        }
+      ]
     }
   },
   "product": {
@@ -352,32 +666,6 @@
       }
     },
     "purposeTitle": "What is {name} for?",
-    "purposes": {
-      "teeth": {
-        "title": "Healthy teeth",
-        "text": "Supports dental health and helps teeth develop properly"
-      },
-      "joints": {
-        "title": "Joints and bones",
-        "text": "Reduces inflammation in the joints and supports mobility and flexibility"
-      },
-      "growth": {
-        "title": "Child growth",
-        "text": "Helps the body get the elements it needs for harmonious growth"
-      },
-      "activity": {
-        "title": "Activity and energy",
-        "text": "Helps keep skin healthy, improves its appearance and strengthens hair and nails"
-      },
-      "immunity": {
-        "title": "Immunity",
-        "text": "Helps strengthen the immune system and protects the body from infections and inflammation"
-      },
-      "energy": {
-        "title": "Energy and tone",
-        "text": "Improves overall body tone, helps fight fatigue and keeps kids active throughout the day"
-      }
-    },
     "intakeTitle": "How to take {name}?",
     "intakeSubtitle": "Follow the recommended rules of intake to get the best result.",
     "intake": {
@@ -418,40 +706,6 @@
       }
     },
     "advantagesTitle": "{name} benefits",
-    "advantages": {
-      "skin": "Improves the condition of skin and hair",
-      "heart": "Supports cardiovascular health",
-      "inflammation": "Has an anti-inflammatory effect",
-      "vision": "Helps preserve eye health and improves vision quality",
-      "energy": "A source of energy and vitality at any age",
-      "memory": "Supports brain function and strengthens memory"
-    },
-    "effects": {
-      "bones": {
-        "title": "Stronger bones and teeth",
-        "text": "Supports the correct formation and strengthening of bone tissue and teeth"
-      },
-      "growth": {
-        "title": "Growth and development",
-        "text": "Supports healthy growth and harmonious development of a child's body"
-      },
-      "calcium": {
-        "title": "Calcium absorption",
-        "text": "Vitamin D3 supports effective absorption of calcium and phosphorus"
-      },
-      "immunity": {
-        "title": "Immune support",
-        "text": "Helps strengthen the child's natural defences"
-      },
-      "energy": {
-        "title": "Energy and activity",
-        "text": "Supports activity, alertness and a child's good wellbeing"
-      },
-      "safety": {
-        "title": "Safe formula for children",
-        "text": "Developed specifically for children with their daily needs in mind"
-      }
-    },
     "orderTitle": "Place your order right now",
     "orderText": "Start caring about your child's health today and feel positive changes within 2–4 weeks of regular intake",
     "orderButton": "Place an order",
@@ -519,8 +773,8 @@
       },
       "hours": {
         "title": "Working hours",
-        "text": "Mon – Fri: 9:00–18:00",
-        "extra": "Sat – Sun: closed"
+        "text": "Mon – Sun: 09:00–19:00",
+        "extra": "No days off!"
       }
     },
     "formTitle": "Write to us",

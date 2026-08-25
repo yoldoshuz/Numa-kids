@@ -7,18 +7,11 @@ export type Accent = "pink" | "blue" | "green" | "orange";
 
 export type ProductCategory =
   | "antiparasitic"
-  | "vitamin-c"
   | "vitamin-d3"
-  | "magnesium"
+  | "iodine"
   | "omega-3"
   | "multi"
   | "probiotics";
-
-export interface ProductEffect {
-  /** i18n key suffix under `product.effects` */
-  id: string;
-  value: number;
-}
 
 export interface Product {
   /**
@@ -83,6 +76,22 @@ export interface Certificate {
 
 export interface Review {
   id: string;
+  avatar: string;
+  tone: "yellow" | "pink" | "orange";
+}
+
+/**
+ * A review as the section renders it, already in the reader's language.
+ *
+ * Resolved on the server so the client component never has to know whether the
+ * text came from the CMS or from the bundled fallback.
+ */
+export interface ReviewCard {
+  id: string;
+  name: string;
+  text: string;
+  rating: number | null;
+  videoUrl: string | null;
   avatar: string;
   tone: "yellow" | "pink" | "orange";
 }

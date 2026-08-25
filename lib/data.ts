@@ -43,7 +43,7 @@ export const PRODUCTS: Product[] = [
     ],
     banner: ["/images/products/bonny-banner.jpg", "/images/products/bonny-hero.jpg"],
     price: 390_000,
-    strains: 24,
+    strains: 90,
     isTop: true,
     order: 2,
   },
@@ -59,7 +59,7 @@ export const PRODUCTS: Product[] = [
     ],
     banner: ["/images/products/bonny-banner.jpg", "/images/products/bonny-hero.jpg"],
     price: 390_000,
-    strains: 24,
+    strains: 90,
     isTop: true,
     order: 3,
   },
@@ -75,7 +75,7 @@ export const PRODUCTS: Product[] = [
     ],
     banner: ["/images/products/bonny-hero.jpg", "/images/products/bonny-banner.jpg"],
     price: 120_000,
-    strains: 24,
+    strains: 90,
     isTop: true,
     order: 4,
   },
@@ -91,49 +91,33 @@ export const PRODUCTS: Product[] = [
     ],
     banner: ["/images/products/bonny-hero.jpg", "/images/products/bonny-banner.jpg"],
     price: 120_000,
-    strains: 24,
+    strains: 90,
     isTop: true,
     order: 5,
   },
   {
-    slug: "vitty",
-    category: "vitamin-c",
-    accent: "pink",
-    image: "/images/products/funny.png",
+    slug: "endomarine",
+    category: "iodine",
+    accent: "blue",
+    image: "/images/products/endomarine.png",
     gallery: [
       "/images/products/bonny-shot-1.jpg",
       "/images/products/bonny-shot-2.jpg",
       "/images/products/kist.jpg",
     ],
     banner: ["/images/products/bonny-banner.jpg", "/images/products/bonny-hero.jpg"],
-    price: 120_000,
-    strains: 24,
+    price: 390_000,
+    strains: 90,
     isTop: true,
     order: 6,
   },
-  {
-    slug: "magny",
-    category: "magnesium",
-    accent: "blue",
-    image: "/images/products/bonny.png",
-    gallery: [
-      "/images/products/bonny-shot-2.jpg",
-      "/images/products/bonny-shot-1.jpg",
-      "/images/products/kist.jpg",
-    ],
-    banner: ["/images/products/bonny-hero.jpg", "/images/products/bonny-banner.jpg"],
-    price: 120_000,
-    strains: 24,
-    isTop: true,
-    order: 7,
-  },
 ];
 
+// Vitamin C and magnesium are not in the range; iodine (Endomarine) is.
 export const PRODUCT_CATEGORIES: ProductCategory[] = [
   "antiparasitic",
-  "vitamin-c",
   "vitamin-d3",
-  "magnesium",
+  "iodine",
   "omega-3",
   "multi",
   "probiotics",
@@ -193,6 +177,10 @@ export const HERO_SLIDES: HeroSlide[] = [
   { slug: "bonny", image: "/images/teams/yellow.jpg", tint: "#8e4fd1" },
   { slug: "jekky", image: "/images/teams/purple.jpg", tint: "#7a49c4" },
   { slug: "funny", image: "/images/teams/red.jpg", tint: "#e2374a" },
+  // Endomarine has no mascot poster of its own yet — this is the product's own
+  // underwater shot, carried over from the Nutrition catalogue and cropped to
+  // the same portrait as the rest.
+  { slug: "endomarine", image: "/images/teams/endomarine.jpg", tint: "#3f8f93" },
 ];
 
 export const CERTIFICATES: Certificate[] = [
@@ -203,10 +191,18 @@ export const CERTIFICATES: Certificate[] = [
   { id: "gmp", image: "/images/certificates/gmp.png" },
 ];
 
+/**
+ * Fallback reviews, shown when the CMS cannot be reached.
+ *
+ * Six avatars for six reviews: the set only has three files, so they repeat.
+ */
 export const REVIEWS: Review[] = [
-  { id: "madina", avatar: "/images/reviews/avatar-1.jpg", tone: "yellow" },
-  { id: "rasul", avatar: "/images/reviews/avatar-2.jpg", tone: "pink" },
-  { id: "zilola", avatar: "/images/reviews/avatar-3.jpg", tone: "orange" },
+  { id: "gulnora", avatar: "/images/reviews/avatar-1.jpg", tone: "yellow" },
+  { id: "nigora", avatar: "/images/reviews/avatar-2.jpg", tone: "pink" },
+  { id: "dilnoza", avatar: "/images/reviews/avatar-3.jpg", tone: "orange" },
+  { id: "shahnoza", avatar: "/images/reviews/avatar-1.jpg", tone: "pink" },
+  { id: "malika", avatar: "/images/reviews/avatar-2.jpg", tone: "orange" },
+  { id: "zilola", avatar: "/images/reviews/avatar-3.jpg", tone: "yellow" },
 ];
 
 export const CONTACT_CHANNELS: ContactChannel[] = [
@@ -227,16 +223,6 @@ export const FAQ_ITEMS: FaqItem[] = [
   { id: "choose", tint: "bg-tint-frost" },
 ];
 
-/** Ids for the product-details "why you need it" grid. */
-export const PRODUCT_PURPOSES = [
-  "teeth",
-  "joints",
-  "growth",
-  "activity",
-  "immunity",
-  "energy",
-] as const;
-
 /** Ids for the numbered intake timeline. */
 export const PRODUCT_INTAKE_STEPS = [
   "dosage",
@@ -251,24 +237,6 @@ export const PRODUCT_FACTS = [
   "course",
   "natural",
   "active",
-] as const;
-
-export const PRODUCT_ADVANTAGES = [
-  "skin",
-  "heart",
-  "inflammation",
-  "vision",
-  "energy",
-  "memory",
-] as const;
-
-export const PRODUCT_EFFECTS = [
-  { id: "bones", value: 95 },
-  { id: "growth", value: 90 },
-  { id: "calcium", value: 88 },
-  { id: "immunity", value: 92 },
-  { id: "energy", value: 90 },
-  { id: "safety", value: 100 },
 ] as const;
 
 export function getProduct(slug: string) {

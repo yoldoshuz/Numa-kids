@@ -10,7 +10,7 @@ import { PlanetSection } from "@/components/pages/home/planet-section";
 import { ReviewsSection } from "@/components/pages/home/reviews-section";
 import { TrustSection } from "@/components/pages/home/trust-section";
 import { JsonLd } from "@/components/shared/json-ld";
-import { getArticles, getProducts } from "@/lib/api/catalog";
+import { getArticles, getProducts, getReviewCards } from "@/lib/api/catalog";
 import { itemListJsonLd } from "@/lib/json-ld";
 import { routing, type AppLocale } from "@/lib/i18n/routing";
 import { buildMetadata } from "@/lib/seo";
@@ -45,7 +45,11 @@ export default async function HomePage({
 
   const t = await getTranslations({ locale, namespace: "products" });
 
-  const [products, articles] = await Promise.all([getProducts(), getArticles()]);
+  const [products, articles, reviews] = await Promise.all([
+    getProducts(),
+    getArticles(),
+    getReviewCards(locale),
+  ]);
 
   return (
     <>
@@ -56,7 +60,7 @@ export default async function HomePage({
       <CatalogSection products={products} />
       <CertificatesSection />
       <CtaSection />
-      <ReviewsSection />
+      <ReviewsSection reviews={reviews} />
 
       <JsonLd
         data={[

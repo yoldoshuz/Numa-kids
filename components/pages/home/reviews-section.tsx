@@ -7,6 +7,7 @@ import { CarouselControls } from "@/components/shared/carousel-controls";
 import { Container } from "@/components/shared/container";
 import { useCarousel } from "@/hooks";
 import { REVIEWS } from "@/lib/data";
+import type { ReviewCard } from "@/types";
 import { cn } from "@/lib/utils";
 
 const TONE = {
@@ -15,13 +16,36 @@ const TONE = {
   orange: "bg-review-orange text-white",
 } as const;
 
-export function ReviewsSection() {
+/**
+ * Parent reviews.
+ *
+ * `reviews` is what the CMS published, already localised on the server. It is
+ * `null` when the backend could not be reached — not empty — so this can tell
+ * an outage apart from a store that genuinely has none yet, and falls back to
+ * the bundled set only in the first case. An empty array renders nothing,
+ * which is the honest answer to "the CMS is up and there are no reviews".
+ */
+export function ReviewsSection({ reviews }: { reviews?: ReviewCard[] | null }) {
   const t = useTranslations("reviews");
   const { ref, canScrollPrev, canScrollNext, scrollPrev, scrollNext } =
     useCarousel<HTMLUListElement>();
 
+  const cards: ReviewCard[] =
+    reviews ??
+    REVIEWS.map((review) => ({
+      id: review.id,
+      name: t(`items.${review.id}.name`),
+      text: t(`items.${review.id}.text`),
+      rating: null,
+      videoUrl: null,
+      avatar: review.avatar,
+      tone: review.tone,
+    }));
+
+  if (!cards.length) return null;
+
   return (
-    <section className="py-14 sm:py-20">
+    <section id="reviews" className="py-14 sm:py-20">
       <Container>
         <div className="flex items-center justify-between gap-6">
           <h2 className="flex items-center gap-3 text-2xl font-extrabold text-brand-ink sm:text-3xl">
@@ -53,7 +77,7 @@ export function ReviewsSection() {
           ref={ref}
           className="-mx-5 mt-8 flex snap-x snap-mandatory gap-6 overflow-x-auto px-5 pb-4 sm:mx-0 sm:px-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
         >
-          {REVIEWS.map((review) => (
+          {cards.map((review) => (
             <li
               key={review.id}
               className={cn(
@@ -62,7 +86,7 @@ export function ReviewsSection() {
               )}
             >
               <blockquote className="text-sm leading-relaxed">
-                {t(`items.${review.id}.text`)}
+                {review.text}
               </blockquote>
 
               <figcaption className="mt-6 flex items-center gap-3">
@@ -76,7 +100,7 @@ export function ReviewsSection() {
                 />
                 <div>
                   <p className="text-sm font-bold">
-                    {t(`items.${review.id}.name`)}
+                    {review.name}
                   </p>
                   <p className="text-xs opacity-70">{t("role")}</p>
                 </div>

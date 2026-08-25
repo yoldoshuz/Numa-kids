@@ -18,7 +18,6 @@ export function CtaSection() {
         </h2>
 
         <p className="mt-6 text-base text-brand-ink/70">{t("delivery")}</p>
-        <p className="text-base text-brand-ink/70">{t("guarantee")}</p>
 
         <Link
           href="/consultation"

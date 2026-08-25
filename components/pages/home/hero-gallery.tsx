@@ -28,6 +28,13 @@ const RING = [
   { x: 0, scale: 1, opacity: 1, blur: 0, z: 40 },
   { x: 0.7, scale: 0.85, opacity: 0.95, blur: 0, z: 30 },
   { x: 1.24, scale: 0.69, opacity: 0.4, blur: 2.5, z: 20 },
+  /*
+   * Anything further round than two places is parked out of sight behind the
+   * front arch. With an even number of slides the window would otherwise be
+   * lopsided — three arches to one side, two to the other — and the odd one
+   * would sit on top of its opposite number.
+   */
+  { x: 1.24, scale: 0.69, opacity: 0, blur: 2.5, z: 10 },
 ] as const;
 
 /**
