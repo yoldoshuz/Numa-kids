@@ -5,7 +5,7 @@ import { ArticlesSection } from "@/components/pages/home/articles-section";
 import { CatalogSection } from "@/components/pages/home/catalog-section";
 import { CertificatesSection } from "@/components/pages/home/certificates-section";
 import { CtaSection } from "@/components/pages/home/cta-section";
-import { HeroTeams } from "@/components/pages/home/hero-teams";
+import { HeroGallery } from "@/components/pages/home/hero-gallery";
 import { PlanetSection } from "@/components/pages/home/planet-section";
 import { ReviewsSection } from "@/components/pages/home/reviews-section";
 import { TrustSection } from "@/components/pages/home/trust-section";
@@ -49,7 +49,7 @@ export default async function HomePage({
 
   return (
     <>
-      <HeroTeams />
+      <HeroGallery />
       <TrustSection />
       <PlanetSection />
       <ArticlesSection articles={articles} />

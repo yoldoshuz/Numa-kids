@@ -60,11 +60,20 @@ export interface Article {
   accent: Extract<Accent, "blue" | "green">;
 }
 
-export interface TeamCard {
-  id: string;
+/** One arch in the hero gallery: a mascot poster that opens its product. */
+export interface HeroSlide {
+  /** Product the arch links to. Copy is read from `products.<slug>`. */
+  slug: string;
+  /** Mascot poster, filling the arch. */
   image: string;
-  /** Vertical offset in the staggered hero row, in pixels at desktop size. */
-  offset: number;
+  /**
+   * The poster's own colour, sampled off the artwork.
+   *
+   * The whole first screen is washed in it — the section behind the gallery and
+   * the halo under the front arch — so the hero takes on the mood of whichever
+   * mascot is showing rather than sitting on one fixed brand tint.
+   */
+  tint: string;
 }
 
 export interface Certificate {
@@ -79,7 +88,7 @@ export interface Review {
 }
 
 export interface ContactChannel {
-  id: "email" | "phone" | "address" | "hours";
+  id: "email" | "phone" | "telegram" | "instagram" | "address" | "hours";
   tint: string;
   href?: string;
 }

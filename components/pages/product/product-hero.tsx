@@ -5,12 +5,13 @@ import { Minus, Plus } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
 
+import { ProductImage } from "@/components/shared/product-image";
 import { useCart } from "@/hooks";
 import { ACCENT } from "@/lib/accents";
 import { Container } from "@/components/shared/container";
 import { formatPrice } from "@/lib/format";
 import { Link } from "@/lib/i18n/navigation";
-import { cn } from "@/lib/utils";
+import { cn, isSoldOut } from "@/lib/utils";
 import type { Product } from "@/types";
 
 const SPECS = [
@@ -32,6 +33,7 @@ export function ProductHero({ product }: { product: Product }) {
   const [quantity, setQuantity] = useState(1);
 
   const name = t(`products.${product.slug}.name`);
+  const soldOut = isSoldOut(product);
 
   return (
     <Container className="grid gap-10 py-10 lg:grid-cols-2 lg:gap-16 lg:py-16">
@@ -42,7 +44,8 @@ export function ProductHero({ product }: { product: Product }) {
             accent.card,
           )}
         >
-          <Image
+          <ProductImage
+            slug={product.slug}
             src={images[active]}
             alt={name}
             fill
@@ -60,7 +63,7 @@ export function ProductHero({ product }: { product: Product }) {
           className="mt-4 grid grid-cols-3 gap-4"
         >
           {images.slice(0, 3).map((image, index) => (
-            <li key={image}>
+            <li key={image + index}>
               <button
                 type="button"
                 onClick={() => setActive(index)}
@@ -122,6 +125,22 @@ export function ProductHero({ product }: { product: Product }) {
           <span className="text-2xl">{t("common.currency")}</span>
         </p>
 
+        {soldOut ? (
+          /*
+           * With nothing in stock there is no quantity worth picking, so the row
+           * is replaced outright rather than greyed in place: a dimmed stepper
+           * beside a dimmed button still invites a try, and this page was taking
+           * the order all the way through to checkout.
+           */
+          <div className="mt-6 rounded-2xl border border-border bg-surface-sand px-5 py-4">
+            <p className="text-base font-bold text-brand-ink">
+              {t("common.outOfStock")}
+            </p>
+            <p className="mt-1 text-sm leading-relaxed text-brand-ink/60">
+              {t("common.outOfStockNote")}
+            </p>
+          </div>
+        ) : (
         <div className="mt-6 flex flex-wrap items-center gap-4">
           <div
             className="flex items-center gap-1 rounded-xl border border-border p-1"
@@ -160,6 +179,7 @@ export function ProductHero({ product }: { product: Product }) {
             {t("product.addToCart")}
           </button>
         </div>
+        )}
 
         <h2 className="mt-12 text-2xl font-extrabold text-brand-ink">
           {t("product.specsTitle")}

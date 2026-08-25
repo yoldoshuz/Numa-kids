@@ -58,7 +58,9 @@
     "quantity": "Quantity",
     "decrease": "Decrease",
     "increase": "Increase",
-    "pcs": "pcs"
+    "pcs": "pcs",
+    "outOfStock": "Out of stock",
+    "outOfStockNote": "This product is temporarily out of stock. Leave a request or write to us and we will let you know the moment it is back."
   },
   "nav": {
     "home": "Home",
@@ -80,16 +82,10 @@
   },
   "hero": {
     "title": "The NUMA KIDS superhero squad",
-    "teams": {
-      "green": "Green team",
-      "yellow": "Yellow team",
-      "purple": "Purple team",
-      "red": "Red team",
-      "orange": "Orange team"
-    },
     "mascots": {
       "surfing": "Bonny the bear on a surfboard"
-    }
+    },
+    "goTo": "Show {name}"
   },
   "trust": {
     "title": "Natural supplements —",
@@ -508,6 +504,14 @@
       "phone": {
         "title": "Phone",
         "text": "We are online 24/7"
+      },
+      "telegram": {
+        "title": "Telegram",
+        "text": "Message us on the app"
+      },
+      "instagram": {
+        "title": "Instagram",
+        "text": "News and life of the brand"
       },
       "address": {
         "title": "Address",

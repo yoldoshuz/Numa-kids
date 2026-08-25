@@ -6,7 +6,7 @@ import type {
   Product,
   ProductCategory,
   Review,
-  TeamCard,
+  HeroSlide,
 } from "@/types";
 
 /**
@@ -175,12 +175,24 @@ export const ARTICLES: Article[] = [
 ];
 
 /** Hero arches — staggered exactly like the Figma composition. */
-export const TEAM_CARDS: TeamCard[] = [
-  { id: "green", image: "/images/teams/green.jpg", offset: 0 },
-  { id: "yellow", image: "/images/teams/yellow.jpg", offset: 36 },
-  { id: "purple", image: "/images/teams/purple.jpg", offset: 72 },
-  { id: "red", image: "/images/teams/red.jpg", offset: 36 },
-  { id: "orange", image: "/images/teams/orange.jpg", offset: 0 },
+/**
+ * The hero gallery, front arch first at load.
+ *
+ * The file names are the colours of the old five-team row and say nothing about
+ * who is on them — every mascot carries its product's initial instead, which is
+ * what these pairings are read off: R on the surfboard, B on the cape clasp, J
+ * on the headband, F on the collar, G on the cap. Order puts Bonny in the
+ * middle so the first paint matches the approved layout.
+ *
+ * `tint` is the average colour of each poster, saturated a little so it still
+ * reads once it is spread across a whole screen.
+ */
+export const HERO_SLIDES: HeroSlide[] = [
+  { slug: "rikki", image: "/images/teams/green.jpg", tint: "#2fb389" },
+  { slug: "genny", image: "/images/teams/orange.jpg", tint: "#3aa3e8" },
+  { slug: "bonny", image: "/images/teams/yellow.jpg", tint: "#8e4fd1" },
+  { slug: "jekky", image: "/images/teams/purple.jpg", tint: "#7a49c4" },
+  { slug: "funny", image: "/images/teams/red.jpg", tint: "#e2374a" },
 ];
 
 export const CERTIFICATES: Certificate[] = [
@@ -200,6 +212,10 @@ export const REVIEWS: Review[] = [
 export const CONTACT_CHANNELS: ContactChannel[] = [
   { id: "email", tint: "bg-tint-rose" },
   { id: "phone", tint: "bg-tint-sky" },
+  // Added after the tester found the site listing no messenger at all, while
+  // every other NUMA storefront pointed people at a Telegram that did not exist.
+  { id: "telegram", tint: "bg-tint-frost" },
+  { id: "instagram", tint: "bg-tint-lilac" },
   { id: "address", tint: "bg-tint-mint" },
   { id: "hours", tint: "bg-tint-butter" },
 ];

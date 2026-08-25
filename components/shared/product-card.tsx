@@ -1,14 +1,14 @@
 "use client";
 
-import Image from "next/image";
 import { useTranslations } from "next-intl";
 
+import { ProductImage } from "@/components/shared/product-image";
 import { QuantityStepper } from "@/components/shared/quantity-stepper";
 import { useCart } from "@/hooks";
 import { ACCENT } from "@/lib/accents";
 import { formatPrice } from "@/lib/format";
 import { Link } from "@/lib/i18n/navigation";
-import { cn } from "@/lib/utils";
+import { cn, isSoldOut } from "@/lib/utils";
 import type { Product } from "@/types";
 
 interface ProductCardProps {
@@ -29,6 +29,7 @@ export function ProductCard({ product, index, priority }: ProductCardProps) {
     lines.find((line) => line.slug === product.slug)?.quantity ?? 0;
   const accent = ACCENT[product.accent];
   const href = `/products/${product.slug}`;
+  const soldOut = isSoldOut(product);
 
   return (
     <article className="group flex w-full flex-col">
@@ -39,7 +40,18 @@ export function ProductCard({ product, index, priority }: ProductCardProps) {
         )}
       >
         <div className="flex items-center justify-around gap-2">
-          {product.isTop ? (
+          {soldOut ? (
+            /*
+             * A zero-stock product stays in the grid — the admin keeps it
+             * "Активный" and children ask for it by name — but the card has to
+             * say so before the packshot does any selling. It takes the slot the
+             * "хит" mark would have used: two chips in a row read as decoration,
+             * one reads as a status.
+             */
+            <span className="rounded-full bg-brand-ink/85 px-4 py-1.5 text-xs font-bold tracking-wide text-white uppercase">
+              {t("common.outOfStock")}
+            </span>
+          ) : product.isTop ? (
             <span
               className={cn(
                 "rounded-full px-4 py-1.5 text-xs font-bold tracking-wide uppercase",
@@ -61,14 +73,19 @@ export function ProductCard({ product, index, priority }: ProductCardProps) {
           href={href}
           className="mt-4 flex justify-center rounded-2xl outline-none focus-visible:ring-3 focus-visible:ring-brand-pink/50"
         >
-          <Image
+          <ProductImage
+            slug={product.slug}
             src={product.image}
             alt={t(`products.${product.slug}.name`)}
             width={200}
             height={280}
             priority={priority}
             sizes="(max-width: 640px) 45vw, 200px"
-            className="h-44 w-auto object-contain drop-shadow-[0_16px_24px_rgba(0,0,0,0.12)] transition-transform duration-300 group-hover:scale-105 sm:h-52"
+            className={cn(
+              "h-44 w-auto object-contain drop-shadow-[0_16px_24px_rgba(0,0,0,0.12)] transition-transform duration-300 group-hover:scale-105 sm:h-52",
+              // Drained of colour, so the card reads as unavailable at a glance.
+              soldOut && "opacity-45 saturate-25",
+            )}
           />
         </Link>
 
@@ -92,7 +109,17 @@ export function ProductCard({ product, index, priority }: ProductCardProps) {
             {formatPrice(product.price)}{" "}
             <span className="text-lg">{t("common.currency")}</span>
           </p>
-          {ready && inCart > 0 ? (
+          {soldOut ? (
+            /* Sold out outranks a line already in the basket: the stock ran out
+               while the shopper browsed, and a stepper would pretend otherwise. */
+            <button
+              type="button"
+              disabled
+              className="cursor-not-allowed rounded-full bg-white/70 px-7 py-3 text-base font-semibold text-brand-ink/50"
+            >
+              {t("common.outOfStock")}
+            </button>
+          ) : ready && inCart > 0 ? (
             <QuantityStepper
               value={inCart}
               onChange={(next) => setQuantity(product.slug, next)}

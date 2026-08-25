@@ -1,7 +1,7 @@
-import Image from "next/image";
 import { useTranslations } from "next-intl";
 
 import { Container } from "@/components/shared/container";
+import { Product3D } from "@/components/shared/product-3d";
 import type { Product } from "@/types";
 
 const FACT_POSITION = [
@@ -49,15 +49,18 @@ export function ProductComposition({ product }: { product: Product }) {
             className="absolute inset-4 hidden rounded-full border border-brand-pink-soft/60 sm:block"
           />
 
-          <div className="relative order-first mx-auto h-56 w-40 sm:order-none sm:h-72 sm:w-52">
-            <Image
-              src={product.image}
-              alt={name}
-              fill
-              sizes="220px"
-              className="object-contain drop-shadow-[0_18px_28px_rgba(0,0,0,0.14)]"
-            />
-          </div>
+          {/*
+            Wider than the flat packshot slot it replaces: the jar turns, and a
+            box cut to the silhouette of one still frame clips the label as it
+            comes round the side.
+          */}
+          <Product3D
+            slug={product.slug}
+            alt={name}
+            fallback={product.image}
+            sizes="(max-width: 640px) 200px, 280px"
+            className="relative order-first mx-auto h-60 w-48 sm:order-none sm:h-80 sm:w-64"
+          />
 
           <ul className="grid grid-cols-2 gap-3 sm:contents">
             {facts.map((fact, index) => (

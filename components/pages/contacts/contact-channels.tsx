@@ -1,6 +1,7 @@
 import { Clock, Mail, MapPin, Smartphone } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 
+import { InstagramIcon, TelegramIcon } from "@/components/shared/brand-icons";
 import { CONTACTS, localizedAddress } from "@/lib/constants";
 import { CONTACT_CHANNELS } from "@/lib/data";
 import type { AppLocale } from "@/lib/i18n/routing";
@@ -8,6 +9,8 @@ import type { AppLocale } from "@/lib/i18n/routing";
 const ICONS = {
   email: Mail,
   phone: Smartphone,
+  telegram: TelegramIcon,
+  instagram: InstagramIcon,
   address: MapPin,
   hours: Clock,
 } as const;
@@ -15,6 +18,8 @@ const ICONS = {
 const HIGHLIGHT = {
   email: "text-brand-pink",
   phone: "text-blue-badge",
+  telegram: "text-blue-badge",
+  instagram: "text-brand-pink",
   address: "text-brand-ink",
   hours: "text-brand-orange",
 } as const;
@@ -26,13 +31,17 @@ export function ContactChannels() {
   const value = {
     email: CONTACTS.email,
     phone: CONTACTS.phone,
+    telegram: CONTACTS.telegram,
+    instagram: CONTACTS.instagram,
     address: localizedAddress(locale),
     hours: t("hours.extra"),
   } as const;
 
   const href = {
-    email: `mailto:${CONTACTS.email}`,
+    email: CONTACTS.emailHref,
     phone: CONTACTS.phoneHref,
+    telegram: CONTACTS.telegramHref,
+    instagram: CONTACTS.instagramHref,
     address: undefined,
     hours: undefined,
   } as const;
@@ -67,6 +76,8 @@ export function ContactChannels() {
               {link ? (
                 <a
                   href={link}
+                  target={link.startsWith("http") ? "_blank" : undefined}
+                  rel={link.startsWith("http") ? "noopener noreferrer" : undefined}
                   className={`mt-1.5 block text-sm font-bold break-words ${HIGHLIGHT[channel.id]} hover:underline`}
                 >
                   {value[channel.id]}

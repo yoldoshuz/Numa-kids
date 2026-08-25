@@ -7,7 +7,18 @@ export const SITE_URL =
 export const SITE_NAME = "NUMA KIDS";
 
 export const CONTACTS = {
-  email: "info@numakids.com",
+  /*
+   * Instagram is this brand's own account; the Telegram is the group's shared
+   * admin, the same one every NUMA site points at. The handles the tester found
+   * here — @numakids and a Telegram username that resolved to nothing — were
+   * never registered.
+   */
+  email: "numafamilyuz@gmail.com",
+  emailHref: "mailto:numafamilyuz@gmail.com",
+  instagram: "@numakids.uz",
+  instagramHref: "https://www.instagram.com/numakids.uz",
+  telegram: "@Numa_uz_admin",
+  telegramHref: "https://t.me/Numa_uz_admin",
   phone: "+998 55 513 33 33",
   phoneHref: "tel:+998555133333",
   address: "Ташкент, Яшнабадский район, ул. Элбек, 31",
@@ -27,8 +38,9 @@ export const DELIVERY_FEE = 50_000;
 export const FREE_DELIVERY_MIN_QUANTITY = 2;
 
 export const SOCIALS = [
+  { id: "instagram", href: CONTACTS.instagramHref },
+  { id: "telegram", href: CONTACTS.telegramHref },
   { id: "facebook", href: "https://facebook.com/numakids" },
-  { id: "instagram", href: "https://instagram.com/numakids" },
   { id: "tiktok", href: "https://tiktok.com/@numakids" },
 ] as const;
 

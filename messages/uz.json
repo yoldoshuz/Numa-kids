@@ -58,7 +58,9 @@
     "quantity": "Miqdori",
     "decrease": "Kamaytirish",
     "increase": "Ko'paytirish",
-    "pcs": "dona"
+    "pcs": "dona",
+    "outOfStock": "Sotuvda yo‘q",
+    "outOfStockNote": "Mahsulot vaqtincha sotuvda yo‘q. Ariza qoldiring yoki bizga yozing — paydo bo‘lishi bilan xabar beramiz."
   },
   "nav": {
     "home": "Bosh sahifa",
@@ -80,16 +82,10 @@
   },
   "hero": {
     "title": "NUMA KIDS superqahramonlar jamoasi",
-    "teams": {
-      "green": "Yashil jamoa",
-      "yellow": "Sariq jamoa",
-      "purple": "Binafsha jamoa",
-      "red": "Qizil jamoa",
-      "orange": "To'q sariq jamoa"
-    },
     "mascots": {
       "surfing": "Bonny ayiqcha syorfda"
-    }
+    },
+    "goTo": "{name} ni ko‘rsatish"
   },
   "trust": {
     "title": "Tabiiy qo'shimchalar —",
@@ -508,6 +504,14 @@
       "phone": {
         "title": "Telefon",
         "text": "Biz 24/7 aloqadamiz"
+      },
+      "telegram": {
+        "title": "Telegram",
+        "text": "Messenjerda bizga yozing"
+      },
+      "instagram": {
+        "title": "Instagram",
+        "text": "Brend yangiliklari va hayoti"
       },
       "address": {
         "title": "Manzil",

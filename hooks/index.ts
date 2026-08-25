@@ -11,4 +11,3 @@ export {
 } from "./use-catalog";
 export { useCarousel } from "./use-carousel";
 export { useQueryFilter, ALL_FILTER } from "./use-query-filter";
-export { useRotation } from "./use-rotation";
