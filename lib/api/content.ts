@@ -16,6 +16,15 @@
  * admin's product form writes `name` and `description` and nothing else. While
  * the seed blob outranked them, renaming a product in the CMS changed nothing
  * on the storefront, which read exactly like the backend was being ignored.
+ *
+ * (2) is now used only for records the bundle ships nothing for. The seed is a
+ * copy of the bundle taken at seeding time and no screen anywhere edits it, so
+ * while it outranked (1) it quietly pinned every product page to whatever the
+ * copy said months ago: a whole round of approved corrections was written into
+ * `messages/*.json`, deployed, and changed nothing on the live site. Nobody can
+ * see the blob to know it is there, which is what made that so hard to explain.
+ * A product created in the admin still has no bundled copy, and for those the
+ * seed remains the only source there is.
  */
 
 import type { AppLocale } from "@/lib/i18n/routing";
@@ -126,12 +135,9 @@ export async function buildContentMessages(
     const name = text(product.name?.[locale]);
     const description = text(product.description?.[locale]);
 
-    const entry: Dict = {
-      ...(Object.keys(shipped).length
-        ? {}
-        : skeleton(productTemplate, name || product.slug, description)),
-      ...seeded,
-    };
+    const entry: Dict = Object.keys(shipped).length
+      ? {}
+      : { ...skeleton(productTemplate, name || product.slug, description), ...seeded };
     if (name) entry.name = name;
     if (description) entry.description = description;
 
@@ -148,12 +154,9 @@ export async function buildContentMessages(
     const title = text(post.title?.[locale]);
     const excerpt = text(post.excerpt?.[locale]);
 
-    const entry: Dict = {
-      ...(Object.keys(shipped).length
-        ? {}
-        : skeleton(articleTemplate, title || post.slug, text(raw) || excerpt)),
-      ...seeded,
-    };
+    const entry: Dict = Object.keys(shipped).length
+      ? {}
+      : { ...skeleton(articleTemplate, title || post.slug, text(raw) || excerpt), ...seeded };
     if (title) entry.title = title;
     if (excerpt) entry.excerpt = excerpt;
 

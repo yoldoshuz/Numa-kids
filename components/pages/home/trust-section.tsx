@@ -9,7 +9,12 @@ export function TrustSection() {
   const t = useTranslations("trust");
 
   return (
-    <section className="relative isolate overflow-hidden py-16 sm:py-24 md:pt-28 md:pb-32">
+    // `id` is the footer's "About the company" target: there is no /about page,
+    // and this block is the company's own pitch.
+    <section
+      id="about"
+      className="relative isolate scroll-mt-24 overflow-hidden py-16 sm:py-24 md:pt-28 md:pb-32"
+    >
       <Sparkles />
       <Container className="text-center">
         <h2 className="text-3xl font-extrabold text-brand-ink sm:text-4xl">

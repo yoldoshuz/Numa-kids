@@ -6,7 +6,7 @@
     },
     "products": {
       "title": "Bolalar uchun barcha vitaminlar — NUMA KIDS katalogi",
-      "description": "Bolalar uchun 6 ta ilmiy asoslangan formula: C vitamini, D3 vitamini, magniy, Omega-3, multivitaminlar va probiotiklar. NUMA KIDS bolalar vitaminlarini yetkazib berish bilan xarid qiling."
+      "description": "Bolalar uchun 6 ta ilmiy asoslangan mahsulot: antiparazit, D3 vitamini, yod, Omega-3, multivitaminlar va probiotiklar. NUMA KIDS bolalar vitaminlarini yetkazib berish bilan xarid qiling."
     },
     "blog": {
       "title": "Bolalar salomatligi haqida foydali maqolalar — NUMA KIDS blogi",
@@ -88,9 +88,9 @@
     "goTo": "{name} ni ko‘rsatish"
   },
   "trust": {
-    "title": "Bolalar salomatligi va rivojlanishi uchun",
-    "titleAccent": "tabiiy yechim",
-    "subtitle": "Hech qanday kimyoviy qo'shimchalarsiz! Farzandingiz sog'lom rivojlanishi uchun tabiiy va halol mahsulotlar.",
+    "title": "Tabiiy qo'shimchalar —",
+    "titleAccent": "ko'proq foyda!",
+    "subtitle": "Har bir formula ilmiy tadqiqotlarga asoslangan, bioyutuvchan ingredientlardan tayyorlangan va maxsus bolalar organizmi uchun ishlab chiqilgan.",
     "items": {
       "safe": {
         "title": "Xavfsiz",
@@ -107,16 +107,16 @@
     }
   },
   "planet": {
-    "title": "«Bolalar va sayyora uchun foyda»",
-    "text": "Tezkor nonushta, maktabdagi yengil taom yoki mashg'ulotdan keyin kuch tiklash uchun ideal.",
+    "title": "Bolalar salomatligi va rivojlanishi uchun tabiiy yechim",
+    "text": "Hech qanday kimyoviy qo'shimchalarsiz! Farzandingiz sog'lom rivojlanishi uchun tabiiy va halol mahsulotlar.",
     "items": {
-      "natural": {
-        "title": "Tabiiy:",
-        "text": "Sun'iy bo'yoqlarsiz"
-      },
       "checked": {
         "title": "Tasdiqlangan:",
-        "text": "GMO qo'shimchalarisiz"
+        "text": "GMO qo'shimchalarisiz!"
+      },
+      "natural": {
+        "title": "Tabiiy:",
+        "text": "Sun'iy bo'yoqlarsiz!"
       },
       "useful": {
         "title": "Foydali:",
@@ -130,7 +130,7 @@
   "catalog": {
     "title": "Bizning",
     "titleAccent": "vitaminlar",
-    "subtitle": "Bolalar uchun 6 ta ilmiy asoslangan mahsulot"
+    "subtitle": "Bolalar uchun 6 ta ilmiy asoslangan mahsulotlar"
   },
   "certificates": {
     "title": "Bizning xalqaro sertifikatlarimiz",
@@ -216,10 +216,11 @@
     "rights": "© Barcha huquqlar himoyalangan",
     "catalog": {
       "all": "Barcha mahsulotlar",
-      "probiotics": "Probiotics",
+      "probiotics": "Probiotiklar",
       "omega": "Omega-3",
       "multi": "Multivitaminlar",
-      "antiparasitic": "Antiparazit"
+      "antiparasitic": "Antiparazit",
+      "iodine": "Yod"
     },
     "info": {
       "blog": "Blog",
@@ -231,7 +232,7 @@
   },
   "productsPage": {
     "title": "Barcha vitaminlar",
-    "subtitle": "Bolalar uchun 6 ta ilmiy asoslangan formula",
+    "subtitle": "Bolalar uchun 6 ta ilmiy asoslangan mahsulotlar",
     "all": "Barchasi",
     "empty": "Bu turkumda hozircha mahsulot yo'q"
   },
@@ -245,18 +246,18 @@
   },
   "productBadges": {
     "top": "TOP",
-    "strains": "{count} shtamm"
+    "strains": "{count} ta marmelad"
   },
   "products": {
     "rikki": {
-      "name": "Rikki — Antiparazit",
+      "name": "Rikki",
       "shortName": "Rikki",
       "tagline": "Gijjalardan xalos bo'lish uchun",
       "description": "Gijjalardan xalos bo'lishga va immunitetni mustahkamlashga yordam beradi. Yuzdagi dog' va toshmalarni yo'qotishga yordam beradi!",
       "long": "Gijja va parazitlardan xalos bo'lish uchun farzandingizga Rikki antiparazitar mahsuloti yordam beradi!",
-      "purposeIntro": "Farzandingizda bu belgilar bo'lsa, parazitlar profilaktikasi haqida o'ylash vaqti keldi",
-      "compositionTitle": "Oʻsimlik kompleksi",
-      "compositionText": "Rikki ichakning tabiiy himoyasini qoʻllab-quvvatlaydigan va bolaning ishtahasini buzmaydigan yumshoq oʻsimlik ekstraktlarini birlashtiradi",
+      "purposeIntro": "Rikki gijja va parazitlardan xalos bo'lishga, ichak faoliyatini me'yorlashtirishga va organizmni toksinlardan tozalashga yordam beradi",
+      "compositionTitle": "Antiparazit",
+      "compositionText": "Gijja va parazitlardan xalos bo'lish uchun farzandingizga Rikki antiparazitar mahsuloti yordam beradi! ✅",
       "activeFormula": "90 ta ayiqcha",
       "effects": [
         {
@@ -281,33 +282,31 @@
         }
       ],
       "advantages": [
-        "Gijja va parazitlardan xalos qiladi",
-        "Ichak faoliyatini me'yorlashtiradi",
-        "Og'izdagi noxush hidning oldini oladi",
-        "Oq dog' va toshmalarga qarshi kurashadi"
+        "1️⃣ Qornida tez-tez og'riq",
+        "2️⃣ Ishtahaning pasayishi yoki aksincha, haddan tashqari ochlik",
+        "3️⃣ Tunda tish g'ijirlatish va uyquning buzilishi",
+        "4️⃣ Orqa sohada qichishish (asosan kechasi)",
+        "5️⃣ Holsizlik, diqqatning pasayishi va tez charchash"
       ],
       "purposes": [
         {
-          "title": "Qornida tez-tez og'riq",
-          "text": "Parazitlar ichak devorini ta'sirlantirganda og'riq tez-tez qaytadi."
+          "title": "Gijja va parazitlardan xalos qiladi",
+          "text": "Parazitlarni harakatdan to'xtatib, ulardan xalos bo'lishga yordam beradi."
         },
         {
-          "title": "Ishtahaning pasayishi yoki aksincha, haddan tashqari ochlik",
-          "text": "Organizm ozuqa moddalarini yo'qotgani sayin ishtaha keskin o'zgaradi."
+          "title": "Ichak faoliyatini me'yorlashtiradi",
+          "text": "Ichakni parazitlardan tozalab, yuzdagi dog'larni kamaytirishga yordam beradi."
         },
         {
-          "title": "Tunda tish g'ijirlatish va uyquning buzilishi",
-          "text": "Tunda bezovtalanish va tish g'ijirlatish — eng ko'p uchraydigan belgi."
+          "title": "Og'izdagi noxush hidning oldini oladi",
+          "text": "Parazitlar keltirgan zararni kamaytirib, ichak mikroflorasining tiklanishini yaxshilaydi."
         },
         {
-          "title": "Orqa sohada qichishish (asosan kechasi)",
-          "text": "Kechasi kuchayadigan qichishish parazitlarning faolligini ko'rsatadi."
-        },
-        {
-          "title": "Holsizlik, diqqatning pasayishi va tez charchash",
-          "text": "Vitaminlar so'rilmay qolgani bolani tez charchatadi va diqqatini pasaytiradi."
+          "title": "Oq dog' va toshmalarga qarshi kurashadi",
+          "text": "Organizmni tozalab, toksinlardan xalos qiladi."
         }
-      ]
+      ],
+      "advantagesTitle": "Farzandingizda bu belgilar bormi?"
     },
     "bonny": {
       "name": "Bonny",
@@ -404,27 +403,31 @@
         }
       ],
       "advantages": [
-        "Uyquni me'yorlashtirish",
-        "Turli virusli kasalliklarning oldini olish",
-        "Qondagi gemoglobin miqdorini oshirish",
-        "Allergiya bilan bog'liq holatlarda yordam beradi"
+        "😴 Uyquni me'yorlashtirish",
+        "🦠 Turli virusli kasalliklarning oldini olish",
+        "🩸 Qondagi gemoglobin miqdorini oshirish",
+        "🌼 Allergiya bilan bog'liq holatlarda yordam beradi"
       ],
       "purposes": [
         {
-          "title": "Uyquni me'yorlashtirish",
+          "title": "Immunitetni mustahkamlaydi",
           "text": "Organizmning tabiiy himoya tizimini qo'llab-quvvatlab, turli infeksiyalarga qarshi kurashishga yordam beradi."
         },
         {
-          "title": "Turli virusli kasalliklarning oldini olish",
+          "title": "Uyquni me'yorlashtirishga yordam beradi",
           "text": "Bolaning tinch va sifatli uxlashini qo'llab-quvvatlab, uyqu tartibini me'yorlashtiradi."
         },
         {
-          "title": "Qondagi gemoglobin miqdorini oshirish",
+          "title": "Turli virusli kasalliklarning oldini olishga yordam beradi",
           "text": "Organizmning tabiiy himoya kuchlarini qo'llab-quvvatlab, virusli kasalliklarga qarshi kurashadi."
         },
         {
-          "title": "Allergiya bilan bog'liq holatlarda yordam beradi",
+          "title": "Qondagi gemoglobin miqdorini oshirishga yordam beradi",
           "text": "Organizmni qon hosil bo'lishi uchun zarur bo'lgan foydali moddalar bilan ta'minlaydi."
+        },
+        {
+          "title": "Allergiya bilan bog'liq holatlarda yordam beradi",
+          "text": "Organizmning tabiiy himoya tizimini qo'llab-quvvatlab, allergiya bilan bog'liq holatlarda yordam beradi."
         }
       ]
     },
@@ -487,16 +490,20 @@
           "text": "Ichakdagi foydali bakteriyalar muvozanatini tiklashga yordam beradi, shu sababli ichak faoliyati me'yorlashadi."
         },
         {
-          "title": "Immunitetni mustahkamlaydi",
+          "title": "Hazm tizimini yaxshilaydi",
           "text": "Ozuqa moddalarining to'liq so'rilishini ta'minlab, hazm qilish tizimini rag'batlantiradi."
         },
         {
-          "title": "Hazm jarayonini yaxshilaydi",
+          "title": "Immunitetni mustahkamlaydi",
           "text": "Organizmning virus va infeksiyalarga chidamliligini oshirib, ichakni himoya qiladi."
         },
         {
-          "title": "Qorin dam bo'lishini kamaytiradi",
+          "title": "Metabolizmni yaxshilaydi",
           "text": "Ichaklarni toksin va shlaklardan tozalab, metabolizm jarayonini yaxshilaydi."
+        },
+        {
+          "title": "Qorin dam bo'lishini kamaytiradi",
+          "text": "Ovqat hazm bo'lishi yaxshilanib, qorin dam bo'lishi va gaz to'planishi kamayadi."
         }
       ]
     },
@@ -545,20 +552,24 @@
       ],
       "purposes": [
         {
-          "title": "Miya faoliyatini yaxshilaydi",
+          "title": "🧠 Miya faoliyatini rivojlantiradi",
           "text": "Bolaning aqliy rivojlanishini qo'llab-quvvatlab, diqqatni jamlash, fikrlash va o'rganish jarayonlariga yordam beradi."
         },
         {
-          "title": "Ko'rish qobiliyatining pasayishini oldini oladi",
+          "title": "💬 Nutq va xotirani mustahkamlaydi",
           "text": "Bolaning yangi ma'lumotlarni eslab qolishi, o'z fikrini ifodalashi va nutq rivojiga ijobiy ta'sir ko'rsatadi."
         },
         {
-          "title": "Organizmda yallig'lanishni kamaytiradi",
+          "title": "👀 Ko'rish qobiliyatini qo'llab-quvvatlaydi",
           "text": "Ko'zlar salomatligi va normal ko'rish faoliyatini saqlash uchun muhim bo'lgan jarayonlarni qo'llab-quvvatlaydi."
         },
         {
-          "title": "Immunitetni mustahkamlaydi",
+          "title": "📚 Diqqatni jamlashga yordam beradi",
           "text": "O'qish, dars qilish va yangi ma'lumotlarni o'zlashtirish jarayonida diqqatni saqlashga ko'maklashadi."
+        },
+        {
+          "title": "🌟 Sog'lom o'sish va rivojlanishga ko'maklashadi",
+          "text": "Bolaning jismoniy va aqliy rivojlanishi uchun zarur bo'lgan muhim jarayonlarni kompleks ravishda qo'llab-quvvatlaydi."
         }
       ]
     },
@@ -567,11 +578,11 @@
       "shortName": "Endomarine",
       "tagline": "Yod va qalqonsimon bez uchun",
       "description": "Diqqat va xotirani kuchaytiradi. Aqliy va jismoniy faollikni oshiradi. Qalqonsimon bez faoliyatini yaxshilaydi.",
-      "long": "Endomarine — organizmni yod bilan to'ldirib, qalqonsimon bez faoliyatini va bolaning aqliy rivojlanishini qo'llab-quvvatlaydigan marmelad ayiqchalar",
+      "long": "Endomarine — organizmni yod bilan to'ldirib, qalqonsimon bez faoliyatini va bolaning aqliy rivojlanishini qo'llab-quvvatlaydigan 100% tabiiy sirop",
       "purposeIntro": "Yod yetishmovchiligi bolaning diqqati, xotirasi va o'sishiga ta'sir qiladi — muntazam qabul buni qoplashga yordam beradi",
       "compositionTitle": "Yod",
       "compositionText": "Endomarine organizmni zarur miqdordagi yod bilan ta'minlab, qalqonsimon bez gormonlarini ishlab chiqarishni qo'llab-quvvatlaydi",
-      "activeFormula": "Yod",
+      "activeFormula": "500 ml sirop",
       "effects": [
         {
           "title": "Aqliy va jismoniy faollikni oshiradi",
@@ -612,22 +623,54 @@
       ],
       "purposes": [
         {
-          "title": "Diqqat va xotirani kuchaytiradi",
+          "title": "Aqliy va jismoniy faollikni oshiradi",
           "text": "Bolaning kun davomida tetik bo'lishi, faol harakatlanishi va aqliy faoliyatini qo'llab-quvvatlaydi."
         },
         {
-          "title": "Aqliy va jismoniy faollikni oshiradi",
+          "title": "Asab tizimini qo'llab-quvvatlaydi",
           "text": "Asab tizimining normal faoliyat yuritishi va bolaning umumiy rivojlanishiga yordam beradi."
         },
         {
-          "title": "Qalqonsimon bez faoliyatini yaxshilaydi",
+          "title": "Organizmni yod bilan to'ldiradi",
           "text": "Organizmga zarur bo'lgan yodning yetarli miqdorda bo'lishini ta'minlashga yordam beradi."
         },
         {
-          "title": "Organizmni yod bilan to'ldiradi",
+          "title": "Qalqonsimon bez faoliyatini normallashtiradi",
           "text": "Qalqonsimon bez gormonlarini ishlab chiqarish uchun zarur bo'lgan yod bilan ta'minlanishiga yordam beradi."
+        },
+        {
+          "title": "Bolaning sog'lom o'sishiga yordam beradi",
+          "text": "O'sish davrida organizmning normal rivojlanishini qo'llab-quvvatlaydi."
+        },
+        {
+          "title": "O'rganish qobiliyatini qo'llab-quvvatlaydi",
+          "text": "Bolaning bilim olish, fikrlash va yangi ma'lumotlarni o'zlashtirish jarayonlarida muhim rol o'ynaydi."
         }
-      ]
+      ],
+      "specs": {
+        "volume": "500 ml",
+        "form": "Sirop"
+      },
+      "facts": {
+        "dosage": {
+          "value": "500 ML",
+          "label": "Hajmi"
+        }
+      },
+      "intake": {
+        "dosage": {
+          "title": "Dozalash",
+          "text": "Kuniga 1 marta, ovqat vaqtida qabul qiling. Aniq miqdorni qadoqdagi ko'rsatmadan qarang"
+        },
+        "afterMeal": {
+          "title": "Qabul qilishdan oldin",
+          "text": "Har safar ishlatishdan oldin shishani yaxshilab chayqating"
+        },
+        "storage": {
+          "title": "Saqlash",
+          "text": "Ochilgandan keyin muzlatgichda saqlang va to'g'ridan-to'g'ri quyosh nuridan asrang"
+        }
+      }
     }
   },
   "product": {
@@ -713,7 +756,7 @@
   },
   "blogPage": {
     "title": "Foydali maqolalar",
-    "subtitle": "Bolalar salomatligi haqidagi fan — sodda va tushunarli",
+    "subtitle": "Farzandingiz salomatligiga oid muhim ma'lumotlar!",
     "all": "Barcha mavzular",
     "empty": "Bu mavzuda hozircha maqola yo'q",
     "backToBlog": "Barcha maqolalar",

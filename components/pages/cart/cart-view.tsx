@@ -61,17 +61,18 @@ export function CartView() {
                   <Link
                     href={`/products/${item.slug}`}
                     className={cn(
-                      "grid size-20 shrink-0 place-items-center overflow-hidden rounded-2xl sm:size-24",
+                      "relative grid size-20 shrink-0 overflow-hidden rounded-2xl sm:size-24",
                       accent.card,
                     )}
                   >
+                    {/* Filled rather than intrinsically sized — see the note on
+                        the same tile in the checkout summary. */}
                     <Image
                       src={item.product.image}
                       alt=""
-                      width={96}
-                      height={96}
-                      sizes="96px"
-                      className="h-full w-full object-contain p-2"
+                      fill
+                      sizes="(max-width: 640px) 80px, 96px"
+                      className="object-contain p-2"
                     />
                   </Link>
 

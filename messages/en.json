@@ -6,7 +6,7 @@
     },
     "products": {
       "title": "All kids vitamins — NUMA KIDS catalogue",
-      "description": "6 science-backed formulas for children: vitamin C, vitamin D3, magnesium, Omega-3, multivitamins and probiotics. Buy NUMA KIDS supplements with delivery."
+      "description": "6 science-backed products for children: antiparasitic, vitamin D3, iodine, Omega-3, multivitamins and probiotics. Buy NUMA KIDS children's vitamins with delivery."
     },
     "blog": {
       "title": "Helpful articles about children's health — NUMA KIDS blog",
@@ -88,9 +88,9 @@
     "goTo": "Show {name}"
   },
   "trust": {
-    "title": "For children's health and development —",
-    "titleAccent": "a natural solution",
-    "subtitle": "No chemical additives. Natural, halal products for your child to grow up healthy.",
+    "title": "Natural supplements —",
+    "titleAccent": "more benefit!",
+    "subtitle": "Every formula is grounded in research, built from bioavailable ingredients and made specifically for a child's body.",
     "items": {
       "safe": {
         "title": "Safe",
@@ -107,19 +107,19 @@
     }
   },
   "planet": {
-    "title": "“Good for kids and the planet”",
-    "text": "Perfect for a quick breakfast, a school snack or recovery after training.",
+    "title": "A natural solution for children's health and development",
+    "text": "No chemical additives. Natural, halal products for your child to grow up healthy.",
     "items": {
-      "natural": {
-        "title": "Natural:",
-        "text": "No artificial colourings"
-      },
       "checked": {
         "title": "Proven:",
-        "text": "No GMO additives"
+        "text": "No GMO additives."
+      },
+      "natural": {
+        "title": "Natural:",
+        "text": "No artificial colourings."
       },
       "useful": {
-        "title": "Tasty:",
+        "title": "Useful:",
         "text": "Gummy bears"
       }
     }
@@ -130,7 +130,7 @@
   "catalog": {
     "title": "Our",
     "titleAccent": "vitamins",
-    "subtitle": "Six science-backed products for children"
+    "subtitle": "6 science-backed products for children"
   },
   "certificates": {
     "title": "Our international certificates",
@@ -219,7 +219,8 @@
       "probiotics": "Probiotics",
       "omega": "Omega-3",
       "multi": "Multivitamins",
-      "antiparasitic": "Antiparasitic"
+      "antiparasitic": "Antiparasitic",
+      "iodine": "Iodine"
     },
     "info": {
       "blog": "Blog",
@@ -231,7 +232,7 @@
   },
   "productsPage": {
     "title": "All vitamins",
-    "subtitle": "6 science-backed formulas for children",
+    "subtitle": "6 science-backed products for children",
     "all": "All",
     "empty": "No products in this category yet"
   },
@@ -245,18 +246,18 @@
   },
   "productBadges": {
     "top": "TOP",
-    "strains": "{count} strains"
+    "strains": "{count} gummies"
   },
   "products": {
     "rikki": {
-      "name": "Rikki — antiparasitic",
+      "name": "Rikki",
       "shortName": "Rikki",
       "tagline": "To clear out worms",
       "description": "Helps clear out worms and strengthen immunity. Helps clear the patches and rash from the face.",
       "long": "Rikki, the antiparasitic product, helps your child get rid of worms and parasites.",
-      "purposeIntro": "If your child shows these signs, it is time to think about parasite prevention",
-      "compositionTitle": "Plant complex",
-      "compositionText": "Rikki combines gentle plant extracts that support the gut’s natural defences without upsetting a child’s appetite",
+      "purposeIntro": "Rikki helps clear out worms and parasites, settle the gut and rid the body of toxins",
+      "compositionTitle": "Antiparasitic",
+      "compositionText": "Rikki, the antiparasitic product, helps your child clear out worms and parasites! ✅",
       "activeFormula": "90 gummy bears",
       "effects": [
         {
@@ -281,33 +282,31 @@
         }
       ],
       "advantages": [
-        "Clears out worms and parasites",
-        "Settles the gut",
-        "Heads off bad breath",
-        "Fights white patches and rashes"
+        "1️⃣ Frequent tummy aches",
+        "2️⃣ Loss of appetite, or the opposite — constant hunger",
+        "3️⃣ Grinding teeth at night and disturbed sleep",
+        "4️⃣ Itching around the anus, mostly at night",
+        "5️⃣ Weakness, poor concentration and tiring quickly"
       ],
       "purposes": [
         {
-          "title": "Frequent tummy aches",
-          "text": "Parasites irritate the gut wall, so the ache keeps coming back."
+          "title": "Clears out worms and parasites",
+          "text": "Stops parasites in their tracks and helps the body be rid of them."
         },
         {
-          "title": "Loss of appetite, or the opposite — constant hunger",
-          "text": "The body loses nutrients and appetite swings sharply either way."
+          "title": "Settles the gut",
+          "text": "Clears parasites from the gut and helps fade the patches on the face."
         },
         {
-          "title": "Grinding teeth at night and disturbed sleep",
-          "text": "Restlessness and grinding teeth at night is the commonest sign of all."
+          "title": "Heads off bad breath",
+          "text": "Reduces the harm parasites do and helps the gut flora recover."
         },
         {
-          "title": "Itching around the anus, mostly at night",
-          "text": "Itching that gets worse at night points to parasites being active."
-        },
-        {
-          "title": "Weakness, poor concentration and tiring quickly",
-          "text": "Vitamins stop being absorbed, so the child tires fast and loses focus."
+          "title": "Fights white patches and rashes",
+          "text": "Cleanses the body and clears out toxins."
         }
-      ]
+      ],
+      "advantagesTitle": "Does your child show these signs?"
     },
     "bonny": {
       "name": "Bonny",
@@ -404,27 +403,31 @@
         }
       ],
       "advantages": [
-        "Settles sleep",
-        "Heads off viral illness",
-        "Raises haemoglobin in the blood",
-        "Helps with allergy-related conditions"
+        "😴 Settles sleep",
+        "🦠 Heads off viral illness",
+        "🩸 Raises haemoglobin in the blood",
+        "🌼 Helps with allergy-related conditions"
       ],
       "purposes": [
         {
-          "title": "Settles sleep",
+          "title": "Strengthens immunity",
           "text": "Supports the body's natural defences and helps it fight off infections."
         },
         {
-          "title": "Heads off viral illness",
+          "title": "Helps settle sleep",
           "text": "Supports calm, sound sleep and settles the child into a routine."
         },
         {
-          "title": "Raises haemoglobin in the blood",
+          "title": "Helps head off viral illness",
           "text": "Supports the body's natural defences and fights viral illness."
         },
         {
-          "title": "Helps with allergy-related conditions",
+          "title": "Helps raise haemoglobin",
           "text": "Supplies the body with what it needs to make blood."
+        },
+        {
+          "title": "Helps with allergy-related conditions",
+          "text": "Supports the body's natural defences and helps in allergy-related conditions."
         }
       ]
     },
@@ -487,16 +490,20 @@
           "text": "Helps rebalance the good bacteria in the gut, so it settles into a normal rhythm."
         },
         {
-          "title": "Strengthens immunity",
+          "title": "Improves digestion",
           "text": "Ensures nutrients are fully absorbed and gets the digestive system working."
         },
         {
-          "title": "Improves digestion",
+          "title": "Strengthens immunity",
           "text": "Raises the body's resistance to viruses and infections and protects the gut."
         },
         {
-          "title": "Reduces bloating",
+          "title": "Improves metabolism",
           "text": "Clears toxins and waste from the gut and improves the metabolism."
+        },
+        {
+          "title": "Reduces bloating",
+          "text": "Food is digested better, so bloating and trapped gas ease off."
         }
       ]
     },
@@ -545,20 +552,24 @@
       ],
       "purposes": [
         {
-          "title": "Improves brain function",
+          "title": "🧠 Develops brain function",
           "text": "Supports the child's mental development and helps with focus, thinking and learning."
         },
         {
-          "title": "Helps prevent eyesight from declining",
+          "title": "💬 Strengthens speech and memory",
           "text": "Helps the child retain new information, express thoughts and develop speech."
         },
         {
-          "title": "Reduces inflammation in the body",
+          "title": "👀 Supports eyesight",
           "text": "Supports the processes that keep eyes healthy and vision working normally."
         },
         {
-          "title": "Strengthens immunity",
+          "title": "📚 Helps hold attention",
           "text": "Helps keep focus during reading, homework and taking in new material."
+        },
+        {
+          "title": "🌟 Supports healthy growth",
+          "text": "Supports, as a whole, the processes a child's physical and mental development depends on."
         }
       ]
     },
@@ -567,11 +578,11 @@
       "shortName": "Endomarine",
       "tagline": "Iodine and the thyroid",
       "description": "Sharpens attention and memory. Raises mental and physical activity. Improves thyroid function.",
-      "long": "Endomarine — gummy bears that top up the body's iodine and support thyroid function and a child's mental development",
+      "long": "Endomarine is a 100% natural syrup that tops up the body's iodine and supports thyroid function and a child's mental development",
       "purposeIntro": "An iodine shortfall shows up in a child's attention, memory and growth — taking it regularly helps make that up",
       "compositionTitle": "Iodine",
       "compositionText": "Endomarine supplies the iodine the body needs and supports the making of thyroid hormones",
-      "activeFormula": "Iodine",
+      "activeFormula": "500 ml syrup",
       "effects": [
         {
           "title": "Raises mental and physical activity",
@@ -612,22 +623,54 @@
       ],
       "purposes": [
         {
-          "title": "Sharpens attention and memory",
+          "title": "Raises mental and physical activity",
           "text": "Keeps the child alert through the day, moving and thinking."
         },
         {
-          "title": "Raises mental and physical activity",
+          "title": "Supports the nervous system",
           "text": "Helps the nervous system work normally and the child develop overall."
         },
         {
-          "title": "Improves thyroid function",
+          "title": "Tops up the body's iodine",
           "text": "Helps make sure the body has enough of the iodine it needs."
         },
         {
-          "title": "Tops up the body's iodine",
+          "title": "Settles thyroid function",
           "text": "Helps supply the iodine the thyroid needs to make its hormones."
+        },
+        {
+          "title": "Helps the child grow healthily",
+          "text": "Supports normal development through the growing years."
+        },
+        {
+          "title": "Supports the ability to learn",
+          "text": "Plays its part in taking in knowledge, thinking and mastering new material."
         }
-      ]
+      ],
+      "specs": {
+        "volume": "500 ml",
+        "form": "Syrup"
+      },
+      "facts": {
+        "dosage": {
+          "value": "500 ML",
+          "label": "Volume"
+        }
+      },
+      "intake": {
+        "dosage": {
+          "title": "Dosage",
+          "text": "Take once a day with food. See the pack for the exact amount"
+        },
+        "afterMeal": {
+          "title": "Before taking",
+          "text": "Shake the bottle well before every use"
+        },
+        "storage": {
+          "title": "Storage",
+          "text": "Keep refrigerated once opened, and out of direct sunlight"
+        }
+      }
     }
   },
   "product": {
@@ -713,7 +756,7 @@
   },
   "blogPage": {
     "title": "Helpful articles",
-    "subtitle": "The science of children's health — simple and clear",
+    "subtitle": "Important information about your child's health!",
     "all": "All topics",
     "empty": "No articles in this topic yet",
     "backToBlog": "All articles",

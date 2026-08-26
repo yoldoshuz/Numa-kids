@@ -64,9 +64,16 @@ export function ProductCard({ product, index, priority }: ProductCardProps) {
           ) : (
             <span />
           )}
-          <span className="rounded-full bg-white/90 px-4 py-1.5 text-xs font-medium text-brand-ink/70">
-            {t("productBadges.strains", { count: product.strains })}
-          </span>
+          {/* The chip counts the marmalade bears in the jar. Endomarine is a
+              syrup and has none, so it goes without rather than claiming a
+              count of zero. */}
+          {product.strains > 0 ? (
+            <span className="rounded-full bg-white/90 px-4 py-1.5 text-xs font-medium text-brand-ink/70">
+              {t("productBadges.strains", { count: product.strains })}
+            </span>
+          ) : (
+            <span />
+          )}
         </div>
 
         <Link

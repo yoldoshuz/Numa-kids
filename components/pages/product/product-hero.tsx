@@ -35,6 +35,17 @@ export function ProductHero({ product }: { product: Product }) {
   const name = t(`products.${product.slug}.name`);
   const soldOut = isSoldOut(product);
 
+  /*
+   * The table is written once for the range, which is marmalade bears in a jar
+   * — so a product that is not one has to be able to answer for itself.
+   * Endomarine is a 500 ml syrup, and inheriting "400 mg / marmalade bears"
+   * would have printed a spec sheet for a different product.
+   */
+  const specValue = (spec: string) => {
+    const own = `products.${product.slug}.specs.${spec}`;
+    return (t.has(own) && t(own)) || t(`product.specs.${spec}.value`);
+  };
+
   return (
     <Container className="grid gap-10 py-10 lg:grid-cols-2 lg:gap-16 lg:py-16">
       <div>
@@ -190,9 +201,7 @@ export function ProductHero({ product }: { product: Product }) {
               <dt className="text-sm text-brand-ink/50">
                 {t(`product.specs.${spec}.label`)}:
               </dt>
-              <dd className="text-sm text-brand-ink">
-                {t(`product.specs.${spec}.value`)}
-              </dd>
+              <dd className="text-sm text-brand-ink">{specValue(spec)}</dd>
             </div>
           ))}
         </dl>

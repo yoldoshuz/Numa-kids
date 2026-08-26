@@ -256,19 +256,28 @@ export function CheckoutView() {
             <ul className="mt-5 flex flex-col gap-4">
               {items.map((item) => (
                 <li key={item.slug} className="flex items-center gap-3">
+                  {/*
+                    `fill`, not width/height. With intrinsic dimensions the
+                    browser sizes the picture from its own aspect ratio and
+                    ignores `h-full`, so an upright bottle rendered 78px tall
+                    in a 56px tile: the packshot sat hard against the top edge
+                    and `overflow-hidden` cut its base off. Filling the tile
+                    hands the centring to `object-contain`, which is the only
+                    thing that keeps a tall bottle and a squat jar looking
+                    like they belong in the same list.
+                  */}
                   <span
                     className={cn(
-                      "grid size-14 shrink-0 place-items-center overflow-hidden rounded-2xl",
+                      "relative grid size-14 shrink-0 overflow-hidden rounded-2xl",
                       ACCENT[item.product.accent].card,
                     )}
                   >
                     <Image
                       src={item.product.image}
                       alt=""
-                      width={56}
-                      height={56}
+                      fill
                       sizes="56px"
-                      className="h-full w-full object-contain p-1.5"
+                      className="object-contain p-1.5"
                     />
                   </span>
                   <span className="min-w-0 flex-1 leading-tight">

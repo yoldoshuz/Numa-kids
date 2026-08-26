@@ -10,6 +10,17 @@ export function ProductIntake({ product }: { product: Product }) {
   const t = useTranslations();
   const name = t(`products.${product.slug}.shortName`);
 
+  /*
+   * The timeline is written for the range — "one to two bears a day" — so a
+   * product that is not a jar of marmalade has to be able to restate its own
+   * steps. Endomarine is a syrup, and inheriting the shared wording had this
+   * page telling parents to count out bears from a bottle.
+   */
+  const own = (key: string) => (t.has(key) && t(key)) || "";
+  const stepText = (step: string, part: "title" | "text") =>
+    own(`products.${product.slug}.intake.${step}.${part}`) ||
+    t(`product.intake.${step}.${part}`);
+
   return (
     <section className="relative isolate overflow-hidden py-16 sm:py-20">
       <Sparkles />
@@ -33,10 +44,10 @@ export function ProductIntake({ product }: { product: Product }) {
                 </span>
                 <div className="rounded-2xl bg-brand-pink-soft/55 px-5 py-4">
                   <h3 className="text-sm font-bold text-brand-pink-deep">
-                    {t(`product.intake.${step}.title`)}
+                    {stepText(step, "title")}
                   </h3>
                   <p className="mt-1.5 text-sm leading-relaxed text-brand-ink/60">
-                    {t(`product.intake.${step}.text`)}
+                    {stepText(step, "text")}
                   </p>
                 </div>
               </li>

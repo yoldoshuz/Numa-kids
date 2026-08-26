@@ -15,10 +15,23 @@ export function ProductComposition({ product }: { product: Product }) {
   const t = useTranslations();
   const name = t(`products.${product.slug}.shortName`);
 
+  /*
+   * The pills are written for the range — a jar of marmalade bears — so a
+   * product that is something else has to be able to restate them. Endomarine
+   * is a 500 ml syrup and would otherwise have advertised a 400 mg dose.
+   */
+  const own = (key: string) => (t.has(key) && t(key)) || "";
+  const fact = (id: "dosage" | "course" | "natural") => ({
+    value:
+      own(`products.${product.slug}.facts.${id}.value`) || t(`product.facts.${id}.value`),
+    label:
+      own(`products.${product.slug}.facts.${id}.label`) || t(`product.facts.${id}.label`),
+  });
+
   const facts = [
-    { value: t("product.facts.dosage.value"), label: t("product.facts.dosage.label") },
-    { value: t("product.facts.course.value"), label: t("product.facts.course.label") },
-    { value: t("product.facts.natural.value"), label: t("product.facts.natural.label") },
+    fact("dosage"),
+    fact("course"),
+    fact("natural"),
     {
       value: t(`products.${product.slug}.activeFormula`),
       label: t("product.facts.active.label"),
@@ -29,8 +42,11 @@ export function ProductComposition({ product }: { product: Product }) {
     <section className="py-16 sm:py-20">
       <Container className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
         <div>
+          {/* "Rikki — Antiparazit", not "Rikki:" — the dash is what the block
+              was signed off with, and a colon reads as a label for the jar
+              rather than as the product's own name. */}
           <h2 className="text-3xl leading-tight font-extrabold text-brand-ink sm:text-4xl">
-            {name}:
+            {name} —
             <br />
             {t(`products.${product.slug}.compositionTitle`)}
           </h2>

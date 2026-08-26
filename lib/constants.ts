@@ -64,13 +64,23 @@ export const FOOTER_CATALOG: NavItem[] = [
   { href: "/products?category=antiparasitic", key: "antiparasitic" },
   { href: "/products?category=probiotics", key: "probiotics" },
   { href: "/products?category=omega-3", key: "omega" },
+  { href: "/products?category=iodine", key: "iodine" },
   { href: "/products?category=multi", key: "multi" },
 ];
 
+/**
+ * Every href here has to land somewhere.
+ *
+ * "About the company" and "Delivery and payment" used to point at `/about` and
+ * `/delivery`, neither of which is a route in this app, so both footer links
+ * answered 404 — which is what the tester reported as "these buttons do not
+ * work". They now point at the blocks that already carry that content: the
+ * trust section on the home page, and the delivery question in the FAQ.
+ */
 export const FOOTER_INFO: NavItem[] = [
   { href: "/blog", key: "blog" },
-  { href: "/about", key: "about" },
-  { href: "/delivery", key: "delivery" },
+  { href: "/#about", key: "about" },
+  { href: "/contacts#faq", key: "delivery" },
   // "Natijalar" — what parents got, which is the reviews block, not a returns page.
   { href: "/#reviews", key: "results" },
   { href: "/contacts#faq", key: "faq" },

@@ -16,12 +16,25 @@ export function ProductAdvantages({ product }: { product: Product }) {
   const name = t(`products.${product.slug}.shortName`);
   // Per product: the shared list printed the same six lines on every page.
   const advantages = t.raw(`products.${product.slug}.advantages`) as string[];
+  /*
+   * A product may name this block itself. Rikki's list is the signs that a
+   * child needs it, not what the jar does, so "Rikki afzalliklari" was
+   * answering a question the list does not ask.
+   *
+   * The empty check matters: a product created in the admin gets a message
+   * sub-tree modelled on the first bundled entry with every string blanked, so
+   * the key exists there as "" and would print a heading with no words in it.
+   */
+  const ownTitle = t.has(`products.${product.slug}.advantagesTitle`)
+    ? t(`products.${product.slug}.advantagesTitle`)
+    : "";
+  const heading = ownTitle || t("product.advantagesTitle", { name });
 
   return (
     <section className="py-14 sm:py-20">
       <Container>
         <h2 className="text-center text-3xl font-extrabold text-brand-ink sm:text-4xl">
-          {t("product.advantagesTitle", { name })}
+          {heading}
         </h2>
 
         <div className="relative mt-10">

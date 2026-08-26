@@ -3,9 +3,10 @@ import { useTranslations } from "next-intl";
 
 import { Container } from "@/components/shared/container";
 
+/** Order comes from the client's own list: proven, natural, useful. */
 const ITEMS = [
-  { id: "natural", chip: "bg-brand-yellow-deep/70", icon: "/images/icons/sunflower.png" },
   { id: "checked", chip: "bg-green-action", icon: "/images/icons/leaf.png" },
+  { id: "natural", chip: "bg-brand-yellow-deep/70", icon: "/images/icons/sunflower.png" },
   { id: "useful", chip: "bg-brand-orange", icon: "/images/icons/alert.png" },
 ] as const;
 

@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { Onest } from "next/font/google";
 
 import { SITE_NAME, SITE_URL } from "@/lib/constants";
@@ -35,12 +34,24 @@ export default function GlobalNotFound() {
           Проверьте адрес или вернитесь на главную. · Check the address or go
           back to the home page.
         </p>
-        <Link
-          href="/ru"
+        {/*
+          A plain anchor, not `next/link`. This page renders its own <html>
+          shell outside the locale layout, so a client-side navigation from
+          here swaps the route without ever mounting that layout — the screen
+          kept showing 404 until the visitor reloaded by hand. A full document
+          load is the only way out of a root that is not the app's own, which
+          is exactly what the lint rule below assumes cannot happen.
+
+          `/` rather than a locale: the proxy negotiates one from the request,
+          so an Uzbek visitor lands on /uz instead of being sent to Russian.
+        */}
+        {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
+        <a
+          href="/"
           className="mt-2 rounded-full bg-brand-pink px-8 py-3.5 text-sm font-bold text-white"
         >
           На главную · Home
-        </Link>
+        </a>
       </body>
     </html>
   );
