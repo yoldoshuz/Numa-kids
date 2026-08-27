@@ -14,6 +14,7 @@ import {
   postConsultation,
   PROBLEM_MAX_LENGTH,
   PROBLEM_MIN_LENGTH,
+  SUBJECT_MAX_LENGTH,
 } from "@/lib/api/consultation";
 import { formatUzPhoneInput, toApiPhone, UZ_PHONE_PREFIX } from "@/lib/phone";
 import {
@@ -61,16 +62,17 @@ export function ConsultationForm() {
     setSubmitError(null);
     if (Object.keys(next).length > 0 || !apiPhone) return;
 
-    // The subject line is a headline for the problem, not a field of its own —
-    // the API takes a single description, so the two are glued together.
-    const problem = (subject ? `${subject}\n\n${message}` : message).slice(
-      0,
-      PROBLEM_MAX_LENGTH,
-    );
-
     setPending(true);
     try {
-      await postConsultation({ name, phone: apiPhone, problem });
+      // The subject travels as its own field — the CRM prints it on a line of
+      // its own, which it cannot do while it is glued to the front of the
+      // description the way this form used to send it.
+      await postConsultation({
+        name,
+        phone: apiPhone,
+        subject: subject.slice(0, SUBJECT_MAX_LENGTH),
+        problem: message.slice(0, PROBLEM_MAX_LENGTH),
+      });
       setOpen(true);
       form.reset();
     } catch (error) {
@@ -177,6 +179,7 @@ export function ConsultationForm() {
               <Input
                 id="consult-subject"
                 name="subject"
+                maxLength={SUBJECT_MAX_LENGTH}
                 placeholder={t("form.subjectPlaceholder")}
                 className={`${FIELD} mt-2`}
               />

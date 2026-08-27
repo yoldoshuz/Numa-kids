@@ -55,6 +55,7 @@
     "goToCatalog": "Katalogga o'tish",
     "skipToContent": "Asosiy qismga o'tish",
     "otherBrands": "NUMA'ning boshqa loyihalari",
+    "comingSoon": "Tez orada",
     "quantity": "Miqdori",
     "decrease": "Kamaytirish",
     "increase": "Ko'paytirish",
@@ -282,11 +283,11 @@
         }
       ],
       "advantages": [
-        "1️⃣ Qornida tez-tez og'riq",
-        "2️⃣ Ishtahaning pasayishi yoki aksincha, haddan tashqari ochlik",
-        "3️⃣ Tunda tish g'ijirlatish va uyquning buzilishi",
-        "4️⃣ Orqa sohada qichishish (asosan kechasi)",
-        "5️⃣ Holsizlik, diqqatning pasayishi va tez charchash"
+        "Qornida tez-tez og'riq",
+        "Ishtahaning pasayishi yoki aksincha, haddan tashqari ochlik",
+        "Tunda tish g'ijirlatish va uyquning buzilishi",
+        "Orqa sohada qichishish (asosan kechasi)",
+        "Holsizlik, diqqatning pasayishi va tez charchash"
       ],
       "purposes": [
         {
@@ -870,7 +871,7 @@
     "errors": {
       "name": "Ismingizni kiriting",
       "phone": "To'g'ri telefon raqamini kiriting",
-      "message": "Muammoni tavsiflang — kamida 10 ta belgi",
+      "message": "Muammoni tavsiflang",
       "rateLimit": "Juda ko'p ariza yuborildi. Birozdan so'ng urinib ko'ring",
       "network": "Arizani yuborib bo'lmadi. Yana bir bor urinib ko'ring"
     },

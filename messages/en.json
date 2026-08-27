@@ -55,6 +55,7 @@
     "goToCatalog": "Go to catalogue",
     "skipToContent": "Skip to content",
     "otherBrands": "Other NUMA projects",
+    "comingSoon": "Coming soon",
     "quantity": "Quantity",
     "decrease": "Decrease",
     "increase": "Increase",
@@ -282,11 +283,11 @@
         }
       ],
       "advantages": [
-        "1️⃣ Frequent tummy aches",
-        "2️⃣ Loss of appetite, or the opposite — constant hunger",
-        "3️⃣ Grinding teeth at night and disturbed sleep",
-        "4️⃣ Itching around the anus, mostly at night",
-        "5️⃣ Weakness, poor concentration and tiring quickly"
+        "Frequent tummy aches",
+        "Loss of appetite, or the opposite — constant hunger",
+        "Grinding teeth at night and disturbed sleep",
+        "Itching around the anus, mostly at night",
+        "Weakness, poor concentration and tiring quickly"
       ],
       "purposes": [
         {
@@ -870,7 +871,7 @@
     "errors": {
       "name": "Please enter your name",
       "phone": "Please enter a valid phone number",
-      "message": "Describe the problem — at least 10 characters",
+      "message": "Describe the problem",
       "rateLimit": "Too many requests. Please try again later",
       "network": "Could not send the request. Please try again"
     },

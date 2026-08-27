@@ -88,7 +88,7 @@ export const FOOTER_INFO: NavItem[] = [
 
 /** Sibling brands surfaced from the logo dropdown. */
 /**
- * The four NUMA properties, surfaced from the logo dropdown.
+ * The six NUMA properties, surfaced from the logo dropdown.
  *
  * Every site carries the whole list including itself, so the menu reads the
  * same everywhere and a visitor can always see where they currently are. The
@@ -98,6 +98,14 @@ export const FOOTER_INFO: NavItem[] = [
  * These are the deploy URLs, not the brand domains: numafamily.uz,
  * numanutrition.uz and nabaviytabobat.uz do not resolve yet, and a dropdown of
  * dead links is worse than no dropdown. Swap them the day DNS is cut over.
+ *
+ * NUMA Diagnostics has no site at all, so its `href` is empty and the menu
+ * renders it as an inert "coming soon" row: the group is six brands and the
+ * menu should say so, but a row that navigates nowhere — or worse, to a
+ * different brand — is the bug this shape avoids.
+ *
+ * `bettery.svg` and `diagnostics.svg` are stand-in marks, not the brands'
+ * artwork. Replace both the day real logos arrive.
  */
 export const SIBLING_SITES: SiblingSite[] = [
   {
@@ -123,6 +131,18 @@ export const SIBLING_SITES: SiblingSite[] = [
     label: "NABAVIY TABOBAT",
     href: "https://nabaviy-tabobat.vercel.app",
     logo: "/brands/tabobat.png",
+  },
+  {
+    id: "bettery",
+    label: "BETTERY ORGANIC",
+    href: "https://betteryorganic.uz",
+    logo: "/brands/bettery.svg",
+  },
+  {
+    id: "diagnostics",
+    label: "NUMA DIAGNOSTICS",
+    href: "",
+    logo: "/brands/diagnostics.svg",
   },
 ];
 
