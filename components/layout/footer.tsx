@@ -8,6 +8,7 @@ import {
   CONTACTS,
   FOOTER_CATALOG,
   FOOTER_INFO,
+  ISO_22000_CERTIFICATE,
   SITE_NAME,
   SOCIALS,
 } from "@/lib/constants";
@@ -93,6 +94,20 @@ export function Footer() {
                     </Link>
                   </li>
                 ))}
+                {/*
+                  A plain `<a>`, not the locale-aware `Link`: this is a file in
+                  `public/`, and prefixing it with `/ru` would 404.
+                */}
+                <li>
+                  <a
+                    href={ISO_22000_CERTIFICATE}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className="text-sm text-brand-ink/75 transition hover:text-brand-pink"
+                  >
+                    {t("footer.certificate")}
+                  </a>
+                </li>
               </ul>
             </nav>
 

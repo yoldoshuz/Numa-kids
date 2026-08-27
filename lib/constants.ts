@@ -147,6 +147,23 @@ export const SIBLING_SITES: SiblingSite[] = [
 ];
 
 
+/**
+ * The one certificate on the site we hold the actual document for, linked from
+ * the footer.
+ *
+ * What the PDF says, so nobody has to open it to find out: certificate
+ * № 24-E-1770 Rev. 0, ISO 22000:2018 Food Safety Management System, issued by
+ * IGC (register: igcert.org) to **NUTRI MAKON FACTORY LLC** — the factory, not
+ * the NUMA brand — for the production of dietary supplements.
+ *
+ * Issued 15.08.2024, **expires 14.08.2027**. After that date this link starts
+ * advertising a lapsed document, so it wants replacing before then.
+ *
+ * The other four marks in the certificates row have no document at all; only
+ * this one is linked anywhere.
+ */
+export const ISO_22000_CERTIFICATE = "/certificates/iso-22000-2018.pdf";
+
 export const CURRENCY = "UZS";
 
 /** Postal address in the reader's language. */

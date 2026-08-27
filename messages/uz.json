@@ -164,6 +164,14 @@
       }
     }
   },
+  "videoSection": {
+    "title": "NUMA KIDS bitta videoda",
+    "subtitle": "Mahsulotlarimiz bolalar salomatligini mustahkamlashda va ularning rivojlanishida qanday yordam berishi haqida",
+    "caption": "NUMA KIDS mahsulotlari haqida",
+    "play": "Videoni ko'rish",
+    "channel": "YouTube'dagi barcha videolar",
+    "openOnYouTube": "YouTube'da ochish"
+  },
   "cta": {
     "title": "Salomatlik haqida qayg'urishni",
     "titleAccent": "bugundan boshlang",
@@ -204,7 +212,7 @@
     "title": "NUMA KIDS — bolalar uchun foydali mahsulotlar",
     "placeholder": "E-pochtangizni kiriting",
     "button": "Bog'lanish",
-    "success": "Rahmat! Promokod pochtangizga yuborildi.",
+    "success": "Rahmat! Kontaktingizni qabul qildik — tez orada siz bilan bog'lanamiz.",
     "error": "To'g'ri e-pochta manzilini kiriting"
   },
   "marquee": "NUMA KIDS",
@@ -215,6 +223,7 @@
     "contactsTitle": "Kontaktlar",
     "available": "Biz 24/7 aloqadamiz",
     "rights": "© Barcha huquqlar himoyalangan",
+    "certificate": "ISO 22000 sertifikati (PDF)",
     "catalog": {
       "all": "Barcha mahsulotlar",
       "probiotics": "Probiotiklar",

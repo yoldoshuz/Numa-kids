@@ -9,6 +9,7 @@ import { HeroGallery } from "@/components/pages/home/hero-gallery";
 import { PlanetSection } from "@/components/pages/home/planet-section";
 import { ReviewsSection } from "@/components/pages/home/reviews-section";
 import { TrustSection } from "@/components/pages/home/trust-section";
+import { VideoSection } from "@/components/pages/home/video-section";
 import { JsonLd } from "@/components/shared/json-ld";
 import { getArticles, getProducts, getReviewCards } from "@/lib/api/catalog";
 import { itemListJsonLd } from "@/lib/json-ld";
@@ -58,6 +59,13 @@ export default async function HomePage({
       <PlanetSection />
       <ArticlesSection articles={articles} />
       <CatalogSection products={products} />
+      {/*
+        Between the catalogue and the certificates on purpose: the clip is about
+        what the products do, so it reads as the answer to the shelf above it and
+        the setup for the proof below. It also breaks a run of three white
+        sections that ran from the articles straight down to the certificates.
+      */}
+      <VideoSection />
       <CertificatesSection />
       <CtaSection />
       <ReviewsSection reviews={reviews} />
