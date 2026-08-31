@@ -210,10 +210,11 @@
   },
   "newsletter": {
     "title": "NUMA KIDS — good products for children",
-    "placeholder": "Enter your email",
+    "placeholder": "90 123 45 67",
+    "label": "Phone number",
     "button": "Get in touch",
     "success": "Thank you! We have your contact details — we'll be in touch soon.",
-    "error": "Please enter a valid email"
+    "error": "Please enter a valid phone number"
   },
   "marquee": "NUMA KIDS",
   "footer": {

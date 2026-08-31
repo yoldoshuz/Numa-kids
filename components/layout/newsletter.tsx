@@ -1,25 +1,28 @@
 "use client";
 
-import { Mail } from "lucide-react";
+import { Phone } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
 
 import { Container } from "@/components/shared/container";
 
+/** Uzbek mobile numbers carry nine national digits after the +998 code. */
+const UZ_PHONE_DIGITS = 9;
+
 export function Newsletter() {
   const t = useTranslations("newsletter");
-  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [status, setStatus] = useState<"idle" | "done" | "error">("idle");
 
   function onSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     // The backend is not wired yet — validate locally and confirm optimistically.
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
+    if (phone.length !== UZ_PHONE_DIGITS) {
       setStatus("error");
       return;
     }
     setStatus("done");
-    setEmail("");
+    setPhone("");
   }
 
   return (
@@ -30,7 +33,7 @@ export function Newsletter() {
             aria-hidden="true"
             className="hidden size-14 shrink-0 place-items-center rounded-xl bg-white/10 sm:grid"
           >
-            <Mail className="size-7" />
+            <Phone className="size-7" />
           </span>
           <p className="text-xl leading-snug font-medium sm:text-2xl">
             {t("title")}
@@ -41,25 +44,41 @@ export function Newsletter() {
           onSubmit={onSubmit}
           className="flex w-full max-w-lg flex-col gap-3 sm:flex-row"
         >
-          <label htmlFor="newsletter-email" className="sr-only">
-            {t("placeholder")}
+          <label htmlFor="newsletter-phone" className="sr-only">
+            {t("label")}
           </label>
-          <input
-            id="newsletter-email"
-            type="email"
-            required
-            value={email}
-            onChange={(event) => {
-              setEmail(event.target.value);
-              setStatus("idle");
-            }}
-            placeholder={t("placeholder")}
-            aria-invalid={status === "error"}
-            className="h-13 flex-1 rounded-full border border-white/15 bg-white/10 px-6 text-sm text-white placeholder:text-white/50 focus:border-white/40 focus:outline-none"
-          />
+          {/*
+            The field is a notch taller on a phone (`h-14`) than on the desktop
+            row it shares with the button (`sm:h-13`): the touch target was the
+            complaint on mobile, where it stacks full-width above the button.
+            A fixed "+998" chip pins the country code so only the nine national
+            digits are typed — that is the Uzbek mobile format.
+          */}
+          <div className="flex h-14 w-full items-center gap-2 rounded-full border border-white/15 bg-white/10 pr-6 pl-5 focus-within:border-white/40 sm:h-13 sm:flex-1">
+            <span className="text-sm font-medium text-white/70 select-none">
+              +998
+            </span>
+            <input
+              id="newsletter-phone"
+              type="tel"
+              inputMode="numeric"
+              autoComplete="tel-national"
+              required
+              value={phone}
+              onChange={(event) => {
+                // Keep digits only and cap at the nine national digits, so the
+                // value is always a clean number regardless of how it is typed.
+                setPhone(event.target.value.replace(/\D/g, "").slice(0, UZ_PHONE_DIGITS));
+                setStatus("idle");
+              }}
+              placeholder={t("placeholder")}
+              aria-invalid={status === "error"}
+              className="h-full w-full min-w-0 bg-transparent text-sm text-white placeholder:text-white/50 focus:outline-none"
+            />
+          </div>
           <button
             type="submit"
-            className="h-13 shrink-0 rounded-full bg-brand-orange px-7 text-sm font-semibold text-white transition hover:brightness-110"
+            className="h-14 shrink-0 rounded-full bg-brand-orange px-7 text-sm font-semibold text-white transition hover:brightness-110 sm:h-13"
           >
             {t("button")}
           </button>

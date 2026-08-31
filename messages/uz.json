@@ -210,10 +210,11 @@
   },
   "newsletter": {
     "title": "NUMA KIDS — bolalar uchun foydali mahsulotlar",
-    "placeholder": "E-pochtangizni kiriting",
+    "placeholder": "90 123 45 67",
+    "label": "Telefon raqamingiz",
     "button": "Bog'lanish",
     "success": "Rahmat! Kontaktingizni qabul qildik — tez orada siz bilan bog'lanamiz.",
-    "error": "To'g'ri e-pochta manzilini kiriting"
+    "error": "To'g'ri telefon raqamini kiriting"
   },
   "marquee": "NUMA KIDS",
   "footer": {
