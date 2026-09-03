@@ -7,6 +7,7 @@ import { useState } from "react";
 
 import { ProductImage } from "@/components/shared/product-image";
 import { useCart } from "@/hooks";
+import type { ProductContent } from "@/lib/api/blocks";
 import { ACCENT } from "@/lib/accents";
 import { Container } from "@/components/shared/container";
 import { formatPrice } from "@/lib/format";
@@ -23,7 +24,13 @@ const SPECS = [
   "storage",
 ] as const;
 
-export function ProductHero({ product }: { product: Product }) {
+export function ProductHero({
+  product,
+  content,
+}: {
+  product: Product;
+  content?: ProductContent;
+}) {
   const t = useTranslations();
   const { add } = useCart();
   const accent = ACCENT[product.accent];
@@ -45,6 +52,17 @@ export function ProductHero({ product }: { product: Product }) {
     const own = `products.${product.slug}.specs.${spec}`;
     return (t.has(own) && t(own)) || t(`product.specs.${spec}.value`);
   };
+
+  /*
+   * The admin's own spec sheet, when it has one. It is not limited to the six
+   * rows the design shipped — a moderator adding "Состав" or dropping "Срок
+   * хранения" is the whole point of moving this table into the CMS — so the
+   * rows carry their own labels rather than being looked up by key.
+   */
+  const cmsSpecs = content?.specs;
+  const tagline = content?.hero?.tagline || t(`products.${product.slug}.tagline`);
+  const description = content?.hero?.text || t(`products.${product.slug}.long`);
+  const badge = content?.hero?.badge;
 
   return (
     <Container className="grid gap-10 py-10 lg:grid-cols-2 lg:gap-16 lg:py-16">
@@ -121,15 +139,27 @@ export function ProductHero({ product }: { product: Product }) {
           </ol>
         </nav>
 
+        {badge && (
+          <p
+            className={cn(
+              "mt-5 inline-flex rounded-full px-3 py-1 text-xs font-bold",
+              accent.card,
+              accent.text,
+            )}
+          >
+            {badge}
+          </p>
+        )}
+
         <h1 className="mt-5 text-4xl font-extrabold text-brand-ink sm:text-5xl">
           {t(`products.${product.slug}.shortName`)}
         </h1>
-        <p className={cn("mt-2 text-base", accent.text)}>
-          {t(`products.${product.slug}.tagline`)}
-        </p>
-        <p className="mt-5 max-w-xl leading-relaxed text-brand-ink/60">
-          {t(`products.${product.slug}.long`)}
-        </p>
+        {tagline && <p className={cn("mt-2 text-base", accent.text)}>{tagline}</p>}
+        {description && (
+          <p className="mt-5 max-w-xl leading-relaxed text-brand-ink/60">
+            {description}
+          </p>
+        )}
 
         <p className="mt-9 text-3xl font-extrabold text-brand-ink">
           {formatPrice(product.price)}{" "}
@@ -193,17 +223,24 @@ export function ProductHero({ product }: { product: Product }) {
         )}
 
         <h2 className="mt-12 text-2xl font-extrabold text-brand-ink">
-          {t("product.specsTitle")}
+          {cmsSpecs?.title || t("product.specsTitle")}
         </h2>
         <dl className="mt-5 grid gap-x-8 gap-y-3 sm:grid-cols-[minmax(0,220px)_1fr]">
-          {SPECS.map((spec) => (
-            <div key={spec} className="contents">
-              <dt className="text-sm text-brand-ink/50">
-                {t(`product.specs.${spec}.label`)}:
-              </dt>
-              <dd className="text-sm text-brand-ink">{specValue(spec)}</dd>
-            </div>
-          ))}
+          {cmsSpecs
+            ? cmsSpecs.items.map((row, index) => (
+                <div key={row.label + index} className="contents">
+                  <dt className="text-sm text-brand-ink/50">{row.label}:</dt>
+                  <dd className="text-sm text-brand-ink">{row.value}</dd>
+                </div>
+              ))
+            : SPECS.map((spec) => (
+                <div key={spec} className="contents">
+                  <dt className="text-sm text-brand-ink/50">
+                    {t(`product.specs.${spec}.label`)}:
+                  </dt>
+                  <dd className="text-sm text-brand-ink">{specValue(spec)}</dd>
+                </div>
+              ))}
         </dl>
       </div>
     </Container>

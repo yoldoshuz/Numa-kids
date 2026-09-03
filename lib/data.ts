@@ -226,3 +226,26 @@ export function getProduct(slug: string) {
 export function getArticle(slug: string) {
   return ARTICLES.find((article) => article.slug === slug);
 }
+
+/**
+ * The clips on the home page, from youtube.com/@numakids.
+ *
+ * Titles are the videos' own and stay in Uzbek in every language — they are
+ * what the channel published, not copy this site writes, so translating them
+ * would mean promising a Russian-language clip that does not exist. That is
+ * also why they live here rather than in `messages/`.
+ *
+ * The first entry is the one the section opens with.
+ */
+export const HOME_VIDEOS: { id: string; title: string }[] = [
+  { id: "URPUqQKICaI", title: "ANTIGELMINT BOX — Gijjalardan butunlay qutulish imkoniyati!" },
+  { id: "VIyVL9ELEZE", title: "Bolalar tanasidagi yashirin xavf!" },
+  { id: "2MlEX1qUTJI", title: "Nega farzandingiz gijjalardan xalos bo'la olmayapti?" },
+  { id: "O2ZxWG7JUF4", title: "Gijjalar qayta yuqmasligi uchun nima qilish kerak?" },
+  { id: "-kbcRlKMsY8", title: "Nega farzandingiz o'sishda tengdoshlaridan orqada qolyapti?" },
+  { id: "5bDpJExdnSg", title: "Bolalardagi ishtahasizlik sabablari" },
+  { id: "foObWfjmbhU", title: "Bolalar go'sht, baliq, tuxum yeyishdan bosh tortishining sababi" },
+  { id: "KxhFpLLzeLE", title: "Bolalardagi «ortiqcha vazn» sabablari" },
+  { id: "CjpKncmyDC8", title: "Bolalardagi enurezga sabab omillar" },
+  { id: "BDrdpDXB2tQ", title: "Farzandingiz «R» harfini aytolmaydimi?" },
+];

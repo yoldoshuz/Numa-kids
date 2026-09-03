@@ -1,3 +1,4 @@
+import type { ApiProductBlock } from "@/lib/api/types";
 import type { AppLocale } from "@/lib/i18n/routing";
 
 export type Locale = AppLocale;
@@ -36,6 +37,15 @@ export interface Product {
   isTop: boolean;
   /** Slot numbers printed on the "tag" below every card in the design. */
   order: number;
+  /**
+   * The product page's editable sections, authored in the admin — visible ones
+   * only, in the order they should render.
+   *
+   * Only the by-slug response carries them, so this is present on a product
+   * page and absent everywhere else. Absent (or empty) means the page falls
+   * back to the copy bundled in `messages/`.
+   */
+  blocks?: ApiProductBlock[];
 }
 
 export type ArticleTopic =

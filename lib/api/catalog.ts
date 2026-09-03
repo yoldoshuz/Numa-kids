@@ -100,6 +100,10 @@ function toProduct(api: ApiProduct, index: number): Product {
     strains: attrs.strains ?? base?.strains ?? 0,
     isTop: attrs.isTop ?? api.isFeatured,
     order: attrs.order ?? base?.order ?? index + 1,
+    // Only the by-slug response carries these, so on a list they are simply
+    // absent — the catalogue has no use for them and they would bloat the
+    // response.
+    blocks: api.blocks?.length ? [...api.blocks].sort((a, b) => a.position - b.position) : undefined,
   };
 }
 

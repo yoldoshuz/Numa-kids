@@ -7,15 +7,25 @@ import { useTranslations } from "next-intl";
 import { CarouselControls } from "@/components/shared/carousel-controls";
 import { Container } from "@/components/shared/container";
 import { useCarousel } from "@/hooks";
+import type { ProductContent } from "@/lib/api/blocks";
 import type { Product } from "@/types";
 
-export function ProductAdvantages({ product }: { product: Product }) {
+export function ProductAdvantages({
+  product,
+  content,
+}: {
+  product: Product;
+  content?: ProductContent;
+}) {
   const t = useTranslations();
   const { ref, canScrollPrev, canScrollNext, scrollPrev, scrollNext } =
     useCarousel<HTMLUListElement>();
   const name = t(`products.${product.slug}.shortName`);
+
+  const cms = content?.advantages;
   // Per product: the shared list printed the same six lines on every page.
-  const advantages = t.raw(`products.${product.slug}.advantages`) as string[];
+  const advantages =
+    cms?.items ?? (t.raw(`products.${product.slug}.advantages`) as string[]);
   /*
    * A product may name this block itself. Rikki's list is the signs that a
    * child needs it, not what the jar does, so "Rikki afzalliklari" was
@@ -28,7 +38,7 @@ export function ProductAdvantages({ product }: { product: Product }) {
   const ownTitle = t.has(`products.${product.slug}.advantagesTitle`)
     ? t(`products.${product.slug}.advantagesTitle`)
     : "";
-  const heading = ownTitle || t("product.advantagesTitle", { name });
+  const heading = cms?.title || ownTitle || t("product.advantagesTitle", { name });
 
   return (
     <section className="py-14 sm:py-20">

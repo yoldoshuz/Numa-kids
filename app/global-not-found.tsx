@@ -14,7 +14,7 @@ const onest = Onest({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: `404 — ${SITE_NAME}`,
-  description: "Страница не найдена / Page not found",
+  description: "Sahifa topilmadi / Страница не найдена / Page not found",
   robots: { index: false, follow: false },
 };
 
@@ -24,15 +24,15 @@ export const metadata: Metadata = {
  */
 export default function GlobalNotFound() {
   return (
-    <html lang="ru" className={`${onest.variable} h-full`}>
+    <html lang="uz" className={`${onest.variable} h-full`}>
       <body className="flex min-h-full flex-col items-center justify-center gap-4 bg-white px-6 text-center">
         <p className="text-6xl font-extrabold text-brand-pink">404</p>
         <h1 className="text-2xl font-extrabold text-brand-ink">
-          Страница не найдена · Page not found
+          Sahifa topilmadi · Страница не найдена
         </h1>
         <p className="max-w-md text-brand-ink/60">
-          Проверьте адрес или вернитесь на главную. · Check the address or go
-          back to the home page.
+          Manzilni tekshirib ko'ring yoki bosh sahifaga qayting. · Проверьте адрес
+          или вернитесь на главную.
         </p>
         {/*
           A plain anchor, not `next/link`. This page renders its own <html>
@@ -50,7 +50,7 @@ export default function GlobalNotFound() {
           href="/"
           className="mt-2 rounded-full bg-brand-pink px-8 py-3.5 text-sm font-bold text-white"
         >
-          На главную · Home
+          Bosh sahifa · На главную
         </a>
       </body>
     </html>

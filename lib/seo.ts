@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 import { SITE_NAME, SITE_URL } from "@/lib/constants";
-import { locales, type AppLocale } from "@/lib/i18n/routing";
+import { defaultLocale, locales, type AppLocale } from "@/lib/i18n/routing";
 
 const OG_LOCALE: Record<AppLocale, string> = {
   ru: "ru_RU",
@@ -51,7 +51,7 @@ export function buildMetadata({
   const languages = Object.fromEntries(
     locales.map((code) => [code, localizedPath(code, path)]),
   ) as Record<string, string>;
-  languages["x-default"] = localizedPath("ru", path);
+  languages["x-default"] = localizedPath(defaultLocale, path);
 
   return {
     // Titles already carry the brand, so bypass the layout-level template.
