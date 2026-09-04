@@ -12,6 +12,7 @@ import { getArticle, getArticleProducts, getArticles } from "@/lib/api/catalog";
 import { ARTICLES } from "@/lib/data";
 import { formatDate } from "@/lib/format";
 import { Link } from "@/lib/i18n/navigation";
+import { noteForLocale } from "@/lib/i18n/note";
 import { articleJsonLd, breadcrumbJsonLd } from "@/lib/json-ld";
 import { routing, type AppLocale } from "@/lib/i18n/routing";
 import { buildMetadata } from "@/lib/seo";
@@ -126,7 +127,7 @@ export default async function ArticlePage({ params }: { params: Params }) {
                 {tArticleProducts("title")}
               </h2>
               <p className="mt-2 text-base leading-relaxed text-brand-ink/70">
-                {articleNote ?? tArticleProducts("subtitle")}
+                {noteForLocale(articleNote, locale) ?? tArticleProducts("subtitle")}
               </p>
               <div className="mt-6 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
                 {articleProducts.map((product, index) => (

@@ -35,7 +35,13 @@ export function ProductHero({
   const { add } = useCart();
   const accent = ACCENT[product.accent];
 
-  const images = [product.image, ...product.gallery];
+  /*
+   * Every photo the product has, once.
+   *
+   * The packshot is usually also the first gallery entry, so without the dedupe
+   * the same picture opened the strip twice.
+   */
+  const images = [...new Set([product.image, ...product.gallery])].filter(Boolean);
   const [active, setActive] = useState(0);
   const [quantity, setQuantity] = useState(1);
 
@@ -87,12 +93,24 @@ export function ProductHero({
           />
         </div>
 
+        {/*
+          Every uploaded photo, not the first three.
+
+          The strip was `grid-cols-3` over `images.slice(0, 3)`, so a product
+          with six photos showed three and a moderator who added a seventh had
+          nowhere to see it — which read as "I uploaded a picture and the site
+          ignored it". Now it scrolls: three across at rest, and more if they
+          are there.
+        */}
         <ul
           aria-label={t("product.gallery")}
-          className="mt-4 grid grid-cols-3 gap-4"
+          className="mt-4 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
         >
-          {images.slice(0, 3).map((image, index) => (
-            <li key={image + index}>
+          {images.map((image, index) => (
+            <li
+              key={image + index}
+              className="w-[calc((100%-2rem)/3)] shrink-0 snap-start"
+            >
               <button
                 type="button"
                 onClick={() => setActive(index)}
