@@ -8,7 +8,7 @@
  */
 
 import { ApiError, api, writeSession, type SessionTokens } from "./axios";
-import { ACCOUNT_TIMEOUT_MS } from "./config";
+import { ACCOUNT_TIMEOUT_MS, STORE } from "./config";
 import type { ApiOrder, StoreSlug } from "./types";
 
 /**
@@ -23,11 +23,13 @@ async function request<T>(
   method: "get" | "post" | "put",
   url: string,
   data?: unknown,
+  headers?: Record<string, string>,
 ): Promise<T> {
   const response = await api.request<T>({
     method,
     url,
     data,
+    headers,
     timeout: ACCOUNT_TIMEOUT_MS,
   });
   return response.data;
@@ -81,12 +83,18 @@ export const registerCustomer = (payload: {
  *
  * The backend also adopts any guest cart and any past guest orders placed with
  * this number, so there is nothing to merge on the storefront afterwards.
+ *
+ * `X-Store` is what stamps the account's `registrationStore` — written once, at
+ * the first confirmed code, and never rewritten. It is a reference field only,
+ * so a dropped header must never fail the sign-in.
  */
 export async function verifyOtp(phone: string, otp: string): Promise<UserProfile> {
-  const session = await request<VerifiedSession>("post", "/auth/verify-otp", {
-    phone,
-    otp,
-  });
+  const session = await request<VerifiedSession>(
+    "post",
+    "/auth/verify-otp",
+    { phone, otp },
+    { "X-Store": STORE },
+  );
   writeSession({
     accessToken: session.accessToken,
     refreshToken: session.refreshToken,

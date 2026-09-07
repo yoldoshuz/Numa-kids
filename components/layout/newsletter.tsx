@@ -5,24 +5,43 @@ import { useTranslations } from "next-intl";
 import { useState } from "react";
 
 import { Container } from "@/components/shared/container";
+import {
+  classifySupportRequestError,
+  postSupportRequest,
+} from "@/lib/api/support-request";
 
 /** Uzbek mobile numbers carry nine national digits after the +998 code. */
 const UZ_PHONE_DIGITS = 9;
 
+type Status = "idle" | "sending" | "done" | "error" | "rateLimit" | "network";
+
 export function Newsletter() {
   const t = useTranslations("newsletter");
   const [phone, setPhone] = useState("");
-  const [status, setStatus] = useState<"idle" | "done" | "error">("idle");
+  const [status, setStatus] = useState<Status>("idle");
 
-  function onSubmit(event: React.FormEvent<HTMLFormElement>) {
+  // Once the request is in, the form stays closed: a second tap would only
+  // spend the visitor's hourly quota on a duplicate.
+  const busy = status === "sending" || status === "done";
+
+  async function onSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    // The backend is not wired yet — validate locally and confirm optimistically.
+    if (busy) return;
     if (phone.length !== UZ_PHONE_DIGITS) {
       setStatus("error");
       return;
     }
-    setStatus("done");
-    setPhone("");
+    setStatus("sending");
+    try {
+      await postSupportRequest(`+998${phone}`);
+      setStatus("done");
+      setPhone("");
+    } catch (error) {
+      // A 429 is the anti-spam cap, not a fault: never retry it for the
+      // visitor, or a shared office IP keeps hitting the same wall.
+      const failure = classifySupportRequestError(error);
+      setStatus(failure === "validation" ? "error" : failure);
+    }
   }
 
   return (
@@ -64,6 +83,7 @@ export function Newsletter() {
               inputMode="numeric"
               autoComplete="tel-national"
               required
+              disabled={busy}
               value={phone}
               onChange={(event) => {
                 // Keep digits only and cap at the nine national digits, so the
@@ -73,25 +93,34 @@ export function Newsletter() {
               }}
               placeholder={t("placeholder")}
               aria-invalid={status === "error"}
+              aria-describedby="newsletter-status"
               className="h-full w-full min-w-0 bg-transparent text-sm text-white placeholder:text-white/50 focus:outline-none"
             />
           </div>
           <button
             type="submit"
-            className="h-14 shrink-0 rounded-full bg-brand-orange px-7 text-sm font-semibold text-white transition hover:brightness-110 sm:h-13"
+            disabled={busy}
+            className="h-14 shrink-0 rounded-full bg-brand-orange px-7 text-sm font-semibold text-white transition hover:brightness-110 disabled:opacity-60 sm:h-13"
           >
-            {t("button")}
+            {status === "sending" ? t("sending") : t("button")}
           </button>
         </form>
       </Container>
 
-      {status !== "idle" && (
+      {status !== "idle" && status !== "sending" && (
         <Container>
           <p
-            role="status"
+            id="newsletter-status"
+            role={status === "done" ? "status" : "alert"}
             className={`mt-4 text-sm ${status === "done" ? "text-green-action" : "text-brand-pink-soft"}`}
           >
-            {status === "done" ? t("success") : t("error")}
+            {status === "done"
+              ? t("success")
+              : status === "rateLimit"
+                ? t("rateLimit")
+                : status === "network"
+                  ? t("networkError")
+                  : t("error")}
           </p>
         </Container>
       )}

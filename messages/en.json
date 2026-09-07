@@ -212,8 +212,11 @@
     "placeholder": "90 123 45 67",
     "label": "Phone number",
     "button": "Get in touch",
-    "success": "Thank you! We have your contact details — we'll be in touch soon.",
-    "error": "Please enter a valid phone number"
+    "sending": "Sending…",
+    "success": "Thank you! We'll be in touch soon.",
+    "error": "Please enter a valid phone number",
+    "rateLimit": "Too many requests. Please try again in an hour.",
+    "networkError": "We could not send your request. Please try again later."
   },
   "marquee": "NUMA KIDS",
   "footer": {

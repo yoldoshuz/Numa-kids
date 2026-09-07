@@ -212,8 +212,11 @@
     "placeholder": "90 123 45 67",
     "label": "Telefon raqamingiz",
     "button": "Bog'lanish",
-    "success": "Rahmat! Kontaktingizni qabul qildik — tez orada siz bilan bog'lanamiz.",
-    "error": "To'g'ri telefon raqamini kiriting"
+    "sending": "Yuborilmoqda…",
+    "success": "Rahmat! Tez orada siz bilan bog'lanamiz.",
+    "error": "To'g'ri telefon raqamini kiriting",
+    "rateLimit": "Juda ko'p so'rov yuborildi. Iltimos, bir soatdan keyin qayta urinib ko'ring.",
+    "networkError": "So'rovni yuborib bo'lmadi. Iltimos, keyinroq urinib ko'ring."
   },
   "marquee": "NUMA KIDS",
   "footer": {
@@ -248,7 +251,7 @@
   },
   "productCategories": {
     "antiparasitic": "Antiparazitar",
-    "vitamin-d3": "D3 vitamini",
+    "vitamin-d3": "Vitamin D3",
     "omega-3": "Omega 3",
     "multi": "Multi",
     "probiotics": "Probiotiklar",
