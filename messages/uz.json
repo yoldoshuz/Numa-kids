@@ -1,0 +1,1044 @@
+{
+  "meta": {
+    "home": {
+      "title": "NUMA KIDS — bolalar uchun marmelad ayiqcha vitaminlari",
+      "description": "Ilmiy asoslangan NUMA KIDS bolalar vitaminlari: kalsiy D3, multivitaminlar, probiotiklar va Omega-3. Xalqaro sertifikatlar, bepul yetkazib berish va 30 kunlik qaytarish kafolati."
+    },
+    "products": {
+      "title": "Bolalar uchun barcha vitaminlar — NUMA KIDS katalogi",
+      "description": "Bolalar uchun 6 ta ilmiy asoslangan mahsulot: antiparazit, D3 vitamini, yod, Omega-3, multivitaminlar va probiotiklar. NUMA KIDS bolalar vitaminlarini yetkazib berish bilan xarid qiling."
+    },
+    "blog": {
+      "title": "Bolalar salomatligi haqida foydali maqolalar — NUMA KIDS blogi",
+      "description": "Bolalar salomatligi haqidagi fan sodda tilda: immunitet, ichak salomatligi, ovqatlanish va vitaminlar. NUMA KIDS mutaxassislari maqolalari."
+    },
+    "contacts": {
+      "title": "NUMA KIDS kontaktlari — biz bilan bog'laning",
+      "description": "NUMA KIDS telefoni, e-pochtasi va manzili. Bolalar vitaminlari bo'yicha savollarga 24 soat ichida javob beramiz va formulani tanlashga yordam beramiz."
+    },
+    "consultation": {
+      "title": "Bolalar vitaminlari bo'yicha bepul konsultatsiya — NUMA KIDS",
+      "description": "Ariza qoldiring va NUMA KIDS mutaxassisi farzandingiz uchun vitaminlarni bepul tanlashga yordam beradi. Ish vaqtida 15–30 daqiqada javob beramiz."
+    },
+    "product": {
+      "title": "{name} — {tagline} | NUMA KIDS",
+      "description": "{description} {name} mahsulotini NUMA KIDS'dan xarid qiling: sertifikatlangan ishlab chiqarish, bepul yetkazib berish, 30 kunlik qaytarish."
+    },
+    "article": {
+      "title": "{title} | NUMA KIDS blogi",
+      "description": "{excerpt}"
+    },
+    "notFound": {
+      "title": "Sahifa topilmadi — NUMA KIDS",
+      "description": "Bunday sahifa mavjud emas. Bosh sahifaga qayting yoki NUMA KIDS bolalar vitaminlari katalogini ko'ring."
+    },
+    "keywords": "bolalar vitaminlari, bolalar uchun vitaminlar, marmelad ayiqchalar, kalsiy D3, bolalar uchun probiotiklar, bolalar uchun omega-3, multivitaminlar, NUMA KIDS",
+    "cart": {
+      "title": "Savat — NUMA Kids",
+      "description": "Sizning savatingiz"
+    }
+  },
+  "common": {
+    "buy": "sotib olish",
+    "readMore": "Maqolani o'qish",
+    "allProducts": "Barcha mahsulotlar",
+    "allArticles": "Barcha maqolalar",
+    "consultation": "Konsultatsiya",
+    "cart": "Savat",
+    "menu": "Menyu",
+    "close": "Yopish",
+    "prev": "Orqaga",
+    "next": "Oldinga",
+    "currency": "so'm",
+    "minutes": "{count} daq",
+    "backHome": "Bosh sahifaga qaytish",
+    "goToCatalog": "Katalogga o'tish",
+    "skipToContent": "Asosiy qismga o'tish",
+    "otherBrands": "NUMA'ning boshqa loyihalari",
+    "comingSoon": "Tez orada",
+    "quantity": "Miqdori",
+    "decrease": "Kamaytirish",
+    "increase": "Ko'paytirish",
+    "pcs": "dona",
+    "outOfStock": "Sotuvda yo‘q",
+    "outOfStockNote": "Mahsulot vaqtincha sotuvda yo‘q. Ariza qoldiring yoki bizga yozing — paydo bo‘lishi bilan xabar beramiz."
+  },
+  "nav": {
+    "home": "Bosh sahifa",
+    "products": "Mahsulotlar",
+    "blog": "Blog",
+    "contacts": "Kontaktlar"
+  },
+  "brands": {
+    "family": "NUMA FAMILY",
+    "nutrition": "NUMA NUTRITION",
+    "tabobat": "NABAVIY TABOBAT",
+    "catering": "NUMA CATERING"
+  },
+  "locale": {
+    "label": "Til",
+    "ru": "Ru",
+    "en": "En",
+    "uz": "Uz"
+  },
+  "hero": {
+    "title": "NUMA KIDS superqahramonlar jamoasi",
+    "mascots": {
+      "surfing": "Bonny ayiqcha syorfda"
+    },
+    "goTo": "{name} ni ko‘rsatish"
+  },
+  "trust": {
+    "title": "Tabiiy qo'shimchalar —",
+    "titleAccent": "ko'proq foyda!",
+    "subtitle": "Har bir formula ilmiy tadqiqotlarga asoslangan, bioyutuvchan ingredientlardan tayyorlangan va maxsus bolalar organizmi uchun ishlab chiqilgan.",
+    "items": {
+      "safe": {
+        "title": "Xavfsiz",
+        "text": "Klinik sinovdan o'tgan"
+      },
+      "natural": {
+        "title": "Tabiiy",
+        "text": "Bo'yoq va xushbo'ylatkichlarsiz"
+      },
+      "quality": {
+        "title": "Sifat",
+        "text": "GMP standartlari"
+      }
+    }
+  },
+  "planet": {
+    "title": "Bolalar salomatligi va rivojlanishi uchun tabiiy yechim",
+    "text": "Hech qanday kimyoviy qo'shimchalarsiz! Farzandingiz sog'lom rivojlanishi uchun tabiiy va halol mahsulotlar.",
+    "items": {
+      "checked": {
+        "title": "Tasdiqlangan:",
+        "text": "GMO qo'shimchalarisiz!"
+      },
+      "natural": {
+        "title": "Tabiiy:",
+        "text": "Sun'iy bo'yoqlarsiz!"
+      },
+      "useful": {
+        "title": "Foydali:",
+        "text": "Ayiqcha ko'rinishidagi marmeladlar"
+      }
+    }
+  },
+  "articlesSection": {
+    "title": "Farzandingiz salomatligiga oid muhim ma'lumotlar!"
+  },
+  "catalog": {
+    "title": "Bizning",
+    "titleAccent": "vitaminlar",
+    "subtitle": "Bolalar uchun 6 ta ilmiy asoslangan mahsulotlar"
+  },
+  "certificates": {
+    "title": "Bizning xalqaro sertifikatlarimiz",
+    "subtitle": "Mahsulotimiz ishlab chiqarishning barcha bosqichlarida xalqaro sifat va xavfsizlik standartlariga amal qilamiz",
+    "items": {
+      "euro-leaf": {
+        "title": "EURO-LEAF",
+        "subtitle": "Yevropa organik sertifikati",
+        "text": "Yevropa Ittifoqining rasmiy organik mahsulot belgisi. Mahsulotning organik ishlab chiqarish, ekologiklik va sifat nazorati bo'yicha qat'iy talablarga muvofiqligini tasdiqlaydi"
+      },
+      "halal": {
+        "title": "HALAL CERTIFICATE",
+        "subtitle": "Halol sertifikati",
+        "text": "Mahsulot halol talablariga javob berishini va islom sifat, xavfsizlik hamda poklik standartlariga muvofiq ishlab chiqarilishini tasdiqlaydi"
+      },
+      "usda": {
+        "title": "USDA ORGANIC",
+        "subtitle": "AQSh Milliy organik dasturi",
+        "text": "AQSh Qishloq xo'jaligi vazirligining sertifikati bo'lib, mahsulotning organik ishlab chiqarish, qayta ishlash, saqlash va sotish standartlariga muvofiqligini tasdiqlaydi"
+      },
+      "iso": {
+        "title": "ISO 22000:2018",
+        "subtitle": "Oziq-ovqat xavfsizligi menejmenti tizimi",
+        "text": "Ishlab chiqarish va yetkazib berishning barcha bosqichlarida sifat va oziq-ovqat xavfsizligi samarali nazoratini tasdiqlovchi xalqaro standart"
+      },
+      "gmp": {
+        "title": "GMP",
+        "subtitle": "Good Manufacturing Practice",
+        "text": "Ishlab chiqarish, sifat nazorati, xavfsizlik va mahsulot samaradorligiga yuqori talablar bajarilishini tasdiqlovchi xalqaro standart"
+      }
+    }
+  },
+  "videoSection": {
+    "title": "NUMA KIDS videolarda",
+    "subtitle": "Mahsulotlarimiz bolalar salomatligini mustahkamlashda va ularning rivojlanishida qanday yordam berishi haqida",
+    "play": "Videoni ko'rish",
+    "channel": "YouTube'dagi barcha videolar",
+    "openOnYouTube": "YouTube'da ochish"
+  },
+  "cta": {
+    "title": "Salomatlik haqida qayg'urishni",
+    "titleAccent": "bugundan boshlang",
+    "delivery": "Bepul yetkazib berish va mutaxassis konsultatsiyasi!",
+    "button": "Ma'lumot olish"
+  },
+  "reviews": {
+    "title": "Ota-onalar fikri",
+    "role": "Xaridor",
+    "items": {
+      "gulnora": {
+        "name": "Gulnora Ismoilova",
+        "text": "O'g'illarim ovqat yeyishmas edi. Keyin men Jekky mahsulotini olib berdim. Ishtahalari ochilib, ovqat yeydigan bo'lishdi."
+      },
+      "nigora": {
+        "name": "Nigora Yusupova",
+        "text": "Bolalarimning yuzida oq dog'lari bor edi. Rikki mahsulotini bolalarimga berdim. Yuzlaridagi oq dog'lar va toshmalar yo'q bo'lib ketdi!"
+      },
+      "dilnoza": {
+        "name": "Dilnoza Karimova",
+        "text": "Farzandim darslarini yaxshi o'zlashtira olmas edi. Shunda menga Endomarine mahsulotini tavsiya qilishdi. Bolalarimga ichirdim. Hozir asablari tinchlangan, darslarni o'zlashtirishi osonlashgan. Yaxshi o'qishyapti."
+      },
+      "shahnoza": {
+        "name": "Shahnoza To'rayeva",
+        "text": "Bolam har doim “Qornim og'riyapti”, deb yig'lardi. Keyin men unga Jekky mahsulotini olib berdim. Hozir qornidan shikoyat qilmaydi!"
+      },
+      "malika": {
+        "name": "Malika Ergasheva",
+        "text": "Farzandim kechqurun tishlarini g'ijirlatib, bezovta bo'lardi. Rikki mahsulotini olib berdim. Bolalarim o'zlari xohlab yeb yurishdi. Hozir gijjalari ham yo'q, tunda ham yaxshi uxlashyapti!"
+      },
+      "zilola": {
+        "name": "Zilola Otajonova",
+        "text": "Bolamning suyaklari mo'rt bo'lib qolgandi, ozgina narsaga ham suyaklari sinib qolardi. Suyagi mustahkam bo'lishi uchun unga Bonny olib berdim. Shundan beri suyaklarida muammo yo'q."
+      }
+    }
+  },
+  "newsletter": {
+    "title": "NUMA KIDS — bolalar uchun foydali mahsulotlar",
+    "placeholder": "90 123 45 67",
+    "label": "Telefon raqamingiz",
+    "button": "Bog'lanish",
+    "success": "Rahmat! Kontaktingizni qabul qildik — tez orada siz bilan bog'lanamiz.",
+    "error": "To'g'ri telefon raqamini kiriting"
+  },
+  "marquee": "NUMA KIDS",
+  "footer": {
+    "tagline": "Farzandingiz salomatligi uchun ilmiy asoslangan vitaminlar",
+    "catalogTitle": "Katalog",
+    "infoTitle": "Ma'lumot",
+    "contactsTitle": "Kontaktlar",
+    "available": "Biz 24/7 aloqadamiz",
+    "rights": "© Barcha huquqlar himoyalangan",
+    "certificate": "ISO 22000 sertifikati (PDF)",
+    "catalog": {
+      "all": "Barcha mahsulotlar",
+      "probiotics": "Probiotiklar",
+      "omega": "Omega-3",
+      "multi": "Multivitaminlar",
+      "antiparasitic": "Antiparazit",
+      "iodine": "Yod"
+    },
+    "info": {
+      "blog": "Blog",
+      "about": "Kompaniya haqida",
+      "delivery": "Yetkazib berish va to'lov",
+      "faq": "FAQ",
+      "results": "Natijalar"
+    }
+  },
+  "productsPage": {
+    "title": "Barcha vitaminlar",
+    "subtitle": "Bolalar uchun 6 ta ilmiy asoslangan mahsulotlar",
+    "all": "Barchasi",
+    "empty": "Bu turkumda hozircha mahsulot yo'q"
+  },
+  "productCategories": {
+    "antiparasitic": "Antiparazitar",
+    "vitamin-d3": "D3 vitamini",
+    "omega-3": "Omega 3",
+    "multi": "Multi",
+    "probiotics": "Probiotiklar",
+    "iodine": "Yod"
+  },
+  "productBadges": {
+    "top": "TOP",
+    "strains": "{count} ta marmelad"
+  },
+  "products": {
+    "rikki": {
+      "name": "Rikki",
+      "shortName": "Rikki",
+      "tagline": "Gijjalardan xalos bo'lish uchun",
+      "description": "Gijjalardan xalos bo'lishga va immunitetni mustahkamlashga yordam beradi. Yuzdagi dog' va toshmalarni yo'qotishga yordam beradi!",
+      "long": "Gijja va parazitlardan xalos bo'lish uchun farzandingizga Rikki antiparazitar mahsuloti yordam beradi!",
+      "purposeIntro": "Rikki gijja va parazitlardan xalos bo'lishga, ichak faoliyatini me'yorlashtirishga va organizmni toksinlardan tozalashga yordam beradi",
+      "compositionTitle": "Antiparazit",
+      "compositionText": "Gijja va parazitlardan xalos bo'lish uchun farzandingizga Rikki antiparazitar mahsuloti yordam beradi! ✅",
+      "activeFormula": "90 ta ayiqcha",
+      "effects": [
+        {
+          "title": "Gijja va parazitlardan xalos qiladi",
+          "text": "Parazitlarni harakatdan to'xtatib, ulardan xalos bo'lishga yordam beradi.",
+          "value": 96
+        },
+        {
+          "title": "Ichak faoliyatini me'yorlashtiradi",
+          "text": "Ichakni parazitlardan tozalab, yuzdagi dog'larni kamaytirishga yordam beradi.",
+          "value": 92
+        },
+        {
+          "title": "Og'izdagi noxush hidning oldini oladi",
+          "text": "Parazitlar keltirgan zararni kamaytirib, ichak mikroflorasining tiklanishini yaxshilaydi.",
+          "value": 88
+        },
+        {
+          "title": "Oq dog' va toshmalarga qarshi kurashadi",
+          "text": "Organizmni tozalab, toksinlardan xalos qiladi.",
+          "value": 90
+        }
+      ],
+      "advantages": [
+        "Qornida tez-tez og'riq",
+        "Ishtahaning pasayishi yoki aksincha, haddan tashqari ochlik",
+        "Tunda tish g'ijirlatish va uyquning buzilishi",
+        "Orqa sohada qichishish (asosan kechasi)",
+        "Holsizlik, diqqatning pasayishi va tez charchash"
+      ],
+      "purposes": [
+        {
+          "title": "Gijja va parazitlardan xalos qiladi",
+          "text": "Parazitlarni harakatdan to'xtatib, ulardan xalos bo'lishga yordam beradi."
+        },
+        {
+          "title": "Ichak faoliyatini me'yorlashtiradi",
+          "text": "Ichakni parazitlardan tozalab, yuzdagi dog'larni kamaytirishga yordam beradi."
+        },
+        {
+          "title": "Og'izdagi noxush hidning oldini oladi",
+          "text": "Parazitlar keltirgan zararni kamaytirib, ichak mikroflorasining tiklanishini yaxshilaydi."
+        },
+        {
+          "title": "Oq dog' va toshmalarga qarshi kurashadi",
+          "text": "Organizmni tozalab, toksinlardan xalos qiladi."
+        }
+      ],
+      "advantagesTitle": "Farzandingizda bu belgilar bormi?"
+    },
+    "bonny": {
+      "name": "Bonny",
+      "shortName": "Bonny",
+      "tagline": "Mustahkam suyaklar uchun",
+      "description": "Suyak va tishlarni mustahkamlaydi. Bo'y o'sishida yordam beradi. Holsizlik va ishtahasizlikning oldini olishga yordam beradi.",
+      "long": "Bolaning o'sishini qo'llab-quvvatlash, suyak va tishlarni mustahkamlash hamda organizmning to'g'ri rivojlanishi uchun kalsiy va D3 vitaminli mazali marmelad ayiqchalar",
+      "purposeIntro": "Kalsiy va D3 vitamini bolaning to'g'ri o'sishi va rivojlanishi uchun zarur. Ular suyak va tishlarni mustahkamlaydi hamda bolalarning har kungi faolligini qo'llab-quvvatlaydi",
+      "compositionTitle": "Kalsiy va D3 vitamini",
+      "compositionText": "Bonny nafaqat suyak va tishlar, balki mushaklar, asab tizimi va butun organizm salomatligi uchun ham muhim. Muntazam qabul qilish jadal o'sish davrida kalsiy yetishmovchiligini qoplashga yordam beradi",
+      "activeFormula": "90 ta ayiqcha",
+      "effects": [
+        {
+          "title": "Suyak va tishlarni mustahkamlaydi",
+          "text": "Tarkibidagi foydali moddalar suyak va tishlarning mustahkam bo'lishini qo'llab-quvvatlaydi.",
+          "value": 95
+        },
+        {
+          "title": "Bo'y o'sishida yordam beradi",
+          "text": "Suyaklarning normal rivojlanishini qo'llab-quvvatlab, bolaning bo'y o'sishiga yordam beradi.",
+          "value": 92
+        },
+        {
+          "title": "Immunitet tizimini yaxshilaydi",
+          "text": "Organizmning tabiiy himoya tizimini qo'llab-quvvatlab, immunitetni mustahkamlashga yordam beradi.",
+          "value": 90
+        },
+        {
+          "title": "Holsizlik va ishtahasizlikning oldini olishga yordam beradi",
+          "text": "Organizmni zarur foydali moddalar bilan ta'minlashga yordam berib, bolaning tetikligi va ishtahasini qo'llab-quvvatlaydi.",
+          "value": 88
+        }
+      ],
+      "advantages": [
+        "Suyak va tishlarni mustahkamlaydi",
+        "Bo'y o'sishida yordam beradi",
+        "Immunitet tizimini yaxshilaydi",
+        "Holsizlik va ishtahasizlikning oldini oladi"
+      ],
+      "purposes": [
+        {
+          "title": "Suyak va tishlarni mustahkamlaydi",
+          "text": "Tarkibidagi foydali moddalar suyak va tishlarning mustahkam bo'lishini qo'llab-quvvatlaydi."
+        },
+        {
+          "title": "Bo'y o'sishida yordam beradi",
+          "text": "Suyaklarning normal rivojlanishini qo'llab-quvvatlab, bolaning bo'y o'sishiga yordam beradi."
+        },
+        {
+          "title": "Immunitet tizimini yaxshilaydi",
+          "text": "Organizmning tabiiy himoya tizimini qo'llab-quvvatlab, immunitetni mustahkamlashga yordam beradi."
+        },
+        {
+          "title": "Holsizlik va ishtahasizlikning oldini oladi",
+          "text": "Organizmni zarur foydali moddalar bilan ta'minlashga yordam berib, bolaning tetikligi va ishtahasini qo'llab-quvvatlaydi."
+        }
+      ]
+    },
+    "funny": {
+      "name": "Funny",
+      "shortName": "Funny",
+      "tagline": "Kuchli immunitet",
+      "description": "Uyquni me'yorlashtirishga, shuningdek, turli virusli kasalliklarning oldini olishga va qondagi gemoglobin miqdorini oshirishga tabiiy yordamchi.",
+      "long": "Bolaning faolligi, immuniteti va yaxshi kayfiyatini kundalik qo'llab-quvvatlash uchun to'liq vitamin va minerallar majmuasiga ega marmelad ayiqchalar",
+      "purposeIntro": "Muvozanatlashgan vitaminlar majmuasi bolaning kundalik ehtiyojini qoplaydi va organizmga maktab hamda mashg'ulotlardagi yuklamalarni yengishga yordam beradi",
+      "compositionTitle": "Bitta ayiqchada 11 ta vitamin",
+      "compositionText": "Funny B guruhi vitaminlarini C, E va D3 bilan bitta marmelad formulasida birlashtiradi. Muntazam qabul qilish mikronutriyent yetishmovchiligini qoplaydi va energiyani saqlaydi",
+      "activeFormula": "90 ta ayiqcha",
+      "effects": [
+        {
+          "title": "Immunitetni mustahkamlaydi",
+          "text": "Organizmning tabiiy himoya tizimini qo'llab-quvvatlab, turli infeksiyalarga qarshi kurashishga yordam beradi.",
+          "value": 94
+        },
+        {
+          "title": "Uyquni me'yorlashtirishga yordam beradi",
+          "text": "Bolaning tinch va sifatli uxlashini qo'llab-quvvatlab, uyqu tartibini me'yorlashtiradi.",
+          "value": 91
+        },
+        {
+          "title": "Turli virusli kasalliklarning oldini olishga yordam beradi",
+          "text": "Organizmning tabiiy himoya kuchlarini qo'llab-quvvatlab, virusli kasalliklarga qarshi kurashadi.",
+          "value": 90
+        },
+        {
+          "title": "Qondagi gemoglobin miqdorini oshirishga yordam beradi",
+          "text": "Organizmni qon hosil bo'lishi uchun zarur bo'lgan foydali moddalar bilan ta'minlaydi.",
+          "value": 89
+        },
+        {
+          "title": "Allergiya bilan bog'liq holatlarda yordam beradi",
+          "text": "Organizmning tabiiy himoya tizimini qo'llab-quvvatlab, allergiya bilan bog'liq holatlarda yordam beradi.",
+          "value": 86
+        }
+      ],
+      "advantages": [
+        "😴 Uyquni me'yorlashtirish",
+        "🦠 Turli virusli kasalliklarning oldini olish",
+        "🩸 Qondagi gemoglobin miqdorini oshirish",
+        "🌼 Allergiya bilan bog'liq holatlarda yordam beradi"
+      ],
+      "purposes": [
+        {
+          "title": "Immunitetni mustahkamlaydi",
+          "text": "Organizmning tabiiy himoya tizimini qo'llab-quvvatlab, turli infeksiyalarga qarshi kurashishga yordam beradi."
+        },
+        {
+          "title": "Uyquni me'yorlashtirishga yordam beradi",
+          "text": "Bolaning tinch va sifatli uxlashini qo'llab-quvvatlab, uyqu tartibini me'yorlashtiradi."
+        },
+        {
+          "title": "Turli virusli kasalliklarning oldini olishga yordam beradi",
+          "text": "Organizmning tabiiy himoya kuchlarini qo'llab-quvvatlab, virusli kasalliklarga qarshi kurashadi."
+        },
+        {
+          "title": "Qondagi gemoglobin miqdorini oshirishga yordam beradi",
+          "text": "Organizmni qon hosil bo'lishi uchun zarur bo'lgan foydali moddalar bilan ta'minlaydi."
+        },
+        {
+          "title": "Allergiya bilan bog'liq holatlarda yordam beradi",
+          "text": "Organizmning tabiiy himoya tizimini qo'llab-quvvatlab, allergiya bilan bog'liq holatlarda yordam beradi."
+        }
+      ]
+    },
+    "jekky": {
+      "name": "Jekky",
+      "shortName": "Jekky",
+      "tagline": "Sog'lom qorincha",
+      "description": "Ichak mikroflorasini tiklashga yordam beradi. Qabziyat va diareyaning oldini olishga yordam beradi. Immunitetni mustahkamlashga yordam beradi. Hazm jarayonini yaxshilaydi. Qorin dam bo'lishini kamaytirishga yordam beradi.",
+      "long": "Sog'lom mikroflora, qulay hazm qilish va mustahkam immunitet uchun tirik probiotik kulturalarga ega marmelad ayiqchalar",
+      "purposeIntro": "Sog'lom ichak mikroflorasi — immunitet, yaxshi kayfiyat va oziq moddalarning to'g'ri o'zlashtirilishi asosidir",
+      "compositionTitle": "Tirik kulturalarning 24 shtammi",
+      "compositionText": "Jekky tarkibida ichakni foydali bakteriyalar bilan to'ldiruvchi va bolaga ovqat almashinuvi hamda antibiotik kursini yengil o'tkazishga yordam beruvchi tanlangan probiotik shtammlar bor",
+      "activeFormula": "90 ta ayiqcha",
+      "effects": [
+        {
+          "title": "Ichak mikroflorasini tiklaydi",
+          "text": "Zararli bakteriyalarga qarshi kurashadi va immunitetni kuchaytiradi.",
+          "value": 95
+        },
+        {
+          "title": "Qabziyat va diareyani oldini oladi",
+          "text": "Ichakdagi foydali bakteriyalar muvozanatini tiklashga yordam beradi, shu sababli ichak faoliyati me'yorlashadi.",
+          "value": 92
+        },
+        {
+          "title": "Hazm tizimini yaxshilaydi",
+          "text": "Ozuqa moddalarining to'liq so'rilishini ta'minlab, hazm qilish tizimini rag'batlantiradi.",
+          "value": 90
+        },
+        {
+          "title": "Immunitetni mustahkamlaydi",
+          "text": "Organizmning virus va infeksiyalarga chidamliligini oshirib, ichakni himoya qiladi.",
+          "value": 93
+        },
+        {
+          "title": "Metabolizmni yaxshilaydi",
+          "text": "Ichaklarni toksin va shlaklardan tozalab, metabolizm jarayonini yaxshilaydi.",
+          "value": 88
+        },
+        {
+          "title": "Qorin dam bo'lishini kamaytiradi",
+          "text": "Ovqat hazm bo'lishi yaxshilanib, qorin dam bo'lishi va gaz to'planishi kamayadi.",
+          "value": 87
+        }
+      ],
+      "advantages": [
+        "Ichak mikroflorasini tiklaydi",
+        "Qabziyat va diareyani oldini oladi",
+        "Immunitetni mustahkamlaydi",
+        "Hazm jarayonini yaxshilaydi",
+        "Qorin dam bo'lishini kamaytiradi"
+      ],
+      "purposes": [
+        {
+          "title": "Ichak mikroflorasini tiklaydi",
+          "text": "Zararli bakteriyalarga qarshi kurashadi va immunitetni kuchaytiradi."
+        },
+        {
+          "title": "Qabziyat va diareyani oldini oladi",
+          "text": "Ichakdagi foydali bakteriyalar muvozanatini tiklashga yordam beradi, shu sababli ichak faoliyati me'yorlashadi."
+        },
+        {
+          "title": "Hazm tizimini yaxshilaydi",
+          "text": "Ozuqa moddalarining to'liq so'rilishini ta'minlab, hazm qilish tizimini rag'batlantiradi."
+        },
+        {
+          "title": "Immunitetni mustahkamlaydi",
+          "text": "Organizmning virus va infeksiyalarga chidamliligini oshirib, ichakni himoya qiladi."
+        },
+        {
+          "title": "Metabolizmni yaxshilaydi",
+          "text": "Ichaklarni toksin va shlaklardan tozalab, metabolizm jarayonini yaxshilaydi."
+        },
+        {
+          "title": "Qorin dam bo'lishini kamaytiradi",
+          "text": "Ovqat hazm bo'lishi yaxshilanib, qorin dam bo'lishi va gaz to'planishi kamayadi."
+        }
+      ]
+    },
+    "genny": {
+      "name": "Genny",
+      "shortName": "Genny",
+      "tagline": "Miya va ko'rish uchun",
+      "description": "Aqliy faoliyatni rivojlantirishga, xotirani mustahkamlashga, immunitetni mustahkamlashga va diqqatni jamlashga yordam beradi.",
+      "long": "Miya rivojlanishi, xotira, diqqat va ko'z salomatligi uchun baliq yog'i va yuqori DHA tarkibiga ega marmelad ayiqchalar",
+      "purposeIntro": "Omega-3 — organizm o'zi ishlab chiqarmaydigan almashtirib bo'lmas yog' kislotalari. Ular miya, ko'rish va yurak salomatligi uchun zarur",
+      "compositionTitle": "Baliq yog'i, EPA va DHA",
+      "compositionText": "Genny nafaqat miya uchun oziqa, balki yurak, ko'rish va butun organizm salomatligi uchun muhim komponentdir. Muntazam iste'mol qilish almashtirib bo'lmas yog' kislotalari yetishmovchiligini qoplaydi",
+      "activeFormula": "90 ta ayiqcha",
+      "effects": [
+        {
+          "title": "Miya faoliyatini rivojlantiradi",
+          "text": "Bolaning aqliy rivojlanishini qo'llab-quvvatlab, diqqatni jamlash, fikrlash va o'rganish jarayonlariga yordam beradi.",
+          "value": 95
+        },
+        {
+          "title": "Nutq va xotirani mustahkamlaydi",
+          "text": "Bolaning yangi ma'lumotlarni eslab qolishi, o'z fikrini ifodalashi va nutq rivojiga ijobiy ta'sir ko'rsatadi.",
+          "value": 92
+        },
+        {
+          "title": "Ko'rish qobiliyatini qo'llab-quvvatlaydi",
+          "text": "Ko'zlar salomatligi va normal ko'rish faoliyatini saqlash uchun muhim bo'lgan jarayonlarni qo'llab-quvvatlaydi.",
+          "value": 90
+        },
+        {
+          "title": "Diqqatni jamlashga yordam beradi",
+          "text": "O'qish, dars qilish va yangi ma'lumotlarni o'zlashtirish jarayonida diqqatni saqlashga ko'maklashadi.",
+          "value": 88
+        },
+        {
+          "title": "Sog'lom o'sish va rivojlanishga ko'maklashadi",
+          "text": "Bolaning jismoniy va aqliy rivojlanishi uchun zarur bo'lgan muhim jarayonlarni kompleks ravishda qo'llab-quvvatlaydi.",
+          "value": 90
+        }
+      ],
+      "advantages": [
+        "Miya faoliyatini yaxshilaydi",
+        "Ko'rish qobiliyatining pasayishini oldini oladi",
+        "Organizmda yallig'lanishni kamaytiradi",
+        "Immunitetni mustahkamlaydi"
+      ],
+      "purposes": [
+        {
+          "title": "🧠 Miya faoliyatini rivojlantiradi",
+          "text": "Bolaning aqliy rivojlanishini qo'llab-quvvatlab, diqqatni jamlash, fikrlash va o'rganish jarayonlariga yordam beradi."
+        },
+        {
+          "title": "💬 Nutq va xotirani mustahkamlaydi",
+          "text": "Bolaning yangi ma'lumotlarni eslab qolishi, o'z fikrini ifodalashi va nutq rivojiga ijobiy ta'sir ko'rsatadi."
+        },
+        {
+          "title": "👀 Ko'rish qobiliyatini qo'llab-quvvatlaydi",
+          "text": "Ko'zlar salomatligi va normal ko'rish faoliyatini saqlash uchun muhim bo'lgan jarayonlarni qo'llab-quvvatlaydi."
+        },
+        {
+          "title": "📚 Diqqatni jamlashga yordam beradi",
+          "text": "O'qish, dars qilish va yangi ma'lumotlarni o'zlashtirish jarayonida diqqatni saqlashga ko'maklashadi."
+        },
+        {
+          "title": "🌟 Sog'lom o'sish va rivojlanishga ko'maklashadi",
+          "text": "Bolaning jismoniy va aqliy rivojlanishi uchun zarur bo'lgan muhim jarayonlarni kompleks ravishda qo'llab-quvvatlaydi."
+        }
+      ]
+    },
+    "endomarine": {
+      "name": "Endomarine",
+      "shortName": "Endomarine",
+      "tagline": "Yod va qalqonsimon bez uchun",
+      "description": "Diqqat va xotirani kuchaytiradi. Aqliy va jismoniy faollikni oshiradi. Qalqonsimon bez faoliyatini yaxshilaydi.",
+      "long": "Endomarine — organizmni yod bilan to'ldirib, qalqonsimon bez faoliyatini va bolaning aqliy rivojlanishini qo'llab-quvvatlaydigan 100% tabiiy sirop",
+      "purposeIntro": "Yod yetishmovchiligi bolaning diqqati, xotirasi va o'sishiga ta'sir qiladi — muntazam qabul buni qoplashga yordam beradi",
+      "compositionTitle": "Yod",
+      "compositionText": "Endomarine organizmni zarur miqdordagi yod bilan ta'minlab, qalqonsimon bez gormonlarini ishlab chiqarishni qo'llab-quvvatlaydi",
+      "activeFormula": "500 ml sirop",
+      "effects": [
+        {
+          "title": "Aqliy va jismoniy faollikni oshiradi",
+          "text": "Bolaning kun davomida tetik bo'lishi, faol harakatlanishi va aqliy faoliyatini qo'llab-quvvatlaydi.",
+          "value": 94
+        },
+        {
+          "title": "Asab tizimini qo'llab-quvvatlaydi",
+          "text": "Asab tizimining normal faoliyat yuritishi va bolaning umumiy rivojlanishiga yordam beradi.",
+          "value": 92
+        },
+        {
+          "title": "Organizmni yod bilan to'ldiradi",
+          "text": "Organizmga zarur bo'lgan yodning yetarli miqdorda bo'lishini ta'minlashga yordam beradi.",
+          "value": 95
+        },
+        {
+          "title": "Qalqonsimon bez faoliyatini normallashtiradi",
+          "text": "Qalqonsimon bez gormonlarini ishlab chiqarish uchun zarur bo'lgan yod bilan ta'minlanishiga yordam beradi.",
+          "value": 93
+        },
+        {
+          "title": "Bolaning sog'lom o'sishiga yordam beradi",
+          "text": "O'sish davrida organizmning normal rivojlanishini qo'llab-quvvatlaydi.",
+          "value": 90
+        },
+        {
+          "title": "O'rganish qobiliyatini qo'llab-quvvatlaydi",
+          "text": "Bolaning bilim olish, fikrlash va yangi ma'lumotlarni o'zlashtirish jarayonlarida muhim rol o'ynaydi.",
+          "value": 89
+        }
+      ],
+      "advantages": [
+        "Diqqat va xotirani kuchaytiradi",
+        "Aqliy va jismoniy faollikni oshiradi",
+        "Qalqonsimon bez faoliyatini yaxshilaydi",
+        "Organizmni yod bilan to'ldiradi"
+      ],
+      "purposes": [
+        {
+          "title": "Aqliy va jismoniy faollikni oshiradi",
+          "text": "Bolaning kun davomida tetik bo'lishi, faol harakatlanishi va aqliy faoliyatini qo'llab-quvvatlaydi."
+        },
+        {
+          "title": "Asab tizimini qo'llab-quvvatlaydi",
+          "text": "Asab tizimining normal faoliyat yuritishi va bolaning umumiy rivojlanishiga yordam beradi."
+        },
+        {
+          "title": "Organizmni yod bilan to'ldiradi",
+          "text": "Organizmga zarur bo'lgan yodning yetarli miqdorda bo'lishini ta'minlashga yordam beradi."
+        },
+        {
+          "title": "Qalqonsimon bez faoliyatini normallashtiradi",
+          "text": "Qalqonsimon bez gormonlarini ishlab chiqarish uchun zarur bo'lgan yod bilan ta'minlanishiga yordam beradi."
+        },
+        {
+          "title": "Bolaning sog'lom o'sishiga yordam beradi",
+          "text": "O'sish davrida organizmning normal rivojlanishini qo'llab-quvvatlaydi."
+        },
+        {
+          "title": "O'rganish qobiliyatini qo'llab-quvvatlaydi",
+          "text": "Bolaning bilim olish, fikrlash va yangi ma'lumotlarni o'zlashtirish jarayonlarida muhim rol o'ynaydi."
+        }
+      ],
+      "specs": {
+        "volume": "500 ml",
+        "form": "Sirop"
+      },
+      "facts": {
+        "dosage": {
+          "value": "500 ML",
+          "label": "Hajmi"
+        }
+      },
+      "intake": {
+        "dosage": {
+          "title": "Dozalash",
+          "text": "Kuniga 1 marta, ovqat vaqtida qabul qiling. Aniq miqdorni qadoqdagi ko'rsatmadan qarang"
+        },
+        "afterMeal": {
+          "title": "Qabul qilishdan oldin",
+          "text": "Har safar ishlatishdan oldin shishani yaxshilab chayqating"
+        },
+        "storage": {
+          "title": "Saqlash",
+          "text": "Ochilgandan keyin muzlatgichda saqlang va to'g'ridan-to'g'ri quyosh nuridan asrang"
+        }
+      }
+    }
+  },
+  "product": {
+    "breadcrumbHome": "Bosh sahifa",
+    "breadcrumbProducts": "Mahsulotlar",
+    "addToCart": "Savatga qo'shish",
+    "quantity": "Miqdor",
+    "decrease": "Miqdorni kamaytirish",
+    "increase": "Miqdorni oshirish",
+    "gallery": "Mahsulot galereyasi",
+    "specsTitle": "Xususiyatlari",
+    "specs": {
+      "volume": {
+        "label": "Hajmi",
+        "value": "400 mg"
+      },
+      "form": {
+        "label": "Chiqarilish shakli",
+        "value": "Marmelad ayiqchalar"
+      },
+      "age": {
+        "label": "Yoshi",
+        "value": "2 yoshdan"
+      },
+      "country": {
+        "label": "Ishlab chiqarilgan davlat",
+        "value": "O'zbekiston"
+      },
+      "shelfLife": {
+        "label": "Yaroqlilik muddati",
+        "value": "24 oy"
+      },
+      "storage": {
+        "label": "Saqlash sharoiti",
+        "value": "+25 °C dan yuqori bo'lmagan quruq va salqin joyda"
+      }
+    },
+    "purposeTitle": "{name} nima uchun kerak?",
+    "intakeTitle": "{name} qanday qabul qilinadi?",
+    "intakeSubtitle": "Maksimal natijaga erishish uchun tavsiya etilgan qabul qoidalariga amal qiling.",
+    "intake": {
+      "dosage": {
+        "title": "Dozalash",
+        "text": "Kuniga 1–2 ta ayiqchani ovqat vaqtida qabul qiling"
+      },
+      "regularity": {
+        "title": "Muntazamlik",
+        "text": "Tavsiya etilgan minimal kurs — 1 oy. Kuchliroq samara uchun to'liq kursni o'tash tavsiya etiladi"
+      },
+      "afterMeal": {
+        "title": "Ovqatdan keyin",
+        "text": "1–2 stakan toza suv bilan iching. Bu mahsulotning yaxshiroq o'zlashtirilishiga yordam beradi"
+      },
+      "storage": {
+        "title": "Saqlash",
+        "text": "To'g'ridan-to'g'ri quyosh nuri va namlikdan himoyalangan quruq, salqin joyda saqlang"
+      }
+    },
+    "importantTitle": "Amal qilish muhim",
+    "importantText": "Faqat tavsiya etilgan yosh dozasiga muvofiq qabul qiling. Yaxshiroq o'zlashtirish uchun ovqat vaqtida yoki undan keyin qabul qilish tavsiya etiladi. Tavsiya etilgan kunlik me'yordan oshirmang. Kichik yoshdagi bolalarga berishdan oldin pediatr bilan maslahatlashing. +25 °C dan yuqori bo'lmagan quruq joyda saqlang.",
+    "facts": {
+      "dosage": {
+        "value": "400 MG",
+        "label": "Dozalash"
+      },
+      "course": {
+        "value": "1–3 oy",
+        "label": "Qabul kursi"
+      },
+      "natural": {
+        "value": "100%",
+        "label": "Tabiiy mahsulot"
+      },
+      "active": {
+        "label": "Faol tarkib"
+      }
+    },
+    "advantagesTitle": "{name} afzalliklari",
+    "orderTitle": "Buyurtmani hoziroq rasmiylashtiring",
+    "orderText": "Bugundan farzandingiz salomatligi haqida qayg'urishni boshlang va muntazam qabuldan 2–4 hafta ichida ijobiy o'zgarishlarni his qiling",
+    "orderButton": "Buyurtma berish",
+    "notFound": "Bunday mahsulot katalogda yo'q"
+  },
+  "blogPage": {
+    "title": "Foydali maqolalar",
+    "subtitle": "Farzandingiz salomatligiga oid muhim ma'lumotlar!",
+    "all": "Barcha mavzular",
+    "empty": "Bu mavzuda hozircha maqola yo'q",
+    "backToBlog": "Barcha maqolalar",
+    "published": "Chop etilgan"
+  },
+  "articleTopics": {
+    "immunity": "Immunitet",
+    "gut-health": "Ichak salomatligi",
+    "nutrition": "Ovqatlanish",
+    "vitamins": "Vitaminlar"
+  },
+  "articles": {
+    "science-of-immunity": {
+      "title": "Immunitet haqidagi fan: bolalar uchun qaysi vitaminlar haqiqatan muhim",
+      "excerpt": "Immunitet uchun barcha vositalar bir xil emas. Tadqiqotlar bolalarda mustahkam himoya shakllanishi haqida nima deydi.",
+      "body": "Bolaning immunitet tizimi o'smirlik yoshigacha shakllanadi va bu davrda u mikronutriyent yetishmovchiligiga ayniqsa sezgir bo'ladi. D3 vitamini, C vitamini va rux — eng ishonchli dalillar bazasiga ega uchta element.\n\nD3 vitamini tug'ma immunitet hujayralari ishida qatnashadi. Quyosh kam bo'lgan hududlarda yetishmovchilik ko'pchilik bolalarda uchraydi, shuning uchun kuz-qish davrida qo'shimcha qabul qilish oqlanadi.\n\nC vitamini shamollashning oldini olmaydi, lekin uning davomiyligini qisqartiradi. Muntazam qabul qilish kasallik paytidagi katta dozalardan ko'ra yaxshiroq ishlaydi.\n\nProbiotiklar immunitetga bilvosita ta'sir qiladi: immunitet hujayralarining taxminan 70 % i ichakda joylashgan, shuning uchun sog'lom mikroflora organizm himoyasining bir qismidir."
+    },
+    "gut-is-the-second-brain": {
+      "title": "Nega ichak salomatligi bolaning o'sishi uchun muhim",
+      "excerpt": "Ichak mikroflorasi nafaqat hazm qilishga, balki immunitet, kayfiyat va umumiy holatga ham ta'sir qiladi.",
+      "body": "«Ichak — miya» o'qi zamonaviy fanning eng qiziqarli sohalaridan biridir. Uni tushunish farzandingiz salomatligiga yondashuvingizni o'zgartirishi mumkin.\n\nMikroflora B guruhi va K vitaminlari sintezida qatnashadi, kalsiy va temirni o'zlashtirishga yordam beradi — aynan jadal o'sish davrida muhim bo'lgan elementlar.\n\nOvqatlanishning o'zgarishi, safarlar va antibiotik kursi bakteriyalar muvozanatini buzadi. Bunday davrlarda probiotiklar mikroflorani tezroq tiklashga yordam beradi.\n\nE'tibor berish kerak bo'lgan belgilar: nomuntazam najas, qorin dam bo'lishi, ishtahaning pasayishi va tez-tez shamollash."
+    },
+    "focus-and-brain-development": {
+      "title": "Bolaning diqqati va miya rivojlanishini qanday qo'llab-quvvatlash mumkin",
+      "excerpt": "Qaysi oziq moddalar bolalarga yaxshiroq diqqatni jamlash, o'rganish va yangi ma'lumotni eslab qolishga yordam beradi.",
+      "body": "Bolaning miyasi taxminan 60 % yog'dan iborat va uning katta qismi omega-3 guruhidagi dokozageksaen kislotasi (DHA) hisoblanadi.\n\nDHA neyronlarning hujayra membranalari tarkibiga kiradi va signal uzatish tezligiga ta'sir qiladi. Tadqiqotlar yetarli omega-3 darajasini yaxshiroq diqqat va o'zlashtirish bilan bog'laydi.\n\nTemir va yod kognitiv rivojlanish uchun javob beradi, B guruhi vitaminlari esa asab to'qimasidagi energiya almashinuvini qo'llab-quvvatlaydi.\n\nMuhim eslatma: qo'shimchalar faqat to'liq uyqu, jismoniy faollik va xilma-xil ovqatlanish bilan birga ishlaydi."
+    },
+    "healthy-snacks-for-active-kids": {
+      "title": "Faol bolalar uchun foydali yengil taomlar",
+      "excerpt": "Qaysi mahsulotlar va odatlar bolaga har kuni ko'proq energiya va kerakli vitaminlarni olishga yordam beradi.",
+      "body": "Yengil taom «ortiqcha ovqat» emas, balki bolalar ratsionining to'laqonli qismidir. U hisobiga bola kunlik energiyaning to'rtdan bir qismigacha oladi.\n\nYaxshi yengil taom sekin uglevodlar, oqsil va ozgina yog'ni birlashtiradi: masalan, pishloqli to'liq donli non, rezavorlar bilan yogurt yoki meva bilan bir hovuch yong'oq.\n\nShirin batonchiklar va sharbatlar tez energiya sakrashini va shunday tez pasayishni beradi — bir soatdan keyin bola yana och va parishon bo'ladi.\n\nVitamin majmualari ratsionni to'ldiradi, lekin uning o'rnini bosmaydi. Marmelad shakli qabulni ko'ndirishsiz kundalik odatga aylantirishga yordam beradi."
+    }
+  },
+  "contacts": {
+    "title": "Biz bilan bog'laning",
+    "subtitle": "Biz savollaringizga javob berish va farzandingiz salomatligiga g'amxo'rlik qilishga yordam berish uchun shu yerdamiz",
+    "channels": {
+      "email": {
+        "title": "Elektron pochta",
+        "text": "24 soat ichida javob beramiz"
+      },
+      "phone": {
+        "title": "Telefon",
+        "text": "Biz 24/7 aloqadamiz"
+      },
+      "telegram": {
+        "title": "Telegram",
+        "text": "Messenjerda bizga yozing"
+      },
+      "instagram": {
+        "title": "Instagram",
+        "text": "Brend yangiliklari va hayoti"
+      },
+      "address": {
+        "title": "Manzil",
+        "text": ""
+      },
+      "hours": {
+        "title": "Ish tartibi",
+        "text": "Dush – Yak: 09:00–19:00",
+        "extra": "Dam olish kunlarisiz!"
+      }
+    },
+    "formTitle": "Bizga yozing",
+    "form": {
+      "name": "Ismingiz",
+      "email": "E-pochta",
+      "subject": "Murojaat mavzusi",
+      "message": "Xabaringiz",
+      "submit": "Bepul konsultatsiya olish",
+      "sent": "Xabar yuborildi — 24 soat ichida javob beramiz",
+      "privacy": "Ma'lumotlaringiz maxfiyligini kafolatlaymiz"
+    },
+    "faqTitle": "Ko'p so'raladigan savollar",
+    "faq": {
+      "production": {
+        "question": "Vitaminlaringiz qayerda ishlab chiqariladi?",
+        "answer": "Mahsulotimiz GMP va ISO 22000 standartlariga rioya qilgan holda sertifikatlangan korxonalarda ishlab chiqariladi."
+      },
+      "delivery": {
+        "question": "Yetkazib berish qanday va qancha vaqt oladi?",
+        "answer": "O'zbekiston bo'ylab yetkazib berish 1 dan 5 ish kunigacha davom etadi. 300 000 so'mdan yuqori buyurtmalarga bepul yetkazib berish."
+      },
+      "returns": {
+        "question": "Mahsulotni qaytarish mumkinmi?",
+        "answer": "Ha, agar mahsulot ochilmagan va ishlatilmagan bo'lsa, uni 30 kun ichida qaytarishingiz mumkin."
+      },
+      "choose": {
+        "question": "Bola uchun vitaminni qanday tanlash kerak?",
+        "answer": "Pediatr bilan maslahatlashishni tavsiya etamiz. Shuningdek, saytimizda bepul konsultatsiyaga ariza qoldirishingiz mumkin."
+      }
+    }
+  },
+  "consultation": {
+    "title": "Konsultatsiyaga yozilish",
+    "subtitle": "Kontaktlaringizni qoldiring va biz bepul konsultatsiya uchun siz bilan bog'lanamiz",
+    "form": {
+      "name": "Ismingiz",
+      "namePlaceholder": "Ism Familiya",
+      "phone": "Telefon raqami",
+      "phonePlaceholder": "+998 __ ___ __ __",
+      "subject": "Murojaat mavzusi",
+      "subjectPlaceholder": "Ixtiyoriy",
+      "message": "Xabar",
+      "messagePlaceholder": "Xabaringiz...",
+      "required": "majburiy maydon",
+      "note": "Forma to'ldirilgandan so'ng mutaxassisimiz 24 soat ichida siz bilan bog'lanadi. Konsultatsiya bepul!",
+      "submit": "Ariza yuborish",
+      "submitting": "Yuborilmoqda…"
+    },
+    "errors": {
+      "name": "Ismingizni kiriting",
+      "phone": "To'g'ri telefon raqamini kiriting",
+      "message": "Muammoni tavsiflang",
+      "rateLimit": "Juda ko'p ariza yuborildi. Birozdan so'ng urinib ko'ring",
+      "network": "Arizani yuborib bo'lmadi. Yana bir bor urinib ko'ring"
+    },
+    "success": {
+      "title": "Arizangiz uchun rahmat!",
+      "text": "Arizangiz muvaffaqiyatli yuborildi. NUMA KIDS mutaxassisi tez orada siz bilan bog'lanadi",
+      "time": "Odatda ish vaqtida 15–30 daqiqa ichida javob beramiz",
+      "backHome": "Bosh sahifaga qaytish",
+      "goToCatalog": "Katalogga o'tish"
+    }
+  },
+  "notFound": {
+    "title": "Sahifa topilmadi",
+    "text": "Chamasi bu sahifa marmelad ayiqchalar bilan birga qochib ketibdi. Bosh sahifaga qayting yoki katalogni ko'ring."
+  },
+  "cart": {
+    "title": "Savat",
+    "empty": "Savat hozircha bo'sh",
+    "emptyHint": "Katalogga qarang — tanlash uchun mahsulotlar bor",
+    "items": "Mahsulotlar ({count})",
+    "delivery": "Yetkazib berish",
+    "free": "Bepul",
+    "total": "Jami",
+    "checkout": "Buyurtma berish",
+    "remove": "O'chirish",
+    "pcs": "dona",
+    "continue": "Xaridni davom ettirish",
+    "unavailable": "Mavjud emas",
+    "unavailableTotal": "Buyurtma uchun mavjud emas",
+    "unavailableHint": "Buyurtma berish uchun mavjud bo'lmagan mahsulotlarni o'chiring.",
+    "freeFrom": "2 ta mahsulotdan boshlab yetkazib berish bepul"
+  },
+  "checkout": {
+    "title": "Buyurtmani rasmiylashtirish",
+    "contactTitle": "Aloqa ma'lumotlari",
+    "deliveryTitle": "Yetkazib berish",
+    "deliveryOption": "Toshkent bo'ylab kuryer",
+    "deliveryTime": "1–2 ish kuni",
+    "orderTitle": "Sizning buyurtmangiz",
+    "paymentTitle": "To'lov usuli",
+    "name": "Ism",
+    "namePlaceholder": "Aziza",
+    "surname": "Familiya",
+    "surnamePlaceholder": "Karimova",
+    "phone": "Telefon",
+    "phonePlaceholder": "+998 90 123 45 67",
+    "city": "Shahar",
+    "cityPlaceholder": "Toshkent",
+    "address": "Manzil",
+    "addressPlaceholder": "Navoiy ko'chasi, 15-uy, 42-xonadon",
+    "paymentCash": "Yetkazib berishda naqd pul",
+    "paymentCashHint": "Buyurtmani tekshirgach kuryerga to'lanadi",
+    "paymentClick": "Click",
+    "paymentClickHint": "Click orqali karta bilan to'lov",
+    "paymentPayme": "Payme",
+    "paymentPaymeHint": "Payme orqali karta bilan to'lov",
+    "paymentUzum": "Uzum",
+    "paymentUzumHint": "Uzum ilovasi orqali to'lov",
+    "pay": "To'lovga o'tish",
+    "payCash": "Buyurtma berish",
+    "submitting": "Rasmiylashtirilmoqda…",
+    "redirecting": "To'lovga o'tilmoqda…",
+    "successTitle": "Buyurtma qabul qilindi!",
+    "successText": "Tasdiqlash uchun tez orada siz bilan bog'lanamiz",
+    "orderNumber": "Buyurtma raqami",
+    "emptyRedirect": "Savat hozircha bo'sh",
+    "errorGeneric": "Buyurtmani rasmiylashtirib bo'lmadi. Qayta urinib ko'ring.",
+    "errorStock": "Omborda yetarli mahsulot yo'q. Miqdorni o'zgartiring.",
+    "errorPayment": "Buyurtma yaratildi, ammo to'lovni ochib bo'lmadi. Siz bilan bog'lanamiz.",
+    "errorOffline": "Server mavjud emas. Buyurtmani telefon orqali qabul qilamiz.",
+    "errorPhone": "Raqamni +998 XX XXX XX XX ko'rinishida kiriting",
+    "errorUnavailable": "Mahsulot sotuvdan olindi. Savatni yangilang va uni o'chiring."
+  },
+  "articleProducts": {
+    "title": "Ushbu maqoladagi mahsulotlar",
+    "subtitle": "Yuqorida so'z yuritilgan mahsulotlarni shu yerdan buyurtma qilish mumkin"
+  },
+  "PaymentReturn": {
+    "metaTitle": "To'lov holati",
+    "metaDescription": "Buyurtmangiz to'lovi holatini tekshiryapmiz.",
+    "checking": "To'lov tekshirilmoqda…",
+    "paidTitle": "Buyurtma to'landi",
+    "paidText": "To'lov tasdiqlandi. Yetkazib berish bo'yicha siz bilan bog'lanamiz.",
+    "failedTitle": "To'lov amalga oshmadi",
+    "failedText": "Pul yechilmadi. Mahsulotlar savatga qaytdi — buyurtmani qayta rasmiylashtirishingiz mumkin.",
+    "stillPendingTitle": "To'lov qayta ishlanmoqda",
+    "stillPendingText": "Bu bir necha daqiqa olishi mumkin. Holat buyurtmalaringizda ko'rinadi — pul yo'qolmaydi.",
+    "unknownTitle": "To'lovni tekshirib bo'lmadi",
+    "unknownText": "Sahifani yangilang yoki holatni keyinroq tekshiring.",
+    "missingOrder": "Buyurtma ko'rsatilmagan",
+    "orderRef": "Buyurtma raqami:",
+    "toCart": "Savatga o'tish",
+    "toCatalog": "Katalogga"
+  },
+  "account": {
+    "title": "Shaxsiy kabinet",
+    "loading": "Yuklanmoqda",
+    "profile": "Profil",
+    "name": "Ism",
+    "firstName": "Ism",
+    "lastName": "Familiya",
+    "phone": "Telefon raqami",
+    "edit": "O'zgartirish",
+    "save": "Saqlash",
+    "cancel": "Bekor qilish",
+    "signOut": "Chiqish",
+    "orders": "Mening buyurtmalarim",
+    "noOrders": "Hozircha buyurtmalar yo'q",
+    "prev": "Orqaga",
+    "next": "Oldinga",
+    "purchases": "Xaridlar tarixi",
+    "purchasesHint": "Saytdagi buyurtmalar va menejer orqali xaridlar bitta ro'yxatda",
+    "noPurchases": "Hozircha xaridlar yo'q",
+    "managerPurchase": "Xarid",
+    "viaManager": "Menejer orqali",
+    "signInTitle": "Kirish",
+    "signInSubtitle": "Tasdiqlash kodini SMS orqali yuboramiz",
+    "registerTitle": "Ro'yxatdan o'tish",
+    "signInTab": "Kirish",
+    "registerTab": "Ro'yxatdan o'tish",
+    "sendCode": "Kod olish",
+    "codeTitle": "SMS dagi kod",
+    "codeSubtitle": "{phone} raqamiga kod yubordik",
+    "code": "Kod",
+    "confirm": "Tasdiqlash",
+    "changePhone": "Raqamni o'zgartirish",
+    "account": "Kabinet",
+    "status": {
+      "new": "Yangi",
+      "processing": "Ishlanmoqda",
+      "completed": "Yakunlangan",
+      "cancelled": "Bekor qilingan"
+    },
+    "stores": {
+      "nutrition": "Nutrition",
+      "kids": "Kids",
+      "halal": "Nabaviy Tabobat",
+      "family": "Family"
+    },
+    "errors": {
+      "phone": "To'g'ri raqam kiriting",
+      "name": "Ismingizni kiriting",
+      "unregistered": "Bu raqamda akkaunt yo'q — ro'yxatdan o'ting",
+      "alreadyRegistered": "Bu raqam allaqachon ro'yxatdan o'tgan — kiring",
+      "wrongCode": "Kod noto'g'ri yoki muddati o'tgan",
+      "rateLimit": "Juda ko'p urinish. Birozdan so'ng qayta urinib ko'ring",
+      "validation": "Kiritilgan ma'lumotlarni tekshiring",
+      "network": "So'rovni bajarib bo'lmadi. Yana urinib ko'ring"
+    },
+    "cart": "Savat",
+    "checkout": "Buyurtma berish",
+    "emptyCart": "Savat bo'sh.",
+    "toCatalogue": "Katalogga o'tish",
+    "total": "Jami",
+    "cartUnavailable": "Savatdagi biror mahsulot hozir mavjud emas",
+    "quantity": "Miqdori",
+    "decrease": "Kamaytirish",
+    "increase": "Ko'paytirish",
+    "removeItem": "Savatdan olib tashlash"
+  }
+}
