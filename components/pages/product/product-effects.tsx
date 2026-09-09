@@ -3,6 +3,7 @@ import { useTranslations } from "next-intl";
 
 import { Container } from "@/components/shared/container";
 import type { ProductContent } from "@/lib/api/blocks";
+import { slotImage } from "@/lib/utils";
 import type { Product } from "@/types";
 
 export function ProductEffects({
@@ -91,7 +92,7 @@ export function ProductEffects({
           />
           <div className="relative h-3/5 w-3/5">
             <Image
-              src={product.image}
+              src={slotImage(product, "benefits_1", product.image)}
               alt={name}
               fill
               sizes="320px"

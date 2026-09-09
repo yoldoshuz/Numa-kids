@@ -3,6 +3,7 @@ import { useTranslations } from "next-intl";
 import { Container } from "@/components/shared/container";
 import { Product3D } from "@/components/shared/product-3d";
 import type { ProductContent } from "@/lib/api/blocks";
+import { slotImage } from "@/lib/utils";
 import type { Product } from "@/types";
 
 const FACT_POSITION = [
@@ -96,7 +97,7 @@ export function ProductComposition({
           <Product3D
             slug={product.slug}
             alt={name}
-            fallback={product.image}
+            fallback={slotImage(product, "composition_1", product.image)}
             sizes="(max-width: 640px) 200px, 280px"
             className="relative order-first mx-auto h-60 w-48 sm:order-none sm:h-80 sm:w-64"
           />

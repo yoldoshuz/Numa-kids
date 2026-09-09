@@ -5,6 +5,7 @@ import { Container } from "@/components/shared/container";
 import { Sparkles } from "@/components/shared/sparkles";
 import type { ProductContent } from "@/lib/api/blocks";
 import { PRODUCT_INTAKE_STEPS } from "@/lib/data";
+import { slotImage } from "@/lib/utils";
 import type { Product } from "@/types";
 
 export function ProductIntake({
@@ -80,16 +81,24 @@ export function ProductIntake({
           </ol>
 
           {/*
-            These slots are filled from the product's uploaded photos, which are
-            as often an upright jar as a wide frame, so each box states its own
-            ratio and the picture letterboxes inside it. A cover-crop of a jar
-            is a strip of its label blown up past recognition.
+            The big frame is the `how_to_use_1` slot — a picture shot for these
+            instructions rather than whichever gallery photo happened to land in
+            second place. Both fall back to the gallery, which is what they were.
+
+            Each box still states its own ratio and letterboxes the picture: the
+            uploads are as often an upright jar as a wide frame, and a
+            cover-crop of a jar is a strip of its label blown up past
+            recognition.
           */}
           <div className="grid gap-5">
             <div className="grid gap-5 sm:grid-cols-[1.85fr_1fr]">
               <div className="relative aspect-[16/9] overflow-hidden rounded-2xl bg-surface-cream">
                 <Image
-                  src={product.gallery[1] ?? product.gallery[0]}
+                  src={slotImage(
+                    product,
+                    "how_to_use_1",
+                    product.gallery[1] ?? product.gallery[0],
+                  )}
                   alt={name}
                   fill
                   sizes="(max-width: 640px) 100vw, 520px"
@@ -98,7 +107,7 @@ export function ProductIntake({
               </div>
               <div className="relative hidden aspect-[4/3] overflow-hidden rounded-2xl bg-surface-cream sm:block">
                 <Image
-                  src={product.gallery[0]}
+                  src={slotImage(product, "lifestyle_1", product.gallery[0])}
                   alt={name}
                   fill
                   sizes="280px"

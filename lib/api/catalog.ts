@@ -15,6 +15,7 @@ import type {
   ArticleTopic,
   Product,
   ProductCategory,
+  ProductImageSlots,
   ReviewCard,
 } from "@/types";
 import type { AppLocale } from "@/lib/i18n/routing";
@@ -30,7 +31,7 @@ import {
   getProductList,
   getReviews,
 } from "./endpoints";
-import type { ApiBlogPost, ApiProduct } from "./types";
+import type { ApiBlogPost, ApiProduct, ImageSlotKey } from "./types";
 
 /* ── mapping ─────────────────────────────────────────────────────────────── */
 
@@ -58,6 +59,53 @@ function uploadedShots(api: ApiProduct): string[] {
     .sort((a, b) => Number(b.isMain) - Number(a.isMain) || a.sortOrder - b.sortOrder)
     .map((m) => img(m.url))
     .filter(Boolean);
+}
+
+/** The four gallery places, in the order the design stacks them. */
+const GALLERY_SLOTS: ImageSlotKey[] = ["gallery_1", "gallery_2", "gallery_3", "gallery_4"];
+
+/**
+ * The pictures a moderator placed by hand, keyed by the slot they sit in.
+ *
+ * Empty slots are dropped rather than kept as `null`, so a caller can ask
+ * `slots.benefits_1` and get either a picture or nothing — no third state to
+ * think about at every use site.
+ */
+function slotted(api: ApiProduct): ProductImageSlots {
+  const entries = Object.entries(api.images ?? {}).flatMap(([slot, value]) => {
+    const url = img(value?.url);
+    if (!url) return [];
+    return [[slot, { ...value!, url }] as const];
+  });
+  return Object.fromEntries(entries) as ProductImageSlots;
+}
+
+/**
+ * The gallery, chosen by name instead of by walking `media`.
+ *
+ * The array walk stays as the fallback, and deliberately so. Slots arrived after
+ * the catalogue was already full, so a product nobody has re-uploaded since has
+ * `images` empty and `media` full; reading only the slots would blank out its
+ * card. Once any gallery slot is filled, that placement is the moderator's
+ * explicit choice and wins outright — including the gaps, which is why the list
+ * is compacted rather than padded.
+ */
+/**
+ * The wide strip, or `null` when nobody placed one — the caller's cue to keep
+ * whatever it was showing before rather than render an empty band.
+ */
+function bannerShots(slots: ProductImageSlots): string[] | null {
+  const placed = [slots.banner_wide?.url, slots.advantages_1?.url].filter(
+    (url): url is string => Boolean(url),
+  );
+  return placed.length ? placed : null;
+}
+
+function galleryShots(api: ApiProduct, slots: ProductImageSlots): string[] {
+  const placed = GALLERY_SLOTS.map((slot) => slots[slot]?.url).filter(
+    (url): url is string => Boolean(url),
+  );
+  return placed.length ? placed : uploadedShots(api);
 }
 
 /**
@@ -92,7 +140,8 @@ function toProduct(api: ApiProduct, index: number): Product {
   const attrs = api.attributes ?? {};
   const images = attrs.images ?? {};
   const base = staticProduct(api.slug);
-  const shots = uploadedShots(api);
+  const slots = slotted(api);
+  const shots = galleryShots(api, slots);
   const card = shots[0] || img(images.card) || base?.image || "";
   const gallery = shots.length
     ? shots
@@ -112,15 +161,22 @@ function toProduct(api: ApiProduct, index: number): Product {
     accent: (attrs.accent as Accent) ?? base?.accent ?? "blue",
     image: card,
     gallery: gallery.length ? gallery : [card],
-    banner: shots.length
+    /*
+     * The advantages carousel. `banner_wide` is the slot cut for exactly this
+     * strip, with `advantages_1` behind it, and only then the old behaviour of
+     * reusing the gallery — which was never really a banner, just the widest
+     * thing available.
+     */
+    banner: bannerShots(slots) ?? (shots.length
       ? shots
       : images.banner
         ? imgs(images.banner)
-        : (base?.banner ?? [card]),
+        : (base?.banner ?? [card])),
     price: Number(api.discountPrice ?? api.price),
     strains: attrs.strains ?? base?.strains ?? 0,
     isTop: attrs.isTop ?? api.isFeatured,
     order: resolveOrder(api.sortOrder, attrs.order, base?.order, index + 1),
+    slots,
     // Only the by-slug response carries these, so on a list they are simply
     // absent — the catalogue has no use for them and they would bloat the
     // response.
