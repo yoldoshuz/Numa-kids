@@ -762,6 +762,13 @@
       }
     },
     "advantagesTitle": "{name} benefits",
+    "slots": {
+      "compositionTitle": "What's on the label",
+      "compositionText": "The full composition of {name}, exactly as printed on the pack. Worth reading before you buy, especially if your child has an allergy.",
+      "lifestyleTitle": "{name} every day",
+      "certificateTitle": "Quality certificate",
+      "certificateText": "The product has passed laboratory testing and certification. The document can be read in full."
+    },
     "orderTitle": "Place your order right now",
     "orderText": "Start caring about your child's health today and feel positive changes within 2–4 weeks of regular intake",
     "orderButton": "Place an order",

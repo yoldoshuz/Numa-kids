@@ -762,6 +762,13 @@
       }
     },
     "advantagesTitle": "{name} afzalliklari",
+    "slots": {
+      "compositionTitle": "Yorliqdagi tarkib",
+      "compositionText": "{name} ning to'liq tarkibi — qadoqda bosilgan holida. Xarid qilishdan oldin tekshirib chiqing, ayniqsa bolada allergiya bo'lsa.",
+      "lifestyleTitle": "{name} har kuni",
+      "certificateTitle": "Sifat sertifikati",
+      "certificateText": "Mahsulot laboratoriya nazoratidan va sertifikatlashdan o'tgan. Hujjatni to'liq ko'rib chiqish mumkin."
+    },
     "orderTitle": "Buyurtmani hoziroq rasmiylashtiring",
     "orderText": "Bugundan farzandingiz salomatligi haqida qayg'urishni boshlang va muntazam qabuldan 2–4 hafta ichida ijobiy o'zgarishlarni his qiling",
     "orderButton": "Buyurtma berish",

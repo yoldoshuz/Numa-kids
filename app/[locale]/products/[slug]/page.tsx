@@ -10,6 +10,12 @@ import { ProductHero } from "@/components/pages/product/product-hero";
 import { ProductIntake } from "@/components/pages/product/product-intake";
 import { ProductOrder } from "@/components/pages/product/product-order";
 import { ProductPurpose } from "@/components/pages/product/product-purpose";
+import {
+  ProductBanner,
+  ProductCertificate,
+  ProductLabel,
+  ProductLifestyle,
+} from "@/components/pages/product/product-slot-sections";
 import { JsonLd } from "@/components/shared/json-ld";
 import {
   resolveProductContent,
@@ -89,6 +95,18 @@ export default async function ProductPage({ params }: { params: Params }) {
     <>
       <ProductHero product={product} content={content} />
       {resolveSectionOrder(product.blocks).map((section) => SECTION[section])}
+
+      {/*
+        The four sections that are a photograph and nothing else. They have no
+        CMS block to order them, so they close the page in the order the shared
+        template lays down — label, lifestyle, certificate, wide strip — and
+        each one renders only if its slot has a file in it.
+      */}
+      <ProductLabel product={product} />
+      <ProductLifestyle product={product} />
+      <ProductCertificate product={product} />
+      <ProductBanner product={product} />
+
       <ProductOrder />
 
       <JsonLd
