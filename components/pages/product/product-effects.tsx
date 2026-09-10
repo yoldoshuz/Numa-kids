@@ -1,9 +1,10 @@
-import Image from "next/image";
 import { useTranslations } from "next-intl";
 
 import { Container } from "@/components/shared/container";
+import { SlotImage } from "@/components/shared/slot-image";
 import type { ProductContent } from "@/lib/api/blocks";
-import { slotImage } from "@/lib/utils";
+import { hasSlots } from "@/lib/product-images";
+import { cn } from "@/lib/utils";
 import type { Product } from "@/types";
 
 export function ProductEffects({
@@ -35,9 +36,22 @@ export function ProductEffects({
       value: number;
     }[]);
 
+  /*
+   * The photo belongs to this block: `metrics_1`, not the packshot the section
+   * used to borrow. Without one the bars take the whole width rather than
+   * leaving a column of decoration next to nothing — Rikki has had a
+   * `metrics_1` uploaded all along and was showing `gallery_1` instead.
+   */
+  const illustrated = hasSlots(product.images, "metrics_1");
+
   return (
     <section className="pb-8 sm:pb-12">
-      <Container className="grid items-center gap-12 lg:grid-cols-[1.15fr_1fr]">
+      <Container
+        className={cn(
+          "grid items-center gap-12",
+          illustrated && "lg:grid-cols-[1.15fr_1fr]",
+        )}
+      >
         <div>
           {cms?.title && (
             <h2 className="mb-8 text-3xl font-extrabold text-brand-ink sm:text-4xl">
@@ -81,25 +95,14 @@ export function ProductEffects({
           </ul>
         </div>
 
-        <div className="relative mx-auto grid aspect-square w-full max-w-md place-items-center">
-          <div
-            aria-hidden="true"
-            className="absolute inset-6 rounded-full bg-brand-pink-tint"
-          />
-          <div
-            aria-hidden="true"
-            className="absolute inset-0 rounded-full border border-brand-pink-soft/50"
-          />
-          <div className="relative h-3/5 w-3/5">
-            <Image
-              src={slotImage(product, "benefits_1", product.image)}
-              alt={name}
-              fill
-              sizes="320px"
-              className="object-contain drop-shadow-[0_18px_28px_rgba(0,0,0,0.14)]"
-            />
-          </div>
-        </div>
+        <SlotImage
+          images={product.images}
+          slot="metrics_1"
+          alt={name}
+          sizes="(max-width: 1024px) 100vw, 460px"
+          className="mx-auto w-full max-w-md rounded-3xl bg-brand-pink-tint"
+          imageClassName="p-6"
+        />
       </Container>
     </section>
   );

@@ -1,12 +1,8 @@
-"use client";
-
-import Image from "next/image";
 import { Check } from "lucide-react";
 import { useTranslations } from "next-intl";
 
-import { CarouselControls } from "@/components/shared/carousel-controls";
 import { Container } from "@/components/shared/container";
-import { useCarousel } from "@/hooks";
+import { SlotImage } from "@/components/shared/slot-image";
 import type { ProductContent } from "@/lib/api/blocks";
 import type { Product } from "@/types";
 
@@ -18,8 +14,6 @@ export function ProductAdvantages({
   content?: ProductContent;
 }) {
   const t = useTranslations();
-  const { ref, canScrollPrev, canScrollNext, scrollPrev, scrollNext } =
-    useCarousel<HTMLUListElement>();
   const name = t(`products.${product.slug}.shortName`);
 
   const cms = content?.advantages;
@@ -47,41 +41,24 @@ export function ProductAdvantages({
           {heading}
         </h2>
 
-        <div className="relative mt-10">
-          <ul
-            ref={ref}
-            className="flex snap-x snap-mandatory gap-4 overflow-x-auto rounded-3xl [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
-          >
-            {product.banner.map((image) => (
-              <li key={image} className="w-full shrink-0 snap-center">
-                {/*
-                  The strip takes whatever is in the product's photo set, which
-                  is as often an upright jar as a wide banner — contained on the
-                  cream plate rather than cropped, since a 16:6 crop of a jar is
-                  a band across the middle of its label.
-                */}
-                <div className="relative aspect-[16/7] overflow-hidden rounded-3xl bg-surface-cream sm:aspect-[16/5]">
-                  <Image
-                    src={image}
-                    alt={name}
-                    fill
-                    sizes="(max-width: 1280px) 100vw, 1200px"
-                    className="object-contain"
-                  />
-                </div>
-              </li>
-            ))}
-          </ul>
+        {/*
+          One picture, from the slot named after this block, in the shape it was
+          shot in.
 
-          <CarouselControls
-            onPrev={scrollPrev}
-            onNext={scrollNext}
-            canPrev={canScrollPrev}
-            canNext={canScrollNext}
-            variant="floating"
-            className="pointer-events-none absolute inset-x-3 top-1/2 hidden -translate-y-1/2 justify-between sm:flex [&>button]:pointer-events-auto"
-          />
-        </div>
+          This used to be a carousel over the product's whole photo set — the
+          gallery again, because "the widest thing available" was the only rule
+          available — inside a 964×301 frame. Rikki's `advantages_1` is a 4:3
+          photograph, so the crop kept a horizontal band across its middle and
+          the section read as empty. Nothing is shown when the slot is empty:
+          the list below is the section, the photograph is its illustration.
+        */}
+        <SlotImage
+          images={product.images}
+          slot="advantages_1"
+          alt={heading}
+          sizes="(max-width: 1024px) 100vw, 900px"
+          className="mx-auto mt-10 w-full max-w-3xl rounded-3xl bg-surface-cream"
+        />
 
         <ul className="mt-10 grid gap-4 md:grid-cols-2 md:gap-x-8">
           {advantages.map((advantage) => (

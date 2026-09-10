@@ -1,11 +1,12 @@
-import Image from "next/image";
 import { useTranslations } from "next-intl";
 
 import { Container } from "@/components/shared/container";
 import { Sparkles } from "@/components/shared/sparkles";
+import { SlotImage } from "@/components/shared/slot-image";
 import type { ProductContent } from "@/lib/api/blocks";
 import { PRODUCT_INTAKE_STEPS } from "@/lib/data";
-import { slotImage } from "@/lib/utils";
+import { hasSlots } from "@/lib/product-images";
+import { cn } from "@/lib/utils";
 import type { Product } from "@/types";
 
 export function ProductIntake({
@@ -45,6 +46,17 @@ export function ProductIntake({
   /* "Важно соблюдать" — a list in the CMS, one paragraph in the bundle. */
   const warnings = content?.warnings;
 
+  /*
+   * One photograph, from the slot shot for these instructions.
+   *
+   * The three frames that used to be here were `gallery_2`, `gallery_1` and
+   * `advantages_1` — the slider's own pictures, repeated a screen further down,
+   * plus one belonging to another block. When `how_to_use_1` is empty the steps
+   * take the full width instead of a column collapsing into a grey box: the
+   * instructions are the section, the photo illustrates them.
+   */
+  const illustrated = hasSlots(product.images, "how_to_use_1");
+
   return (
     <section className="relative isolate overflow-hidden py-16 sm:py-20">
       <Sparkles />
@@ -58,7 +70,12 @@ export function ProductIntake({
           </p>
         )}
 
-        <div className="mt-12 grid gap-10 lg:grid-cols-[minmax(0,380px)_1fr] lg:gap-14">
+        <div
+          className={cn(
+            "mt-12 grid gap-10",
+            illustrated && "lg:grid-cols-[minmax(0,420px)_1fr] lg:gap-14",
+          )}
+        >
           <ol className="relative space-y-5 border-l-2 border-brand-pink-soft/60 pl-8">
             {steps.map((step, index) => (
               <li key={step.title || index} className="relative">
@@ -80,82 +97,42 @@ export function ProductIntake({
             ))}
           </ol>
 
-          {/*
-            The big frame is the `how_to_use_1` slot — a picture shot for these
-            instructions rather than whichever gallery photo happened to land in
-            second place. Both fall back to the gallery, which is what they were.
-
-            Each box still states its own ratio and letterboxes the picture: the
-            uploads are as often an upright jar as a wide frame, and a
-            cover-crop of a jar is a strip of its label blown up past
-            recognition.
-          */}
-          <div className="grid gap-5">
-            <div className="grid gap-5 sm:grid-cols-[1.85fr_1fr]">
-              <div className="relative aspect-[16/9] overflow-hidden rounded-2xl bg-surface-cream">
-                <Image
-                  src={slotImage(
-                    product,
-                    "how_to_use_1",
-                    product.gallery[1] ?? product.gallery[0],
-                  )}
-                  alt={name}
-                  fill
-                  sizes="(max-width: 640px) 100vw, 520px"
-                  className="object-contain"
-                />
-              </div>
-              <div className="relative hidden aspect-[4/3] overflow-hidden rounded-2xl bg-surface-cream sm:block">
-                <Image
-                  src={slotImage(product, "lifestyle_1", product.gallery[0])}
-                  alt={name}
-                  fill
-                  sizes="280px"
-                  className="object-contain"
-                />
-              </div>
-            </div>
+          <div className="grid content-start gap-5">
+            <SlotImage
+              images={product.images}
+              slot="how_to_use_1"
+              alt={heading}
+              sizes="(max-width: 1024px) 100vw, 640px"
+              className="rounded-2xl bg-surface-cream"
+            />
 
             {/*
-              The banner used to size itself from the file: as a plain
-              `w-full h-full` image its height came from the photo's own ratio,
-              so an upright jar stretched this panel to several hundred pixels.
-              Below `sm` the caption sits under the photo on a solid plate —
-              the overlay gradient fades out on its right, which at phone width
-              would leave the text lying on the product.
+              "Важно соблюдать" has no slot of its own — it is a list of rules,
+              and the wide photo that used to sit behind it was borrowed from
+              whatever the product had going widest. It keeps the brand plate
+              instead, which is what the design asks for and what reads on a
+              phone.
             */}
-            <div className="isolate overflow-hidden rounded-2xl sm:relative">
-              <div className="relative aspect-[16/10] w-full bg-surface-cream sm:aspect-[1200/415]">
-                <Image
-                  src={product.banner[0]}
-                  alt={name}
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 820px"
-                  className="object-contain"
-                />
-              </div>
-              <div className="hidden bg-gradient-to-r from-brand-pink-soft/95 via-brand-pink-soft/70 to-transparent sm:absolute sm:inset-0 sm:block" />
-              <div className="flex flex-col justify-center bg-brand-pink-soft p-6 sm:absolute sm:inset-y-0 sm:left-0 sm:max-w-[60%] sm:bg-transparent sm:p-8">
-                <h3 className="text-base font-bold text-white">
-                  {warnings?.title || t("product.importantTitle")}
-                </h3>
-                {warnings ? (
-                  <ul className="mt-3 space-y-1.5">
-                    {warnings.items.map((rule) => (
-                      <li
-                        key={rule}
-                        className="text-xs leading-relaxed text-white/90 before:mr-1.5 before:content-['•'] sm:text-sm"
-                      >
-                        {rule}
-                      </li>
-                    ))}
-                  </ul>
-                ) : (
-                  <p className="mt-3 text-xs leading-relaxed text-white/90 sm:text-sm">
-                    {t("product.importantText")}
-                  </p>
-                )}
-              </div>
+            <div className="rounded-2xl bg-brand-pink-soft p-6 sm:p-8">
+              <h3 className="text-base font-bold text-white">
+                {warnings?.title || t("product.importantTitle")}
+              </h3>
+              {warnings ? (
+                <ul className="mt-3 space-y-1.5">
+                  {warnings.items.map((rule) => (
+                    <li
+                      key={rule}
+                      className="text-xs leading-relaxed text-white/90 before:mr-1.5 before:content-['•'] sm:text-sm"
+                    >
+                      {rule}
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p className="mt-3 text-xs leading-relaxed text-white/90 sm:text-sm">
+                  {t("product.importantText")}
+                </p>
+              )}
             </div>
           </div>
         </div>

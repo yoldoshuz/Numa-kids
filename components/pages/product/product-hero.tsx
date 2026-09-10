@@ -6,12 +6,14 @@ import { useTranslations } from "next-intl";
 import { useState } from "react";
 
 import { ProductImage } from "@/components/shared/product-image";
+import { SlotBackground } from "@/components/shared/slot-image";
 import { useCart } from "@/hooks";
 import type { ProductContent } from "@/lib/api/blocks";
 import { ACCENT } from "@/lib/accents";
 import { Container } from "@/components/shared/container";
 import { formatPrice } from "@/lib/format";
 import { Link } from "@/lib/i18n/navigation";
+import { galleryOf } from "@/lib/product-images";
 import { cn, isSoldOut } from "@/lib/utils";
 import type { Product } from "@/types";
 
@@ -36,12 +38,16 @@ export function ProductHero({
   const accent = ACCENT[product.accent];
 
   /*
-   * Every photo the product has, once.
+   * The slider's frames, taken from the four gallery places by name.
    *
-   * The packshot is usually also the first gallery entry, so without the dedupe
-   * the same picture opened the strip twice.
+   * It used to be the packshot followed by every upload, deduped by URL —
+   * which meant the strip's length and order came out of the upload pile and
+   * the dedupe only caught the cases where the same file was reached twice.
+   * The gallery slots are the moderator's own choice of what the slider shows,
+   * gaps and all, so there is nothing left to guess at or de-duplicate.
    */
-  const images = [...new Set([product.image, ...product.gallery])].filter(Boolean);
+  const gallery = galleryOf(product.images);
+  const cover = gallery[0];
   const [active, setActive] = useState(0);
   const [quantity, setQuantity] = useState(1);
 
@@ -71,196 +77,218 @@ export function ProductHero({
   const badge = content?.hero?.badge;
 
   return (
-    <Container className="grid gap-10 py-10 lg:grid-cols-2 lg:gap-16 lg:py-16">
-      <div>
-        <div
-          className={cn(
-            "relative aspect-square w-full overflow-hidden rounded-3xl",
-            accent.card,
-          )}
-        >
-          <ProductImage
-            slug={product.slug}
-            src={images[active]}
-            alt={name}
-            fill
-            priority
-            sizes="(max-width: 1024px) 100vw, 560px"
-            // Every frame is contained: the set is whatever was uploaded for
-            // the product, so "slot 0 is the packshot, the rest are lifestyle"
-            // stopped being a safe assumption.
-            className="object-contain p-8"
-          />
+    <section className="relative isolate overflow-hidden">
+      {/*
+        `hero_bg` — uploaded for Rikki and for most of the catalogue, and
+        rendered nowhere until now. It sits behind the buy box under a veil that
+        keeps the price and the spec sheet legible; a product without one keeps
+        the plain ground the design specifies.
+      */}
+      <SlotBackground images={product.images} slot="hero_bg" className="-z-20" />
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 -z-10 bg-gradient-to-b from-white/85 via-white/92 to-white"
+      />
+      <Container className="grid gap-10 py-10 lg:grid-cols-2 lg:gap-16 lg:py-16">
+        <div>
+          <div
+            className={cn(
+              "relative aspect-square w-full overflow-hidden rounded-3xl",
+              accent.card,
+            )}
+          >
+            {/*
+              Contained, and the plate carries the frame: `gallery_*` is shot
+              square, but a moderator can upload anything into it and a
+              cover-crop of an upright jar is a band across its label.
+
+              Nothing is drawn when the product has no gallery photo at all. That
+              cannot happen through the admin — `gallery_1` is the required slot —
+              and inventing a picture for the case would put artwork belonging to
+              some other product at the top of this one.
+            */}
+            {cover && (
+              <ProductImage
+                slug={product.slug}
+                src={gallery[active]?.url ?? cover.url}
+                alt={name}
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 560px"
+                className="object-contain p-8"
+              />
+            )}
+          </div>
+
+          {/*
+            One thumbnail per filled gallery slot — up to four, and no more,
+            because four is how many places the design has.
+
+            It scrolls rather than truncating: three across at rest, four if the
+            fourth is filled.
+          */}
+          <ul
+            aria-label={t("product.gallery")}
+            className="mt-4 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          >
+            {gallery.map((image, index) => (
+              <li
+                key={image.url}
+                className="w-[calc((100%-2rem)/3)] shrink-0 snap-start"
+              >
+                <button
+                  type="button"
+                  onClick={() => setActive(index)}
+                  aria-current={active === index}
+                  className={cn(
+                    // Square, like the slot: the thumbnail is the same
+                    // photograph as the frame above, not a wider crop of it.
+                    "relative block aspect-square w-full overflow-hidden rounded-2xl ring-2 transition",
+                    accent.card,
+                    active === index
+                      ? "ring-brand-pink"
+                      : "ring-transparent hover:ring-brand-pink/40",
+                  )}
+                >
+                  <Image
+                    src={image.url}
+                    alt=""
+                    fill
+                    sizes="180px"
+                    className="object-contain p-3"
+                  />
+                </button>
+              </li>
+            ))}
+          </ul>
         </div>
 
-        {/*
-          Every uploaded photo, not the first three.
+        <div>
+          <nav aria-label="Breadcrumb">
+            <ol className="flex flex-wrap items-center gap-2 text-sm text-brand-ink/45">
+              <li>
+                <Link href="/" className="hover:text-brand-pink">
+                  {t("product.breadcrumbHome")}
+                </Link>
+              </li>
+              <li aria-hidden="true">/</li>
+              <li>
+                <Link href="/products" className="hover:text-brand-pink">
+                  {t("product.breadcrumbProducts")}
+                </Link>
+              </li>
+              <li aria-hidden="true">/</li>
+              <li aria-current="page" className="text-brand-ink/70">
+                {t(`products.${product.slug}.shortName`)}
+              </li>
+            </ol>
+          </nav>
 
-          The strip was `grid-cols-3` over `images.slice(0, 3)`, so a product
-          with six photos showed three and a moderator who added a seventh had
-          nowhere to see it — which read as "I uploaded a picture and the site
-          ignored it". Now it scrolls: three across at rest, and more if they
-          are there.
-        */}
-        <ul
-          aria-label={t("product.gallery")}
-          className="mt-4 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
-        >
-          {images.map((image, index) => (
-            <li
-              key={image + index}
-              className="w-[calc((100%-2rem)/3)] shrink-0 snap-start"
+          {badge && (
+            <p
+              className={cn(
+                "mt-5 inline-flex rounded-full px-3 py-1 text-xs font-bold",
+                accent.card,
+                accent.text,
+              )}
+            >
+              {badge}
+            </p>
+          )}
+
+          <h1 className="mt-5 text-4xl font-extrabold text-brand-ink sm:text-5xl">
+            {t(`products.${product.slug}.shortName`)}
+          </h1>
+          {tagline && <p className={cn("mt-2 text-base", accent.text)}>{tagline}</p>}
+          {description && (
+            <p className="mt-5 max-w-xl leading-relaxed text-brand-ink/60">
+              {description}
+            </p>
+          )}
+
+          <p className="mt-9 text-3xl font-extrabold text-brand-ink">
+            {formatPrice(product.price)}{" "}
+            <span className="text-2xl">{t("common.currency")}</span>
+          </p>
+
+          {soldOut ? (
+            /*
+             * With nothing in stock there is no quantity worth picking, so the row
+             * is replaced outright rather than greyed in place: a dimmed stepper
+             * beside a dimmed button still invites a try, and this page was taking
+             * the order all the way through to checkout.
+             */
+            <div className="mt-6 rounded-2xl border border-border bg-surface-sand px-5 py-4">
+              <p className="text-base font-bold text-brand-ink">
+                {t("common.outOfStock")}
+              </p>
+              <p className="mt-1 text-sm leading-relaxed text-brand-ink/60">
+                {t("common.outOfStockNote")}
+              </p>
+            </div>
+          ) : (
+          <div className="mt-6 flex flex-wrap items-center gap-4">
+            <div
+              className="flex items-center gap-1 rounded-xl border border-border p-1"
+              role="group"
+              aria-label={t("product.quantity")}
             >
               <button
                 type="button"
-                onClick={() => setActive(index)}
-                aria-current={active === index}
-                className={cn(
-                  "relative block aspect-[4/3] w-full overflow-hidden rounded-2xl ring-2 transition",
-                  accent.card,
-                  active === index
-                    ? "ring-brand-pink"
-                    : "ring-transparent hover:ring-brand-pink/40",
-                )}
+                aria-label={t("product.decrease")}
+                onClick={() => setQuantity((value) => Math.max(1, value - 1))}
+                className="grid size-10 place-items-center rounded-lg text-brand-ink transition hover:bg-surface-sand"
               >
-                <Image
-                  src={image}
-                  alt=""
-                  fill
-                  sizes="180px"
-                  className="object-contain p-3"
-                />
+                <Minus className="size-4" />
               </button>
-            </li>
-          ))}
-        </ul>
-      </div>
+              <span
+                aria-live="polite"
+                className="w-10 text-center text-base font-semibold"
+              >
+                {quantity}
+              </span>
+              <button
+                type="button"
+                aria-label={t("product.increase")}
+                onClick={() => setQuantity((value) => Math.min(99, value + 1))}
+                className="grid size-10 place-items-center rounded-lg text-brand-ink transition hover:bg-surface-sand"
+              >
+                <Plus className="size-4" />
+              </button>
+            </div>
 
-      <div>
-        <nav aria-label="Breadcrumb">
-          <ol className="flex flex-wrap items-center gap-2 text-sm text-brand-ink/45">
-            <li>
-              <Link href="/" className="hover:text-brand-pink">
-                {t("product.breadcrumbHome")}
-              </Link>
-            </li>
-            <li aria-hidden="true">/</li>
-            <li>
-              <Link href="/products" className="hover:text-brand-pink">
-                {t("product.breadcrumbProducts")}
-              </Link>
-            </li>
-            <li aria-hidden="true">/</li>
-            <li aria-current="page" className="text-brand-ink/70">
-              {t(`products.${product.slug}.shortName`)}
-            </li>
-          </ol>
-        </nav>
-
-        {badge && (
-          <p
-            className={cn(
-              "mt-5 inline-flex rounded-full px-3 py-1 text-xs font-bold",
-              accent.card,
-              accent.text,
-            )}
-          >
-            {badge}
-          </p>
-        )}
-
-        <h1 className="mt-5 text-4xl font-extrabold text-brand-ink sm:text-5xl">
-          {t(`products.${product.slug}.shortName`)}
-        </h1>
-        {tagline && <p className={cn("mt-2 text-base", accent.text)}>{tagline}</p>}
-        {description && (
-          <p className="mt-5 max-w-xl leading-relaxed text-brand-ink/60">
-            {description}
-          </p>
-        )}
-
-        <p className="mt-9 text-3xl font-extrabold text-brand-ink">
-          {formatPrice(product.price)}{" "}
-          <span className="text-2xl">{t("common.currency")}</span>
-        </p>
-
-        {soldOut ? (
-          /*
-           * With nothing in stock there is no quantity worth picking, so the row
-           * is replaced outright rather than greyed in place: a dimmed stepper
-           * beside a dimmed button still invites a try, and this page was taking
-           * the order all the way through to checkout.
-           */
-          <div className="mt-6 rounded-2xl border border-border bg-surface-sand px-5 py-4">
-            <p className="text-base font-bold text-brand-ink">
-              {t("common.outOfStock")}
-            </p>
-            <p className="mt-1 text-sm leading-relaxed text-brand-ink/60">
-              {t("common.outOfStockNote")}
-            </p>
-          </div>
-        ) : (
-        <div className="mt-6 flex flex-wrap items-center gap-4">
-          <div
-            className="flex items-center gap-1 rounded-xl border border-border p-1"
-            role="group"
-            aria-label={t("product.quantity")}
-          >
             <button
               type="button"
-              aria-label={t("product.decrease")}
-              onClick={() => setQuantity((value) => Math.max(1, value - 1))}
-              className="grid size-10 place-items-center rounded-lg text-brand-ink transition hover:bg-surface-sand"
+              onClick={() => add(product.slug, quantity)}
+              className="h-13 flex-1 rounded-xl bg-brand-ink px-10 text-base font-semibold text-white transition hover:brightness-125 active:translate-y-px sm:flex-none"
             >
-              <Minus className="size-4" />
-            </button>
-            <span
-              aria-live="polite"
-              className="w-10 text-center text-base font-semibold"
-            >
-              {quantity}
-            </span>
-            <button
-              type="button"
-              aria-label={t("product.increase")}
-              onClick={() => setQuantity((value) => Math.min(99, value + 1))}
-              className="grid size-10 place-items-center rounded-lg text-brand-ink transition hover:bg-surface-sand"
-            >
-              <Plus className="size-4" />
+              {t("product.addToCart")}
             </button>
           </div>
+          )}
 
-          <button
-            type="button"
-            onClick={() => add(product.slug, quantity)}
-            className="h-13 flex-1 rounded-xl bg-brand-ink px-10 text-base font-semibold text-white transition hover:brightness-125 active:translate-y-px sm:flex-none"
-          >
-            {t("product.addToCart")}
-          </button>
+          <h2 className="mt-12 text-2xl font-extrabold text-brand-ink">
+            {cmsSpecs?.title || t("product.specsTitle")}
+          </h2>
+          <dl className="mt-5 grid gap-x-8 gap-y-3 sm:grid-cols-[minmax(0,220px)_1fr]">
+            {cmsSpecs
+              ? cmsSpecs.items.map((row, index) => (
+                  <div key={row.label + index} className="contents">
+                    <dt className="text-sm text-brand-ink/50">{row.label}:</dt>
+                    <dd className="text-sm text-brand-ink">{row.value}</dd>
+                  </div>
+                ))
+              : SPECS.map((spec) => (
+                  <div key={spec} className="contents">
+                    <dt className="text-sm text-brand-ink/50">
+                      {t(`product.specs.${spec}.label`)}:
+                    </dt>
+                    <dd className="text-sm text-brand-ink">{specValue(spec)}</dd>
+                  </div>
+                ))}
+          </dl>
         </div>
-        )}
-
-        <h2 className="mt-12 text-2xl font-extrabold text-brand-ink">
-          {cmsSpecs?.title || t("product.specsTitle")}
-        </h2>
-        <dl className="mt-5 grid gap-x-8 gap-y-3 sm:grid-cols-[minmax(0,220px)_1fr]">
-          {cmsSpecs
-            ? cmsSpecs.items.map((row, index) => (
-                <div key={row.label + index} className="contents">
-                  <dt className="text-sm text-brand-ink/50">{row.label}:</dt>
-                  <dd className="text-sm text-brand-ink">{row.value}</dd>
-                </div>
-              ))
-            : SPECS.map((spec) => (
-                <div key={spec} className="contents">
-                  <dt className="text-sm text-brand-ink/50">
-                    {t(`product.specs.${spec}.label`)}:
-                  </dt>
-                  <dd className="text-sm text-brand-ink">{specValue(spec)}</dd>
-                </div>
-              ))}
-        </dl>
-      </div>
-    </Container>
+      </Container>
+    </section>
   );
 }

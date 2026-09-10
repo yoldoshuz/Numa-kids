@@ -1,4 +1,5 @@
-import type { ApiImageSlot, ApiProductBlock, ImageSlotKey } from "@/lib/api/types";
+import type { ApiProductBlock } from "@/lib/api/types";
+import type { ProductImages } from "@/lib/product-images";
 import type { AppLocale } from "@/lib/i18n/routing";
 
 export type Locale = AppLocale;
@@ -28,10 +29,7 @@ export interface Product {
   accent: Accent;
   /** Packshot with a transparent background. */
   image: string;
-  /** Lifestyle shots for the details gallery. */
-  gallery: string[];
-  /** Wide banner used by the advantages carousel. */
-  banner: string[];
+
   price: number;
   strains: number;
   isTop: boolean;
@@ -47,17 +45,21 @@ export interface Product {
    */
   blocks?: ApiProductBlock[];
   /**
-   * Pictures the moderator placed into named slots, keyed by slot.
+   * Every place a photograph can go on this product's page, keyed by the name
+   * of the place.
    *
-   * `image`/`gallery`/`banner` above are still the fields the cards and the
-   * gallery read, so nothing breaks without this. What it adds is the sections
-   * further down the page: each one asks for the slot it was designed around and
-   * falls back to the packshot, which is what they all showed before.
+   * This is the whole of the page's photography. Each section asks for the slot
+   * that carries its own name — `benefits` reads `benefits_1`/`benefits_2`,
+   * `metrics` reads `metrics_1` — and an empty slot means that section renders
+   * without a picture. There is no borrowing from the gallery and no bundled
+   * placeholder: both put a photograph of something the customer is not buying
+   * onto the page.
+   *
+   * `image` above stays alongside it because the catalogue lists do not carry
+   * this map — a grid of cards needs one photo each, not fifteen.
    */
-  slots?: ProductImageSlots;
+  images?: ProductImages;
 }
-
-export type ProductImageSlots = Partial<Record<ImageSlotKey, ApiImageSlot>>;
 
 export type ArticleTopic =
   | "immunity"

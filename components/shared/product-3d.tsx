@@ -22,8 +22,12 @@ const SPIN_RATE = (Math.PI * 2) / 14;
 interface Product3DProps {
   slug: string;
   alt: string;
-  /** Packshot: the poster while the model loads, and the answer if it cannot. */
-  fallback: string;
+  /**
+   * Poster while the model loads, and the answer on a device that cannot show
+   * one. Optional: it comes from a named slot now, and an empty slot means
+   * there is no photograph to show rather than "show something else".
+   */
+  fallback?: string;
   className?: string;
   sizes?: string;
 }
@@ -357,15 +361,17 @@ export function Product3D({ slug, alt, fallback, className, sizes }: Product3DPr
         it would leave a hole for as long as the model takes, and it is also the
         whole answer on a device with no WebGL.
       */}
-      <Image
-        src={fallback}
-        alt={alt}
-        fill
-        sizes={sizes}
-        className={`object-contain drop-shadow-[0_18px_28px_rgba(0,0,0,0.14)] transition-opacity duration-500 ${
-          ready ? "opacity-0" : "opacity-100"
-        }`}
-      />
+      {fallback ? (
+        <Image
+          src={fallback}
+          alt={alt}
+          fill
+          sizes={sizes}
+          className={`object-contain drop-shadow-[0_18px_28px_rgba(0,0,0,0.14)] transition-opacity duration-500 ${
+            ready ? "opacity-0" : "opacity-100"
+          }`}
+        />
+      ) : null}
       {model && !failed ? (
         <div
           ref={host}

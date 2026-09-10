@@ -1,3 +1,8 @@
+import {
+  EMPTY_PRODUCT_IMAGES,
+  GALLERY_SLOTS,
+  type ProductImages,
+} from "@/lib/product-images";
 import type {
   Article,
   Certificate,
@@ -10,6 +15,30 @@ import type {
 } from "@/types";
 
 /**
+ * The bundled catalogue's own photographs, placed into the gallery slots.
+ *
+ * The offline storefront has no admin behind it, so this is where its artwork
+ * declares which places it fills: the product page reads named slots and
+ * nothing else, and a fallback catalogue that spoke a different language would
+ * render every section photoless. Only the gallery is bundled — the
+ * informational slots are content, and content nobody has uploaded has no
+ * stand-in.
+ *
+ * The dimensions are the slot's specification, which is all a layout needs from
+ * them; the files themselves are square packshots.
+ */
+function bundledGallery(...urls: string[]): ProductImages {
+  return {
+    ...EMPTY_PRODUCT_IMAGES,
+    ...Object.fromEntries(
+      urls
+        .slice(0, GALLERY_SLOTS.length)
+        .map((url, index) => [GALLERY_SLOTS[index], { url, width: 1000, height: 1000 }]),
+    ),
+  };
+}
+
+/**
  * Static catalogue. Only structural data lives here — every string is resolved
  * through `messages/*.json`, so the shop is fully bilingual before the backend
  * is wired in.
@@ -20,8 +49,7 @@ export const PRODUCTS: Product[] = [
     category: "antiparasitic",
     accent: "green",
     image: "/images/products/rikki.png",
-    gallery: ["/images/products/rikki.png"],
-    banner: ["/images/products/rikki.png"],
+    images: bundledGallery("/images/products/rikki.png"),
     price: 390_000,
     strains: 90,
     isTop: true,
@@ -32,12 +60,11 @@ export const PRODUCTS: Product[] = [
     category: "vitamin-d3",
     accent: "pink",
     image: "/images/products/bonny.png",
-    gallery: [
+    images: bundledGallery(
       "/images/products/bonny-shot-1.jpg",
       "/images/products/bonny-shot-2.jpg",
       "/images/products/kist.jpg",
-    ],
-    banner: ["/images/products/bonny-banner.jpg", "/images/products/bonny-hero.jpg"],
+    ),
     price: 390_000,
     strains: 90,
     isTop: true,
@@ -48,8 +75,7 @@ export const PRODUCTS: Product[] = [
     category: "probiotics",
     accent: "green",
     image: "/images/products/jekky.png",
-    gallery: ["/images/products/jekky.png"],
-    banner: ["/images/products/jekky.png"],
+    images: bundledGallery("/images/products/jekky.png"),
     price: 390_000,
     strains: 90,
     isTop: true,
@@ -60,8 +86,7 @@ export const PRODUCTS: Product[] = [
     category: "omega-3",
     accent: "orange",
     image: "/images/products/genny.png",
-    gallery: ["/images/products/genny.png"],
-    banner: ["/images/products/genny.png"],
+    images: bundledGallery("/images/products/genny.png"),
     price: 390_000,
     strains: 90,
     isTop: true,
@@ -72,8 +97,7 @@ export const PRODUCTS: Product[] = [
     category: "multi",
     accent: "blue",
     image: "/images/products/funny.png",
-    gallery: ["/images/products/funny.png"],
-    banner: ["/images/products/funny.png"],
+    images: bundledGallery("/images/products/funny.png"),
     price: 390_000,
     strains: 90,
     isTop: true,
@@ -84,8 +108,7 @@ export const PRODUCTS: Product[] = [
     category: "iodine",
     accent: "blue",
     image: "/images/products/endomarine.png",
-    gallery: ["/images/products/endomarine.png"],
-    banner: ["/images/products/endomarine.png"],
+    images: bundledGallery("/images/products/endomarine.png"),
     price: 480_000,
     strains: 0,
     isTop: true,
