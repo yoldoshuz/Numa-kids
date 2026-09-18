@@ -280,6 +280,41 @@ export function HeroGallery() {
           </button>
         </div>
       </Container>
+
+      {/*
+        The bloom is a 1500px circle inside a section barely 700px tall, so its
+        falloff never finishes before it reaches the edges and `overflow-hidden`
+        cut it off along a straight line — one right under the sticky header,
+        one on the seam with the section below. Shrinking the circle is not an
+        option: anything small enough to fade out on its own is smaller than the
+        poster it is supposed to be coming off.
+
+        So the section's own colour is laid back over the top and bottom bands
+        instead, and the bloom dissolves into the page rather than ending. Both
+        panels sit in the same negative-z layer as the bloom but later in the
+        document, so they cover it while staying under every bit of content.
+
+        The stops name the background colour twice rather than fading to
+        `transparent`: the keyword is rgba(0,0,0,0), and interpolating a near
+        white towards it walks the ramp through grey — a dirty band exactly
+        where this is meant to be invisible.
+      */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-28 sm:h-32"
+        style={{
+          backgroundImage:
+            "linear-gradient(to bottom, #fffdfb 12%, rgba(255, 253, 251, 0))",
+        }}
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-28 sm:h-32"
+        style={{
+          backgroundImage:
+            "linear-gradient(to top, #fffdfb 12%, rgba(255, 253, 251, 0))",
+        }}
+      />
     </section>
   );
 }
