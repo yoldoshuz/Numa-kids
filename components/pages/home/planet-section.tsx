@@ -52,13 +52,20 @@ export function PlanetSection() {
           </ul>
         </div>
 
-        <div className="relative -mb-14 h-56 sm:h-72 lg:-mr-16 lg:-mb-20 lg:h-auto lg:min-h-[340px]">
+        {/*
+          The new artwork carries its own pink backdrop, so it cannot bleed off
+          the section the way the old cut-out did — two different pinks meeting
+          at a straight edge read as a printing fault. It gets a frame instead:
+          its own 16:9 box, so neither end of the line-up is cropped away, and
+          rounded corners so the rectangle reads as deliberate.
+        */}
+        <div className="relative aspect-[16/9] w-full self-center overflow-hidden rounded-2xl shadow-[0_18px_40px_-20px_rgba(23,28,51,0.45)] lg:rounded-3xl">
           <Image
-            src="/images/mascots/team.png"
+            src="/images/kids-image.png"
             alt={t("title")}
             fill
-            sizes="(max-width: 1024px) 90vw, 640px"
-            className="object-contain object-bottom"
+            sizes="(max-width: 1024px) 92vw, 640px"
+            className="object-cover"
           />
         </div>
       </Container>
